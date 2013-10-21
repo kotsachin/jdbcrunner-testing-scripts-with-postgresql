@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>7. その他の付属ツール &mdash; JdbcRunner v1.2 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="JdbcRunner v1.2 documentation" href="index.html" />
+    <link rel="next" title="8. テストキット Tiny SysBench" href="sysbench.html" />
+    <link rel="prev" title="6. スクリプトAPIリファレンス" href="reference.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="sysbench.html" title="8. テストキット Tiny SysBench"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="reference.html" title="6. スクリプトAPIリファレンス"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>7. その他の付属ツール<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>この章では、JdbcRunnerに付属するその他のツールについて説明します。</p>
+<div class="section" id="response-histogram-ods">
+<h2>7.1. response_histogram.ods<a class="headerlink" href="#response-histogram-ods" title="Permalink to this headline">¶</a></h2>
+<p>miscディレクトリに、response_histogram.odsというOpenOffice.orgまたはLibreOffice用の表計算シートを用意しています。これはレスポンスタイムのヒストグラムを作成するためのものです。</p>
+<img alt="_images/response_sheet.png" src="_images/response_sheet.png" />
+<p>このシートにはマクロが組み込まれています。マクロを実行するにはツール→オプション→OpenOffice.org→セキュリティ→マクロセキュリティを中または低に設定する必要があります。</p>
+<p>シート内のボタンを押して、レスポンスタイムの度数分布データを読み込みます。</p>
+<img alt="_images/response_open.png" src="_images/response_open.png" />
+<p>すると、以下のようなヒストグラムが描画されます。棒グラフが階級ごとの度数、折れ線グラフが累積相対度数を表しています。</p>
+<img alt="_images/response_graph.png" src="_images/response_graph.png" />
+<p>シート左上のパラメータで、階級の幅とグラフ化する列を変更することができます。</p>
+<img alt="_images/response_change.png" src="_images/response_change.png" />
+<p>例えば上記のデータで階級の幅を5ミリ秒に変更すると、以下のようになります。</p>
+<img alt="_images/response_graph_5.png" src="_images/response_graph_5.png" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">7. その他の付属ツール</a><ul>
+<li><a class="reference external" href="#response-histogram-ods">7.1. response_histogram.ods</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="reference.html"
+                                  title="previous chapter">6. スクリプトAPIリファレンス</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="sysbench.html"
+                                  title="next chapter">8. テストキット Tiny SysBench</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/misc.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="sysbench.html" title="8. テストキット Tiny SysBench"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="reference.html" title="6. スクリプトAPIリファレンス"
+             >previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2010-2011, Sadao Hiratsuka.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

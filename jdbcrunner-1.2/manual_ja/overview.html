@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1. JdbcRunnerの概要 &mdash; JdbcRunner v1.2 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="JdbcRunner v1.2 documentation" href="index.html" />
+    <link rel="next" title="2. チュートリアル" href="tutorial.html" />
+    <link rel="prev" title="JdbcRunner - 汎用データベース負荷テストツール" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="tutorial.html" title="2. チュートリアル"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="JdbcRunner - 汎用データベース負荷テストツール"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="jdbcrunner">
+<h1>1. JdbcRunnerの概要<a class="headerlink" href="#jdbcrunner" title="Permalink to this headline">¶</a></h1>
+<p>この章では、JdbcRunnerの概要を説明します。</p>
+<div class="section" id="id1">
+<h2>1.1. JdbcRunnerとは<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>JdbcRunnerとは、Oracle Database、MySQL、PostgreSQLなどRDBMSを対象とした負荷テストツールです。OLTPを想定した比較的短いトランザクションを定義して多重実行し、スループットとレスポンスタイムを測定することができます。</p>
+</div>
+<div class="section" id="id2">
+<h2>1.2. JdbcRunnerの特長<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rdbms">
+<h3>1.2.1. RDBMS非依存<a class="headerlink" href="#rdbms" title="Permalink to this headline">¶</a></h3>
+<p>JdbcRunnerはJavaで実装されているため、JDBCドライバが提供されているRDBMSであれば製品を問わず使用することができます。</p>
+</div>
+<div class="section" id="id3">
+<h3>1.2.2. 自由度の高い負荷シナリオ<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>JdbcRunnerでは負荷テストのシナリオをスクリプトで記述します。これによって入力データの生成や条件分岐を柔軟に行うことができ、より実際のシステムに近い状況をシミュレートすることができます。スクリプト言語にはJavaScriptを採用しています。</p>
+</div>
+<div class="section" id="id4">
+<h3>1.2.3. コネクションプールを利用<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>コネクションプールとして、Apache Tomcatで用いられているApache Commons DBCPを使用しています。これによってより一般的なJava EEの構成に近い挙動を再現しています。</p>
+<p>ただし、コネクションプールを利用していないシステムとは挙動が大きく異なることになります。</p>
+</div>
+<div class="section" id="id5">
+<h3>1.2.4. パラメータのバインド機構を利用<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>JdbcRunnerからSQLを発行する際は、必ずPreparedStatementを用いパラメータをバインドするように設計しています。他の負荷テストツール、特にMySQLをターゲットにしたものはパラメータのバインド機構を利用していないものが多いのですが、それらに比べより実際のシステムに近い性能の傾向を得ることができます。</p>
+<p>ただし、パラメータのバインド機構を利用していないシステムとは性能の傾向が大きく異なることになります。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>1.3. 動作要件<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>JdbcRunnerを動作させるには、以下の環境が必要です。</p>
+<ul class="simple">
+<li>Java SE 6</li>
+<li>各RDBMS用のJDBCドライバ</li>
+</ul>
+<p>MySQLとPostgreSQLについてはJDBCドライバを内蔵しているため、別途JDBCドライバを用意する必要はありません。</p>
+</div>
+<div class="section" id="id7">
+<h2>1.4. ライセンス<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>JdbcRunner本体はNew BSD Licenseです。</p>
+<p>JdbcRunnerでは以下のライブラリをそれぞれのライセンスに従って利用しています。JdbcRunnerを修正・再配布する場合は、これらのライセンスに対する考慮も必要となります。</p>
+<ul class="simple">
+<li>Apache Commons CLI (Apache License 2.0)</li>
+<li>Apache Commons DBCP (Apache License 2.0)</li>
+<li>Apache Commons Pool (Apache License 2.0)</li>
+<li>Apache log4j (Apache License 2.0)</li>
+<li>Mozilla Rhino (Mozilla Public License 1.1)</li>
+<li>MySQL Connector/J (GNU General Public License v2 with FOSS License Exception)</li>
+<li>PostgreSQL JDBC Driver (New BSD License)</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">1. JdbcRunnerの概要</a><ul>
+<li><a class="reference external" href="#id1">1.1. JdbcRunnerとは</a></li>
+<li><a class="reference external" href="#id2">1.2. JdbcRunnerの特長</a><ul>
+<li><a class="reference external" href="#rdbms">1.2.1. RDBMS非依存</a></li>
+<li><a class="reference external" href="#id3">1.2.2. 自由度の高い負荷シナリオ</a></li>
+<li><a class="reference external" href="#id4">1.2.3. コネクションプールを利用</a></li>
+<li><a class="reference external" href="#id5">1.2.4. パラメータのバインド機構を利用</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#id6">1.3. 動作要件</a></li>
+<li><a class="reference external" href="#id7">1.4. ライセンス</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="index.html"
+                                  title="previous chapter">JdbcRunner - 汎用データベース負荷テストツール</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="tutorial.html"
+                                  title="next chapter">2. チュートリアル</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/overview.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="tutorial.html" title="2. チュートリアル"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="JdbcRunner - 汎用データベース負荷テストツール"
+             >previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2010-2011, Sadao Hiratsuka.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

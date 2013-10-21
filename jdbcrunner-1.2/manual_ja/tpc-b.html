@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>9. テストキット Tiny TPC-B &mdash; JdbcRunner v1.2 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="JdbcRunner v1.2 documentation" href="index.html" />
+    <link rel="next" title="10. テストキット Tiny TPC-C" href="tpc-c.html" />
+    <link rel="prev" title="8. テストキット Tiny SysBench" href="sysbench.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="tpc-c.html" title="10. テストキット Tiny TPC-C"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sysbench.html" title="8. テストキット Tiny SysBench"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tiny-tpc-b">
+<h1>9. テストキット Tiny TPC-B<a class="headerlink" href="#tiny-tpc-b" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tpc-b">
+<h2>9.1. TPC-Bとは<a class="headerlink" href="#tpc-b" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.tpc.org/tpcb/">TPC-B</a> とは、 <a class="reference external" href="http://www.tpc.org/">TPC</a> によって策定されたベンチマーク仕様の一つです。銀行の窓口業務をモデルにしたトランザクションを実行し、システムの性能を測定します。データベースのER図を以下に示します。</p>
+<img alt="_images/tpc-b.png" src="_images/tpc-b.png" />
+<ul class="simple">
+<li>branches : 銀行の支店を表しています。このテーブルのレコード数がデータベース全体の規模を決めるスケールファクタになっています。</li>
+<li>tellers : 銀行員を表しています。支店あたり10名の銀行員がいます。</li>
+<li>accounts : 銀行口座を表しています。支店あたり10万の口座があります。</li>
+<li>history : 取引履歴を表しています。</li>
+</ul>
+<p>TPC-Bでは1種類のトランザクションが定義されています。これは以下のSQLを順番に発行するものです。</p>
+<div class="highlight-python"><pre>UPDATE accounts SET abalance = abalance + :1 WHERE aid = :2;
+SELECT abalance FROM accounts WHERE aid = :1;
+UPDATE tellers SET tbalance = abalance + :1 WHERE aid = :2;
+UPDATE branches SET bbalance = abalance + :1 WHERE aid = :2;
+INSERT INTO history (aid, aid, aid, delta) VALUES (:1, :2, :3, :4);
+COMMIT;</pre>
+</div>
+<p>TPC-BのCRUD図を以下に示します。TPC-Bには更新の割合が非常に高いという特徴があります。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="20%" />
+<col width="17%" />
+<col width="20%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Transaction</th>
+<th class="head">branches</th>
+<th class="head">tellers</th>
+<th class="head">accounts</th>
+<th class="head">history</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>TPC-B</td>
+<td>U</td>
+<td>U</td>
+<td>RU</td>
+<td>C</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id2">
+<h2>9.2. Tiny TPC-Bとは<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Tiny TPC-Bは、TPC-B Standard Specification 2.0の仕様を抜粋しJdbcRunnerのスクリプトとして実装したものです。仕様書のうち以下の章節を実装しています。</p>
+<ul class="simple">
+<li>1 Transaction Profile<ul>
+<li>1.2 The Transaction Profile</li>
+</ul>
+</li>
+<li>3 Logical Database Design</li>
+<li>4 Scaling Rules</li>
+<li>5 Distribution, Partitioning, and Transaction Generation</li>
+</ul>
+<p>それ以外の章節については実装されていないか、仕様を満たしていません。従ってTiny TPC-Bのテスト結果は正式なTPC-Bのスコアではありません。</p>
+<p>Tiny TPC-Bは以下の二つのスクリプトから構成されています。</p>
+<ul class="simple">
+<li>scripts/tpcb_load.js : テストデータ生成用スクリプト</li>
+<li>scripts/tpcb.js : テスト用スクリプト</li>
+</ul>
+</div>
+<div class="section" id="rdbms">
+<h2>9.3. 対応RDBMS<a class="headerlink" href="#rdbms" title="Permalink to this headline">¶</a></h2>
+<p>Tiny TPC-Bは以下のRDBMSに対応しています。</p>
+<ul class="simple">
+<li>Oracle Database 11g Release 2</li>
+<li>MySQL 5.1、5.5</li>
+<li>PostgreSQL 8.4、9.0、9.1</li>
+</ul>
+<p>RDBMSのバージョンは実際に動作確認を行ったバージョンを示しており、これ以外のバージョンでも動作する可能性はあります。</p>
+</div>
+<div class="section" id="id3">
+<h2>9.4. テストの準備<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>MySQLにおけるテストの準備手順を以下に示します。Oracle Database、PostgreSQLについてはscripts/tpcb_load.jsのコメントをご参照ください。</p>
+<div class="section" id="id4">
+<h3>9.4.1. ユーザの作成<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>MySQLにrootユーザで接続し、tpcbユーザを作成します。</p>
+<div class="highlight-python"><pre>&gt; mysql -u root
+
+mysql&gt; GRANT ALL PRIVILEGES ON tpcb.* TO tpcb@'%' IDENTIFIED BY 'tpcb';
+Query OK, 0 rows affected (0.00 sec)</pre>
+</div>
+<p>ネットワーク環境によっては、接続元ホストを制限したりtpcbをより安全なパスワードに変更することをおすすめします。</p>
+</div>
+<div class="section" id="id5">
+<h3>9.4.2. データベースの作成<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>tpcbデータベースを作成します。</p>
+<div class="highlight-python"><pre>mysql&gt; CREATE DATABASE tpcb;
+Query OK, 1 row affected (0.00 sec)</pre>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>9.4.3. テストデータの生成<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>scripts/tpcb_load.jsを用いてテストデータの生成を行います。このスクリプトは以下の処理を行っています。</p>
+<ul class="simple">
+<li>テーブルの削除</li>
+<li>テーブルの作成</li>
+<li>データロード</li>
+<li>インデックスの作成 (MySQLのみデータロード前に作成)</li>
+<li>統計情報の更新 (Oracle Database、PostgreSQLのみ実施)</li>
+</ul>
+<div class="highlight-python"><pre>&gt; java JR scripts\tpcb_load.js
+
+02:35:34 [INFO ] &gt; JdbcRunner 1.2
+02:35:34 [INFO ] [Config]
+Program start time   : 20111011-023534
+Script filename      : scripts\tpcb_load.js
+JDBC driver          : -
+JDBC URL             : jdbc:mysql://localhost:3306/tpcb?rewriteBatchedStatements=true
+JDBC user            : tpcb
+Load mode            : true
+Number of agents     : 4
+Auto commit          : false
+Debug mode           : false
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+02:35:35 [INFO ] Tiny TPC-B 1.1 - data loader
+02:35:35 [INFO ] -param0  : Scale factor (default : 16)
+02:35:35 [INFO ] -nAgents : Parallel loading degree (default : 4)
+02:35:35 [INFO ] Scale factor            : 16
+02:35:35 [INFO ] Parallel loading degree : 4
+02:35:35 [INFO ] Dropping tables ...
+02:35:35 [WARN ] JavaException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown table 'history'
+02:35:35 [WARN ] JavaException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown table 'accounts'
+02:35:35 [WARN ] JavaException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown table 'tellers'
+02:35:35 [WARN ] JavaException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown table 'branches'
+02:35:35 [INFO ] Creating tables ...
+02:35:35 [INFO ] Loading branch id 1 by agent 1 ...
+02:35:35 [INFO ] Loading branch id 2 by agent 2 ...
+02:35:35 [INFO ] Loading branch id 3 by agent 0 ...
+02:35:35 [INFO ] Loading branch id 4 by agent 3 ...
+02:35:44 [INFO ] Loading branch id 5 by agent 1 ...
+02:35:56 [INFO ] Loading branch id 6 by agent 3 ...
+02:36:04 [INFO ] Loading branch id 7 by agent 0 ...
+02:36:04 [INFO ] Loading branch id 8 by agent 2 ...
+02:36:10 [INFO ] Loading branch id 9 by agent 3 ...
+02:36:10 [INFO ] Loading branch id 10 by agent 1 ...
+02:36:13 [INFO ] Loading branch id 11 by agent 2 ...
+02:36:15 [INFO ] Loading branch id 12 by agent 0 ...
+02:36:19 [INFO ] Loading branch id 13 by agent 1 ...
+02:36:20 [INFO ] Loading branch id 14 by agent 3 ...
+02:36:23 [INFO ] Loading branch id 15 by agent 2 ...
+02:36:26 [INFO ] Loading branch id 16 by agent 0 ...
+02:36:53 [INFO ] Completed.
+02:36:53 [INFO ] &lt; JdbcRunner SUCCESS</pre>
+</div>
+<p>「Unknown table &#8216;history&#8217;」などの警告は、存在しないテーブルを削除しようとして出力されるものです。無視して構いません。</p>
+<p>-param0を指定することによって、スケールファクタを変更することが可能です。スケールファクタ1あたり、branchesテーブルが1レコード、tellersテーブルが10レコード、accountsテーブルが10万レコード増加します。デフォルトのスケールファクタは16です。</p>
+<p>-nAgentsを指定することによって、ロードの並列度を変更することが可能です。RDBMSがCPUスケーラビリティに優れておりクアッドコアなどCPUコア数の多い環境では、並列度を上げることでロード時間を短縮することができます。デフォルトの並列度は4です。</p>
+<div class="highlight-python"><pre>&gt; java JR scripts\tpcb_load.js -nAgents 8 -param0 100</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>9.5. テストの実行<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>scripts/tpcb.jsを用いてテストを実行します。JdbcRunnerを動作させるマシンは、テスト対象のマシンとは別に用意することを強くおすすめします。</p>
+<p>Oracle Java SE/OpenJDKを利用する際は、Server VMを用いることをおすすめします。詳細は <a class="reference external" href="http://java.sun.com/javase/ja/6/docs/ja/technotes/guides/vm/index.html">JDK 6 仮想マシン (VM) 関連 API &amp; 開発者ガイド</a> をご参照ください。</p>
+<div class="highlight-python"><pre>&gt; java -server JR scripts\tpcb.js -jdbcUrl jdbc:mysql://server/tpcb
+
+02:40:05 [INFO ] &gt; JdbcRunner 1.2
+02:40:05 [INFO ] [Config]
+Program start time   : 20111011-024004
+Script filename      : scripts\tpcb.js
+JDBC driver          : -
+JDBC URL             : jdbc:mysql://server/tpcb
+JDBC user            : tpcb
+Warmup time          : 60 sec
+Measurement time     : 180 sec
+Number of tx types   : 1
+Number of agents     : 16
+Connection pool size : 16
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : false
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+02:40:06 [INFO ] Tiny TPC-B 1.1
+02:40:06 [INFO ] Scale factor : 16
+02:40:06 [INFO ] Truncating history table...
+02:40:07 [INFO ] [Warmup] -59 sec, 659 tps, (659 tx)
+02:40:08 [INFO ] [Warmup] -58 sec, 759 tps, (1418 tx)
+02:40:09 [INFO ] [Warmup] -57 sec, 933 tps, (2351 tx)
+02:40:10 [INFO ] [Warmup] -56 sec, 1248 tps, (3599 tx)
+02:40:11 [INFO ] [Warmup] -55 sec, 1291 tps, (4890 tx)
+...
+02:44:02 [INFO ] [Progress] 176 sec, 1518 tps, 216989 tx
+02:44:03 [INFO ] [Progress] 177 sec, 730 tps, 217719 tx
+02:44:04 [INFO ] [Progress] 178 sec, 1725 tps, 219444 tx
+02:44:05 [INFO ] [Progress] 179 sec, 785 tps, 220229 tx
+02:44:06 [INFO ] [Progress] 180 sec, 1436 tps, 221665 tx
+02:44:06 [INFO ] [Total tx count] 221663 tx
+02:44:06 [INFO ] [Throughput] 1231.5 tps
+02:44:06 [INFO ] [Response time (minimum)] 4 msec
+02:44:06 [INFO ] [Response time (50%tile)] 10 msec
+02:44:06 [INFO ] [Response time (90%tile)] 18 msec
+02:44:06 [INFO ] [Response time (95%tile)] 22 msec
+02:44:06 [INFO ] [Response time (99%tile)] 41 msec
+02:44:06 [INFO ] [Response time (maximum)] 821 msec
+02:44:06 [INFO ] &lt; JdbcRunner SUCCESS</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">9. テストキット Tiny TPC-B</a><ul>
+<li><a class="reference external" href="#tpc-b">9.1. TPC-Bとは</a></li>
+<li><a class="reference external" href="#id2">9.2. Tiny TPC-Bとは</a></li>
+<li><a class="reference external" href="#rdbms">9.3. 対応RDBMS</a></li>
+<li><a class="reference external" href="#id3">9.4. テストの準備</a><ul>
+<li><a class="reference external" href="#id4">9.4.1. ユーザの作成</a></li>
+<li><a class="reference external" href="#id5">9.4.2. データベースの作成</a></li>
+<li><a class="reference external" href="#id6">9.4.3. テストデータの生成</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#id7">9.5. テストの実行</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="sysbench.html"
+                                  title="previous chapter">8. テストキット Tiny SysBench</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="tpc-c.html"
+                                  title="next chapter">10. テストキット Tiny TPC-C</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/tpc-b.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="tpc-c.html" title="10. テストキット Tiny TPC-C"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sysbench.html" title="8. テストキット Tiny SysBench"
+             >previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2010-2011, Sadao Hiratsuka.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

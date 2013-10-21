@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5. 設定パラメータ &mdash; JdbcRunner v1.2 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="JdbcRunner v1.2 documentation" href="index.html" />
+    <link rel="next" title="6. スクリプトAPIリファレンス" href="reference.html" />
+    <link rel="prev" title="4. スクリプトの書き方" href="script.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="reference.html" title="6. スクリプトAPIリファレンス"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="script.html" title="4. スクリプトの書き方"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>5. 設定パラメータ<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>この章では、JdbcRunnerの動作を規定する設定パラメータについて説明します。</p>
+<div class="section" id="id2">
+<h2>5.1. パラメータの一覧<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>設定パラメータの一覧を以下に示します。設定パラメータはスクリプトのグローバル変数として指定できるものと、コマンドラインオプションとして指定できるものがあります。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="30%" />
+<col width="9%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">グローバル変数</th>
+<th class="head">コマンドラインオプション</th>
+<th class="head">タイプ</th>
+<th class="head">デフォルト値</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>(なし)</td>
+<td>-scriptCharset</td>
+<td>文字列</td>
+<td>(なし)</td>
+</tr>
+<tr><td>jdbcDriver</td>
+<td>-jdbcDriver</td>
+<td>文字列</td>
+<td>(なし)</td>
+</tr>
+<tr><td>jdbcUrl</td>
+<td>-jdbcUrl</td>
+<td>文字列</td>
+<td><tt class="docutils literal"><span class="pre">jdbc:mysql://localhost:3306/test</span></tt></td>
+</tr>
+<tr><td>jdbcUser</td>
+<td>-jdbcUser</td>
+<td>文字列</td>
+<td>(なし)</td>
+</tr>
+<tr><td>jdbcPass</td>
+<td>-jdbcPass</td>
+<td>文字列</td>
+<td>(なし)</td>
+</tr>
+<tr><td>isLoad</td>
+<td>(なし)</td>
+<td>真偽値</td>
+<td>false</td>
+</tr>
+<tr><td>warmupTime</td>
+<td>-warmupTime</td>
+<td>整数</td>
+<td>10</td>
+</tr>
+<tr><td>measurementTime</td>
+<td>-measurementTime</td>
+<td>整数</td>
+<td>60</td>
+</tr>
+<tr><td>nTxTypes</td>
+<td>(なし)</td>
+<td>整数</td>
+<td>1</td>
+</tr>
+<tr><td>nAgents</td>
+<td>-nAgents</td>
+<td>整数</td>
+<td>1</td>
+</tr>
+<tr><td>connPoolSize</td>
+<td>-connPoolSize</td>
+<td>整数</td>
+<td>(nAgentsと同じ数)</td>
+</tr>
+<tr><td>stmtCacheSize</td>
+<td>-stmtCacheSize</td>
+<td>整数</td>
+<td>10</td>
+</tr>
+<tr><td>isAutoCommit</td>
+<td>-autoCommit</td>
+<td>真偽値</td>
+<td>true</td>
+</tr>
+<tr><td>sleepTime</td>
+<td>-sleepTime</td>
+<td>整数</td>
+<td>0</td>
+</tr>
+<tr><td>throttle</td>
+<td>-throttle</td>
+<td>整数</td>
+<td>0</td>
+</tr>
+<tr><td>isDebug</td>
+<td>-debug</td>
+<td>真偽値</td>
+<td>false</td>
+</tr>
+<tr><td>isTrace</td>
+<td>-trace</td>
+<td>真偽値</td>
+<td>false</td>
+</tr>
+<tr><td>logDir</td>
+<td>-logDir</td>
+<td>文字列</td>
+<td>.</td>
+</tr>
+<tr><td>(なし)</td>
+<td>-param0</td>
+<td>整数</td>
+<td>0</td>
+</tr>
+<tr><td>(なし)</td>
+<td>-param1</td>
+<td>整数</td>
+<td>0</td>
+</tr>
+<tr><td>(なし)</td>
+<td>-param2</td>
+<td>整数</td>
+<td>0</td>
+</tr>
+<tr><td>(なし)</td>
+<td>-param3</td>
+<td>整数</td>
+<td>0</td>
+</tr>
+<tr><td>(なし)</td>
+<td>-param4</td>
+<td>整数</td>
+<td>0</td>
+</tr>
+<tr><td>(なし)</td>
+<td>-param5</td>
+<td>整数</td>
+<td>0</td>
+</tr>
+<tr><td>(なし)</td>
+<td>-param6</td>
+<td>整数</td>
+<td>0</td>
+</tr>
+<tr><td>(なし)</td>
+<td>-param7</td>
+<td>整数</td>
+<td>0</td>
+</tr>
+<tr><td>(なし)</td>
+<td>-param8</td>
+<td>整数</td>
+<td>0</td>
+</tr>
+<tr><td>(なし)</td>
+<td>-param9</td>
+<td>整数</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>5.2. パラメータの設定方法<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>JdbcRunnerのパラメータを設定するには、以下の2つの方法があります。</p>
+<ul class="simple">
+<li>スクリプト内にグローバル変数として宣言する</li>
+<li>コマンドラインオプションで指定する</li>
+</ul>
+<p>以下はスクリプト内でグローバル変数を宣言する例です。</p>
+<div class="highlight-python"><pre>var jdbcUrl = "jdbc:mysql://dbserver01:3306/scott";
+var jdbcUser = "scott";
+var jdbcPass = "tiger";
+var warmupTime = 120;
+var measurementTime = 600;
+var nAgents = 20;
+var isAutoCommit = false;
+var isDebug = true;</pre>
+</div>
+<p>同じ設定をコマンドラインオプションで行うと、次のようになります。コマンドラインオプションを指定すると、グローバル変数による設定は上書きされます。</p>
+<div class="highlight-python"><pre>&gt; java JR test.js -jdbcUrl jdbc:mysql://dbserver01:3306/scott
+                  -jdbcUser scott
+                  -jdbcPass tiger
+                  -warmupTime 120
+                  -measurementTime 600
+                  -nAgents 20
+                  -autoCommit false
+                  -debug</pre>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>5.3. パラメータの説明<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>この節では、それぞれのパラメータについて説明します。</p>
+<div class="section" id="id5">
+<h3>5.3.1. スクリプトの文字セット<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : (なし)</li>
+<li>コマンドラインオプション : -scriptCharset</li>
+<li>タイプ : 文字列</li>
+<li>デフォルト値 : (なし)</li>
+</ul>
+<p>スクリプトの文字セットを指定するパラメータです。JdbcRunnerはデフォルトでOSのロケールにあわせた文字セットが使われていると仮定します。</p>
+<p>デフォルトとは異なる文字セットを指定したい場合、例えばLinuxで作成したスクリプトをWindowsの日本語環境で動かすといった場合は以下のようにします。</p>
+<div class="highlight-python"><pre>&gt; java JR test.js -scriptCharset UTF-8</pre>
+</div>
+<p>逆に、Windowsの日本語環境で作成したスクリプトをLinuxで動かす場合は以下のようにします。</p>
+<div class="highlight-python"><pre>$ java JR test.js -scriptCharset Windows-31J</pre>
+</div>
+</div>
+<div class="section" id="jdbc">
+<h3>5.3.2. JDBCドライバ<a class="headerlink" href="#jdbc" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : jdbcDriver</li>
+<li>コマンドラインオプション : -jdbcDriver</li>
+<li>タイプ : 文字列</li>
+<li>デフォルト値 : (なし)</li>
+</ul>
+<p>JDBCドライバのクラス名を指定するパラメータです。JDBCドライバがJDBC 4.0以上に対応している場合はこのパラメータを指定する必要はありません。JDBCドライバがJDBC 4.0以上に対応していない場合は、テスト対象のRDBMSにあわせて設定してください。</p>
+</div>
+<div class="section" id="jdbcurl">
+<h3>5.3.3. JDBC接続URL<a class="headerlink" href="#jdbcurl" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : jdbcUrl</li>
+<li>コマンドラインオプション : -jdbcUrl</li>
+<li>タイプ : 文字列</li>
+<li>デフォルト値 : <tt class="docutils literal"><span class="pre">jdbc:mysql://localhost:3306/test</span></tt></li>
+</ul>
+<p>JDBC接続URLを指定するパラメータです。デフォルトはMySQLでローカルホストのtestデータベースに接続する設定になっています。テスト対象のRDBMSにあわせて設定してください。</p>
+</div>
+<div class="section" id="id6">
+<h3>5.3.4. データベースのユーザ名<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : jdbcUser</li>
+<li>コマンドラインオプション : -jdbcUser</li>
+<li>タイプ : 文字列</li>
+<li>デフォルト値 : (なし)</li>
+</ul>
+<p>データベースへログインするユーザ名を指定するパラメータです。テスト対象のRDBMSにあわせて設定してください。</p>
+</div>
+<div class="section" id="id7">
+<h3>5.3.5. データベースユーザのパスワード<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : jdbcPass</li>
+<li>コマンドラインオプション : -jdbcPass</li>
+<li>タイプ : 文字列</li>
+<li>デフォルト値 : (なし)</li>
+</ul>
+<p>データベースへログインするユーザのパスワードを指定するパラメータです。テスト対象のRDBMSにあわせて設定してください。</p>
+</div>
+<div class="section" id="id8">
+<h3>5.3.6. ロードモード<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : isLoad</li>
+<li>コマンドラインオプション : (なし)</li>
+<li>タイプ : 真偽値</li>
+<li>デフォルト値 : false</li>
+</ul>
+<p>テストデータ生成を指示するパラメータです。ロードモードを有効にすると、JdbcRunnerの動作が以下のように変わります。</p>
+<ul class="simple">
+<li>warmupTimeとmeasurementTimeの指定が無視され、すべてのエージェントがsetBreak()を行うまで処理が繰り返される</li>
+<li>進捗状況と結果ファイルは出力されなくなる</li>
+</ul>
+<p>ロードモードを利用するサンプルを示します。このサンプルではtestテーブルに対し10レコードINSERTが行われます。</p>
+<div class="highlight-python"><pre>var isLoad = true;
+var scaleFactor = 10;
+var counter = 0;
+
+function run() {
+    if (++counter &lt;= scaleFactor) {
+        execute("INSERT INTO test (id, data) VALUES ($int, $string)",
+            counter, "ABCDEFGHIJKLMNOPQESTUVWXYZ");
+    } else {
+        setBreak();
+    }
+}</pre>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>5.3.7. ウォームアップ時間<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : warmupTime</li>
+<li>コマンドラインオプション : -warmupTime</li>
+<li>タイプ : 整数</li>
+<li>デフォルト値 : 10</li>
+</ul>
+<p>測定開始後、トランザクションを集計から除外する時間を指定するパラメータです。単位は秒です。</p>
+<p>多くのRDBMSは起動直後、メモリ上のキャッシュにデータが溜まるまでは十分な性能が出ません。ウォームアップ時間を適切に設定することで、そうしたデータを除外することができます。</p>
+</div>
+<div class="section" id="id10">
+<h3>5.3.8. 測定時間<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : measurementTime</li>
+<li>コマンドラインオプション : -measurementTime</li>
+<li>タイプ : 整数</li>
+<li>デフォルト値 : 60</li>
+</ul>
+<p>run()ファンクションを繰り返し実行して測定を行う時間を指定するパラメータです。単位は秒です。</p>
+<p>ウォームアップ時間はこのパラメータで指定する測定時間には含まれません。そのためツール全体の実行時間は、ウォームアップ時間と測定時間で指定した値の合計となります。</p>
+</div>
+<div class="section" id="id11">
+<h3>5.3.9. トランザクションの種類数<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : nTxTypes</li>
+<li>コマンドラインオプション : (なし)</li>
+<li>タイプ : 整数</li>
+<li>デフォルト値 : 1</li>
+</ul>
+<p>負荷シナリオで実行するトランザクションの種類数を指定するパラメータです。</p>
+<p>JdbcRunnerでは一つのスクリプト内に複数種類のトランザクションを定義して実行し、それぞれのスループットとレスポンスタイムを分計することができます。その場合、あらかじめこのパラメータでトランザクションの種類数を設定しておく必要があります。</p>
+<p>複数種類のトランザクションを実行する場合、事前にsetTxType()ファンクションを呼び出してトランザクション番号を指示します。setTxType()の引数には0以上nTxTypes未満の値を指定することができます。以下に例を示します。</p>
+<div class="highlight-python"><pre>var nTxTypes = 2;
+
+function run() {
+    var r = random(1, 100);
+
+    if (r &lt;= 60) {
+        setTxType(0);
+        orderFunc();
+    } else {
+        setTxType(1);
+        paymentFunc();
+    }
+}</pre>
+</div>
+<p>この例では60%の確率で注文処理を行い、40%の確率で支払い処理を行います。それぞれ処理の実行前にsetTxType()を呼び出し、注文処理に0番、支払い処理に1番のトランザクション番号を割り当てています。</p>
+</div>
+<div class="section" id="id12">
+<h3>5.3.10. エージェント数<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : nAgents</li>
+<li>コマンドラインオプション : -nAgents</li>
+<li>タイプ : 整数</li>
+<li>デフォルト値 : 1</li>
+</ul>
+<p>負荷シナリオを実行する多重度を指定するパラメータです。JdbcRunnerはエージェントの数だけスレッドを立ち上げ、負荷シナリオを並列に実行します。このパラメータを増やすほどRDBMSにかける負荷が大きくなります。</p>
+</div>
+<div class="section" id="id13">
+<h3>5.3.11. コネクションプールサイズ<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : connPoolSize</li>
+<li>コマンドラインオプション : -connPoolSize</li>
+<li>タイプ : 整数</li>
+<li>デフォルト値 : (nAgentsと同じ数)</li>
+</ul>
+<p>コネクションプールに保持される、RDBMSへの物理的な接続数を指定するパラメータです。デフォルトではエージェント数と同じだけの物理接続が確保されます。</p>
+<p>このパラメータで設定された数の物理接続が、負荷テスト開始時に確保されます。テスト中この数は上下しません。</p>
+</div>
+<div class="section" id="id14">
+<h3>5.3.12. 文キャッシュサイズ<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : stmtCacheSize</li>
+<li>コマンドラインオプション : -stmtCacheSize</li>
+<li>タイプ : 整数</li>
+<li>デフォルト値 : 10</li>
+</ul>
+<p>データベースへの接続ごとに、PreparedStatementを破棄せずにキャッシュする数を指定するパラメータです。</p>
+<p>文キャッシュが有効な場合、PreparedStatement#close()は実際にはPreparedStatementオブジェクトを破棄せず、次回同じSQL文を実行するときのためにオブジェクトを保存しておくようになります。こうすると次の実行においてConnection#prepareStatement()を省略することができるため、性能が向上します。</p>
+<p>負荷テストにおいては、負荷シナリオで実行されるSQL文の種類数より大きな数をこのパラメータに指定しておくと最も良い性能を得ることができます。ただしRDBMS側で同時にオープンできるSQL文の数に制限がある場合は、その制限値を超えないように注意してください。</p>
+</div>
+<div class="section" id="id15">
+<h3>5.3.13. オートコミットモード<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : isAutoCommit</li>
+<li>コマンドラインオプション : -autoCommit</li>
+<li>タイプ : 真偽値</li>
+<li>デフォルト値 : true</li>
+</ul>
+<p>オートコミットモードの有効/無効を指定するパラメータです。</p>
+</div>
+<div class="section" id="id16">
+<h3>5.3.14. スリープ時間<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : sleepTime</li>
+<li>コマンドラインオプション : -sleepTime</li>
+<li>タイプ : 整数</li>
+<li>デフォルト値 : 0</li>
+</ul>
+<p>run()ファンクションの実行後にスリープする時間を指定するパラメータです。単位はミリ秒です。デフォルトの0はスリープしないことを表しています。スリープ時間を設定することで、RDBMSに与える負荷を調節することができます。</p>
+<p>トランザクションの種類数が2以上の場合は、それぞれのトランザクション種別に対して値を指定することができます。グローバル変数の場合は配列として宣言します。</p>
+<div class="highlight-python"><pre>var sleepTime = new Array(100, 200);</pre>
+</div>
+<p>コマンドラインオプションの場合は、カンマ区切りで指定します。</p>
+<div class="highlight-python"><pre>&gt; java JR test.js -sleepTime 100,200</pre>
+</div>
+<p>個別指定を行わないこともできます。その場合はすべてのトランザクション種別で同じスリープ時間となります。</p>
+</div>
+<div class="section" id="id17">
+<h3>5.3.15. スループットの上限値<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : throttle</li>
+<li>コマンドラインオプション : -throttle</li>
+<li>タイプ : 整数</li>
+<li>デフォルト値 : 0</li>
+</ul>
+<p>スループットの上限値を指定するパラメータです。単位はトランザクション/秒です。デフォルトは0ですが、これは0トランザクション/秒ではなく、この機能を使わないことを意味します。</p>
+<p>スリープ時間と似たパラメータですが、このパラメータを指定すると指定したスループットを超えないように時間を逆算してスリープします。これによってRDBMSに一定の負荷をかけ続けることができます。</p>
+<p>トランザクションの種類数が2以上の場合は、それぞれのトランザクション種別に対して値を指定することができます。グローバル変数の場合は配列として宣言します。</p>
+<div class="highlight-python"><pre>var throttle = new Array(100, 200);</pre>
+</div>
+<p>コマンドラインオプションの場合は、カンマ区切りで指定します。</p>
+<div class="highlight-python"><pre>&gt; java JR test.js -throttle 100,200</pre>
+</div>
+<p>個別指定を行わないこともできます。その場合はすべてのトランザクション種別を合計したスループットが上限値を超えないように、スリープを行います。</p>
+</div>
+<div class="section" id="id18">
+<h3>5.3.16. デバッグモード<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : isDebug</li>
+<li>コマンドラインオプション : -debug</li>
+<li>タイプ : 真偽値</li>
+<li>デフォルト値 : false</li>
+</ul>
+<p>デバッグログの出力を指定するパラメータです。デフォルトはfalseで、出力を行いません。</p>
+<p>このパラメータを有効にすると、debug()ファンクションによるログ出力が行われるようになります。</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">debug</span><span class="p">(</span><span class="s">&quot;このメッセージは、isDebug == trueのときだけ出力されます&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>コマンドラインオプションで指定する場合、-debug trueと引数をつける必要はありません。-debugのみで有効化されます。</p>
+</div>
+<div class="section" id="id19">
+<h3>5.3.17. トレースモード<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : isTrace</li>
+<li>コマンドラインオプション : -trace</li>
+<li>タイプ : 真偽値</li>
+<li>デフォルト値 : false</li>
+</ul>
+<p>デバッグログよりも詳細な、トレースログの出力を指定するパラメータです。デフォルトはfalseで、出力を行いません。</p>
+<p>このパラメータを有効にすると、trace()ファンクションによるログ出力が行われるようになります。また、トレースログを有効化した場合は自動的にデバッグログも有効化されます。</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">trace</span><span class="p">(</span><span class="s">&quot;このメッセージは、isTrace == trueのときだけ出力されます&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>トレースログを有効化すると、ログエントリにログを出力したスレッド名とメソッド名が付加されるようになります。</p>
+<div class="highlight-python"><pre>2011-10-11 00:29:51 [receiver] [jdbcrunner.Manager$Receiver#run] [Progress] 59 sec, 5060 tps, 279128 tx
+2011-10-11 00:29:52 [receiver] [jdbcrunner.Manager$Receiver#run] [Progress] 60 sec, 5045 tps, 284173 tx
+2011-10-11 00:29:52 [main] [jdbcrunner.Manager$Receiver#stop] 割り込みが発生しました
+2011-10-11 00:29:52 [main] [jdbcrunner.Result#printLine] [Total tx count] 284177 tx
+2011-10-11 00:29:52 [main] [jdbcrunner.Result#printLine] [Throughput] 4736.3 tps
+2011-10-11 00:29:52 [main] [jdbcrunner.Result#printLine] [Response time (minimum)] 0 msec
+2011-10-11 00:29:52 [main] [jdbcrunner.Result#printLine] [Response time (50%tile)] 0 msec
+2011-10-11 00:29:52 [main] [jdbcrunner.Result#printLine] [Response time (90%tile)] 0 msec
+2011-10-11 00:29:52 [main] [jdbcrunner.Result#printLine] [Response time (95%tile)] 0 msec
+2011-10-11 00:29:52 [main] [jdbcrunner.Result#printLine] [Response time (99%tile)] 0 msec
+2011-10-11 00:29:52 [main] [jdbcrunner.Result#printLine] [Response time (maximum)] 7 msec
+2011-10-11 00:29:52 [main] [JR#main] &lt; JdbcRunner SUCCESS</pre>
+</div>
+<p>コマンドラインオプションで指定する場合、-trace trueと引数をつける必要はありません。-traceのみで有効化されます。</p>
+</div>
+<div class="section" id="id20">
+<h3>5.3.18. ログの出力先ディレクトリ<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : logDir</li>
+<li>コマンドラインオプション : -logDir</li>
+<li>タイプ : 文字列</li>
+<li>デフォルト値 : .</li>
+</ul>
+<p>ログファイルと結果ファイルの出力先ディレクトリを指定するパラメータです。デフォルトはカレントディレクトリです。</p>
+</div>
+<div class="section" id="id21">
+<h3>5.3.19. 変数代入パラメータ<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>グローバル変数 : (なし)</li>
+<li>コマンドラインオプション : -param0 ～ -param9</li>
+<li>タイプ : 整数</li>
+<li>デフォルト値 : 0</li>
+</ul>
+<p>コマンドラインオプションからスクリプトの変数に値を代入するパラメータです。-param0を指定するとスクリプトのparam0に指定した値が代入されます。代入できるのは整数のみで、デフォルトは0です。</p>
+<p>例えば、以下のようなスクリプトを作成します。</p>
+<div class="highlight-python"><pre>function run() {
+    var id = random(1, param0);
+    query("SELECT ename FROM emp WHERE empno = $int", id);
+}</pre>
+</div>
+<p>すると、次のようにコマンドラインオプションで-param0を指定することにより、複数のパターンでの負荷テストを行うことができます。</p>
+<div class="highlight-python"><pre>&gt; java JR test.js -param0 100</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">5. 設定パラメータ</a><ul>
+<li><a class="reference external" href="#id2">5.1. パラメータの一覧</a></li>
+<li><a class="reference external" href="#id3">5.2. パラメータの設定方法</a></li>
+<li><a class="reference external" href="#id4">5.3. パラメータの説明</a><ul>
+<li><a class="reference external" href="#id5">5.3.1. スクリプトの文字セット</a></li>
+<li><a class="reference external" href="#jdbc">5.3.2. JDBCドライバ</a></li>
+<li><a class="reference external" href="#jdbcurl">5.3.3. JDBC接続URL</a></li>
+<li><a class="reference external" href="#id6">5.3.4. データベースのユーザ名</a></li>
+<li><a class="reference external" href="#id7">5.3.5. データベースユーザのパスワード</a></li>
+<li><a class="reference external" href="#id8">5.3.6. ロードモード</a></li>
+<li><a class="reference external" href="#id9">5.3.7. ウォームアップ時間</a></li>
+<li><a class="reference external" href="#id10">5.3.8. 測定時間</a></li>
+<li><a class="reference external" href="#id11">5.3.9. トランザクションの種類数</a></li>
+<li><a class="reference external" href="#id12">5.3.10. エージェント数</a></li>
+<li><a class="reference external" href="#id13">5.3.11. コネクションプールサイズ</a></li>
+<li><a class="reference external" href="#id14">5.3.12. 文キャッシュサイズ</a></li>
+<li><a class="reference external" href="#id15">5.3.13. オートコミットモード</a></li>
+<li><a class="reference external" href="#id16">5.3.14. スリープ時間</a></li>
+<li><a class="reference external" href="#id17">5.3.15. スループットの上限値</a></li>
+<li><a class="reference external" href="#id18">5.3.16. デバッグモード</a></li>
+<li><a class="reference external" href="#id19">5.3.17. トレースモード</a></li>
+<li><a class="reference external" href="#id20">5.3.18. ログの出力先ディレクトリ</a></li>
+<li><a class="reference external" href="#id21">5.3.19. 変数代入パラメータ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="script.html"
+                                  title="previous chapter">4. スクリプトの書き方</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="reference.html"
+                                  title="next chapter">6. スクリプトAPIリファレンス</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/parameter.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="reference.html" title="6. スクリプトAPIリファレンス"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="script.html" title="4. スクリプトの書き方"
+             >previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2010-2011, Sadao Hiratsuka.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

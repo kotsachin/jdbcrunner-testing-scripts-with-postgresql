@@ -1,0 +1,57 @@
+# make.common.in
+
+TOPDIR=.
+DBI_NAME=@DBI_NAME@
+INCLUDE_DIR=@TOPDIR@/include
+CACHE_DIR=$(TOPDIR)/cache
+COMMON_DIR=$(TOPDIR)/common
+DBDRIVER_DIR=$(TOPDIR)/dbdriver
+INCLUDE_DIR=$(TOPDIR)/include
+
+CC = gcc
+CFLAGS =	-g -Wall   -DGET_TIME \
+			-DLINUX -D_FILE_OFFSET_BITS=64 
+LDFLAGS =	@LDFLAGS@ @LIBS@ 
+
+COMMON_PRGS = common/common.c common/_socket.c
+COMMON_OBJS = $(COMMON_PRGS:.c=.so)
+
+## --------------------------------------------------------
+## ODBC (SAPDB) Configuration
+## --------------------------------------------------------
+DBI_DIR=$(TOPDIR)/interfaces/$(DBI_NAME)
+
+DBI_PRGS = \
+	$(DBI_DIR)/$(DBI_NAME)_interaction.c \
+	$(DBI_DIR)/$(DBI_NAME)_interaction_admin_confirm.c \
+	$(DBI_DIR)/$(DBI_NAME)_interaction_admin_request.c \
+	$(DBI_DIR)/$(DBI_NAME)_interaction_best_sellers.c \
+	$(DBI_DIR)/$(DBI_NAME)_interaction_buy_confirm.c \
+	$(DBI_DIR)/$(DBI_NAME)_interaction_buy_request.c \
+	$(DBI_DIR)/$(DBI_NAME)_interaction_home.c \
+	$(DBI_DIR)/$(DBI_NAME)_interaction_new_products.c \
+	$(DBI_DIR)/$(DBI_NAME)_interaction_order_display.c \
+	$(DBI_DIR)/$(DBI_NAME)_interaction_order_inquiry.c \
+	$(DBI_DIR)/$(DBI_NAME)_interaction_product_detail.c \
+	$(DBI_DIR)/$(DBI_NAME)_interaction_search_request.c \
+	$(DBI_DIR)/$(DBI_NAME)_interaction_search_results.c \
+	$(DBI_DIR)/$(DBI_NAME)_interaction_shopping_cart.c 
+DBI_OBJS = $(DBI_PRGS:.c=.so)
+
+DBI_INCLUDE = $(INCLUDE_DIR)/$(DBI_NAME)_interaction_home.h \
+	$(INCLUDE_DIR)/$(DBI_NAME)_interaction.h \
+	$(INCLUDE_DIR)/$(DBI_NAME)_interaction_shopping_cart.h \
+	$(INCLUDE_DIR)/$(DBI_NAME)_interaction_buy_request.h \
+	$(INCLUDE_DIR)/$(DBI_NAME)_interaction_new_products.h \
+	$(INCLUDE_DIR)/$(DBI_NAME)_interaction_best_sellers.h \
+	$(INCLUDE_DIR)/$(DBI_NAME)_interaction_buy_confirm.h \
+	$(INCLUDE_DIR)/$(DBI_NAME)_interaction_order_inquiry.h \
+	$(INCLUDE_DIR)/$(DBI_NAME)_interaction_order_display.h \
+	$(INCLUDE_DIR)/$(DBI_NAME)_interaction_product_detail.h \
+	$(INCLUDE_DIR)/$(DBI_NAME)_interaction_search_request.h \
+	$(INCLUDE_DIR)/$(DBI_NAME)_interaction_admin_request.h \
+	$(INCLUDE_DIR)/$(DBI_NAME)_interaction_admin_confirm.h \
+	$(INCLUDE_DIR)/$(DBI_NAME)_interaction_search_results.h
+
+%.so:%.c
+	$(CC) -c -shared -fpic $(CFLAGS) -o $@ $<

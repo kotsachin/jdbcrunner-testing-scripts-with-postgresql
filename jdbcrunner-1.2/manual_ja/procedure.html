@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3. 負荷テストの流れ &mdash; JdbcRunner v1.2 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="JdbcRunner v1.2 documentation" href="index.html" />
+    <link rel="next" title="4. スクリプトの書き方" href="script.html" />
+    <link rel="prev" title="2. チュートリアル" href="tutorial.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="script.html" title="4. スクリプトの書き方"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="2. チュートリアル"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>3. 負荷テストの流れ<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>この章では、JdbcRunnerの構成と負荷テストの流れについて説明します。</p>
+<div class="section" id="jdbcrunner">
+<h2>3.1. JdbcRunnerの構成<a class="headerlink" href="#jdbcrunner" title="Permalink to this headline">¶</a></h2>
+<p>JdbcRunnerの全体的な構成は、以下のようになっています。</p>
+<img alt="_images/architecture.png" src="_images/architecture.png" />
+<ul class="simple">
+<li>マネージャ : 負荷テスト全体を管理するスレッドです。ログファイルや結果ファイルの出力も行います</li>
+<li>エージェント : 負荷シナリオを実行するスレッドです。エージェントは複数存在しており、並列に動作します。実際にRDBMSにクエリを発行するのはこのエージェントの役割となります</li>
+<li>スクリプト : 負荷シナリオの処理内容を定義したスクリプトです</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>3.2. 起動方法<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>JdbcRunnerを起動するには、JRクラスを指定してjavaコマンドを実行します。1つ目のオプションにスクリプトのファイル名、2つ目以降のオプションに設定パラメータを指定します。設定パラメータは省略可能です。</p>
+<div class="highlight-python"><pre>&gt; java JR &lt;script&gt; [options]</pre>
+</div>
+<p>オプションなしで実行すると、簡単な使い方が表示されます。</p>
+<div class="highlight-python"><pre>&gt; java JR
+
+JdbcRunner 1.2
+スクリプトファイルが指定されていません
+
+usage: java JR &lt;script&gt; [options]
+-autoCommit &lt;arg&gt;     オートコミットモードを有効化または無効化します (デフォルト : true (有効))
+-connPoolSize &lt;arg&gt;   コネクションプールの物理接続数を指定します (デフォルト : nAgents)
+-debug                デバッグモードを有効にします (デフォルト : false)
+-jdbcDriver &lt;arg&gt;     JDBCドライバのクラス名を指定します (デフォルト : (なし))
+-jdbcPass &lt;arg&gt;       データベースユーザのパスワードを指定します (デフォルト : (なし))
+-jdbcUrl &lt;arg&gt;        JDBC接続URLを指定します (デフォルト : jdbc:mysql://localhost:3306/test)
+-jdbcUser &lt;arg&gt;       データベースのユーザ名を指定します (デフォルト : (なし))
+-logDir &lt;arg&gt;         ログの出力先ディレクトリを指定します (デフォルト : .)
+-measurementTime &lt;arg&gt;測定時間[sec]を指定します (デフォルト : 60)
+-nAgents &lt;arg&gt;        エージェント数を指定します (デフォルト : 1)
+-param0 &lt;arg&gt;         変数param0に値を設定します
+-param1 &lt;arg&gt;         変数param1に値を設定します
+-param2 &lt;arg&gt;         変数param2に値を設定します
+-param3 &lt;arg&gt;         変数param3に値を設定します
+-param4 &lt;arg&gt;         変数param4に値を設定します
+-param5 &lt;arg&gt;         変数param5に値を設定します
+-param6 &lt;arg&gt;         変数param6に値を設定します
+-param7 &lt;arg&gt;         変数param7に値を設定します
+-param8 &lt;arg&gt;         変数param8に値を設定します
+-param9 &lt;arg&gt;         変数param9に値を設定します
+-scriptCharset &lt;arg&gt;  スクリプトの文字セットを指定します
+-sleepTime &lt;arg&gt;      トランザクションごとのスリープ時間[msec]を指定します (デフォルト : 0)
+-stmtCacheSize &lt;arg&gt;  コネクションあたりの文キャッシュ数を指定します (デフォルト : 10)
+-throttle &lt;arg&gt;       スループットの上限値[tps]を指定します (デフォルト : 0 (無制限))
+-trace                トレースモードを有効にします (デフォルト : false)
+-warmupTime &lt;arg&gt;     測定前にあらかじめ負荷をかけておく時間[sec]を指定します (デフォルト : 10)</pre>
+</div>
+<p>ツールの起動後は、ユーザが操作する箇所はありません。JdbcRunnerはスクリプトで定義された負荷テストを実行し、ログファイルと結果ファイルを出力してプログラムを終了します。</p>
+</div>
+<div class="section" id="id3">
+<h2>3.3. 負荷テストの3つのフェーズ<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>JdbcRunnerによる負荷テストは、大きく3つのフェーズに分かれています。</p>
+<img alt="_images/phases.png" src="_images/phases.png" />
+<ol class="arabic simple">
+<li>初期化処理</li>
+<li>測定</li>
+<li>終了処理</li>
+</ol>
+<p>初期化処理は負荷テストの開始時に行われ、スクリプトのinit()ファンクションがそれぞれのエージェントあたり1回だけ呼び出されます。このフェーズではテーブル作成、データロードや入力データの初期化などを行うことを想定しています。特にすることがない場合、このフェーズは省略することも可能です。</p>
+<p>測定は負荷テストのメインとなるフェーズです。ここではスクリプトのrun()ファンクションが繰り返し呼び出されます。</p>
+<p>終了処理は負荷テストの終了時に行われ、スクリプトのfin()ファンクションがそれぞれのエージェントあたり1回だけ呼び出されます。このフェーズでは、測定終了後のデータ確認やデータベースのメンテナンスなどを行うことを想定しています。特にすることがない場合、初期化処理と同様このフェーズを省略することも可能です。</p>
+<p>初期化処理、測定と終了処理を行う例を以下に示します。</p>
+<div class="highlight-python"><pre>function init() {
+    if (getId() == 0) {
+        execute("UPDATE account SET balance = 0");
+        commit();
+    }
+}
+
+function run() {
+    var accountId = random(1, 100);
+    var amount = random(-10000, 10000);
+
+    query("SELECT name, balance FROM account WHERE id = $int FOR UPDATE", accountId);
+    execute("UPDATE account SET balance = balance + $int WHERE id = $int", amount, accountId);
+    commit();
+}
+
+function fin() {
+    if (getId() == 0) {
+        info("Total : " + fetchAsArray("SELECT sum(balance) FROM account")[0][0]);
+        commit();
+    }
+}</pre>
+</div>
+<p>この負荷シナリオでは、まず初期化処理においてすべての口座の残高を0にリセットしています。次の測定においては口座をランダムに選んで入出金を行っています。最後に終了処理においてすべての口座の残高合計を求めて、ログへの出力を行います。</p>
+<p>初期化処理においてすべてのエージェントが「UPDATE account SET balance = 0」を実行する必要はないため、この例では0番のエージェントのみが処理を行うようにしています。終了処理も同様に0番のエージェントのみに処理を行わせています。</p>
+</div>
+<div class="section" id="id4">
+<h2>3.4. ウォームアップ時間<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>ほとんどのRDBMSは、ディスク上に保存されたテーブルのデータをメモリ上にキャッシュする仕組みを備えています。テーブルのデータをメモリ上にキャッシュする目的は、頻繁にアクセスされるデータについてアクセスのたびにディスクI/Oが発生することを防ぎ、全体の性能を向上させることです。</p>
+<p>そのため負荷テストを行う際、RDBMS起動直後はあまり性能が出ないということに注意する必要があります。起動直後はまだ必要なデータがメモリ上にキャッシュされていないためです。次のグラフは、およそ200MBのテーブルに対してランダムにクエリを発行したときのスループット推移をプロットしたものです。</p>
+<img alt="_images/nowarmup_throughput.png" src="_images/nowarmup_throughput.png" />
+<p>このように測定開始直後はスループットが低く、時間が経つにつれて徐々にスループットが上がっていきます。ある程度大規模なテストデータで負荷テストを行う場合は、こうした傾向に注意する必要があります。このときのCPU使用率は以下のようになっています。</p>
+<img alt="_images/nowarmup_cpu.png" src="_images/nowarmup_cpu.png" />
+<p>測定開始直後はほとんどがI/Oウェイトを占めており、ディスクI/O待ちによってCPUが遊んでいることが分かります。2分ほど経過すると十分にデータがキャッシュされるため、徐々にユーザ時間の割合が増えていきます。</p>
+<p>このような性能の傾向を捉えることも重要ですが、単にピーク性能を知りたいときのために、JdbcRunnerでは序盤のデータを除外することができます。序盤のデータを除外するにはwarmupTimeというパラメータを設定します。warmupTimeで指定した時間はウォームアップ時間とみなされ、スループットやレスポンスタイムの集計対象から除外されます。</p>
+<p>先ほどの例についてwarmupTimeを120秒と設定すると、以下のようになります。</p>
+<img alt="_images/warmup_throughput.png" src="_images/warmup_throughput.png" />
+<p>warmupTimeの設定によって、スループットが安定しているところのデータを採取できることが分かります。負荷テストにおいてwarmupTimeを何秒に設定すればよいかはテスト環境やトランザクションの内容によって異なるため、事前に検証を行う必要があります。</p>
+</div>
+<div class="section" id="id5">
+<h2>3.5. 負荷テストの流れ<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>ウォームアップ時間を考慮して負荷テストの流れを図示すると、以下のようになります。</p>
+<img alt="_images/procedures.png" src="_images/procedures.png" />
+<p>初期化処理、測定、終了処理の3つのフェーズの切り替わりにおいては、すべてのエージェントが待ち合わせを行います。例えばあるエージェントのrun()ファンクションが、他のエージェントのinit()ファンクションよりも先に実行されることはありません。</p>
+<p>測定中のウォームアップと測定の間は、待ち合わせを行いません。このとき境目をまだいだトランザクションがどう扱われるかですが、JdbcRunnerではトランザクションは処理が完了したタイミングでカウントされるというルールにしています。つまり、ウォームアップ時間中に開始して測定時間中に完了したトランザクションは、集計の対象となります。</p>
+<p>測定時間を過ぎて完了したトランザクション、図で灰色になっている部分は集計の対象となりません。しかし処理自体はキャンセルされずに最後まで行われるため、注意が必要です。例えばウォームアップ時間なしでINSERTを繰り返し行うような負荷テストの場合、JdbcRunnerから報告される合計トランザクション数と実際にテーブルにINSERTされたレコード数は、一致しないことがあります。</p>
+</div>
+<div class="section" id="id6">
+<h2>3.6. レスポンスタイムの定義<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>JdbcRunnerではrun()ファンクションを1回実行することを1トランザクションと呼んでいます(実際にはrun()ファンクションの中で複数のトランザクションを実行してもよいので、これは便宜上の呼び方です)。このトランザクションという処理単位について、スループットとレスポンスタイムを求めるのがJdbcRunnerの役割です。</p>
+<p>レスポンスタイムとはrun()ファンクションを1回実行するのにかかった時間のことを表しますが、実際にはrun()ファンクションには前処理と後処理があり、以下のような構成になっています。</p>
+<img alt="_images/responsetime.png" src="_images/responsetime.png" />
+<ol class="arabic simple">
+<li>コネクションプールからコネクションを取得する</li>
+<li>run()ファンクションを実行する</li>
+<li>コネクションプールにコネクションを返却する</li>
+<li>sleepTime、throttleの設定に応じてスリープする</li>
+</ol>
+<p>JdbcRunnerでいうレスポンスタイムとは、厳密には1番から3番までの処理を行うのにかかった時間のことを表しています。</p>
+<p>デフォルト設定ではエージェント数と同じコネクションプールサイズが確保されるため、コネクションの取得にかかる時間はほぼ無視できます。一方コネクションプールサイズをエージェント数よりも小さく設定した場合は、コネクション取得の際に空きができるまで待たされます。この場合、レスポンスタイムにはコネクション取得で待たされた時間も含まれることになります。</p>
+</div>
+<div class="section" id="id7">
+<h2>3.7. ログファイル<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>負荷テストを行うとログファイルが出力されます。ファイル名はjdbcrunner.logで固定となっており、出力先ディレクトリはパラメータlogDirで指定した場所となります。デフォルトはカレントディレクトリです。</p>
+<div class="highlight-python"><pre>2011-10-10 22:40:58 [INFO ] &gt; JdbcRunner 1.2
+2011-10-10 22:40:58 [INFO ] [Config]
+Program start time   : 20111010-224058
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:mysql://localhost:3306/test
+JDBC user            :
+Warmup time          : 10 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 1
+Connection pool size : 1
+Statement cache size : 10
+Auto commit          : true
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2011-10-10 22:40:59 [INFO ] [Warmup] -9 sec, 3038 tps, (3038 tx)
+2011-10-10 22:41:00 [INFO ] [Warmup] -8 sec, 4887 tps, (7925 tx)
+2011-10-10 22:41:01 [INFO ] [Warmup] -7 sec, 4858 tps, (12783 tx)
+2011-10-10 22:41:02 [INFO ] [Warmup] -6 sec, 4920 tps, (17703 tx)
+2011-10-10 22:41:03 [INFO ] [Warmup] -5 sec, 4932 tps, (22635 tx)
+2011-10-10 22:41:04 [INFO ] [Warmup] -4 sec, 4842 tps, (27477 tx)
+2011-10-10 22:41:05 [INFO ] [Warmup] -3 sec, 4854 tps, (32331 tx)
+2011-10-10 22:41:06 [INFO ] [Warmup] -2 sec, 4799 tps, (37130 tx)
+2011-10-10 22:41:07 [INFO ] [Warmup] -1 sec, 4789 tps, (41919 tx)
+2011-10-10 22:41:08 [INFO ] [Warmup] 0 sec, 4776 tps, (46695 tx)
+2011-10-10 22:41:09 [INFO ] [Progress] 1 sec, 4778 tps, 4778 tx
+2011-10-10 22:41:10 [INFO ] [Progress] 2 sec, 4795 tps, 9573 tx
+2011-10-10 22:41:11 [INFO ] [Progress] 3 sec, 4870 tps, 14443 tx
+2011-10-10 22:41:12 [INFO ] [Progress] 4 sec, 4823 tps, 19266 tx
+2011-10-10 22:41:13 [INFO ] [Progress] 5 sec, 4806 tps, 24072 tx
+...
+2011-10-10 22:42:04 [INFO ] [Progress] 56 sec, 4691 tps, 267178 tx
+2011-10-10 22:42:05 [INFO ] [Progress] 57 sec, 4774 tps, 271952 tx
+2011-10-10 22:42:06 [INFO ] [Progress] 58 sec, 4771 tps, 276723 tx
+2011-10-10 22:42:07 [INFO ] [Progress] 59 sec, 4733 tps, 281456 tx
+2011-10-10 22:42:08 [INFO ] [Progress] 60 sec, 4704 tps, 286160 tx
+2011-10-10 22:42:08 [INFO ] [Total tx count] 286161 tx
+2011-10-10 22:42:08 [INFO ] [Throughput] 4769.4 tps
+2011-10-10 22:42:08 [INFO ] [Response time (minimum)] 0 msec
+2011-10-10 22:42:08 [INFO ] [Response time (50%tile)] 0 msec
+2011-10-10 22:42:08 [INFO ] [Response time (90%tile)] 0 msec
+2011-10-10 22:42:08 [INFO ] [Response time (95%tile)] 0 msec
+2011-10-10 22:42:08 [INFO ] [Response time (99%tile)] 0 msec
+2011-10-10 22:42:08 [INFO ] [Response time (maximum)] 11 msec
+2011-10-10 22:42:08 [INFO ] &lt; JdbcRunner SUCCESS</pre>
+</div>
+<div class="section" id="id8">
+<h3>3.7.1. フォーマット<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>ログファイルのフォーマットは以下のようになっています。</p>
+<div class="highlight-python"><pre>日時                レベル  メッセージ
+2011-10-10 22:41:09 [INFO ] [Progress] 1 sec, 4778 tps, 4778 tx</pre>
+</div>
+<ul class="simple">
+<li>日時 : ログイベントが発生した日時です。標準出力には時刻のみ、ログファイルには日付と時刻が出力されます</li>
+<li>レベル : ログの重要度を表します。重要な方からERROR、WARN、INFO、DEBUG、TRACEの5種類が定義されています</li>
+<li>メッセージ : ログのメッセージです</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3>3.7.2. 開始ログと終了ログ<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>ツールの起動時には以下の開始ログが出力されます。開始ログにはツール名とバージョン番号が含まれます。</p>
+<div class="highlight-python"><pre>2011-10-10 22:40:58 [INFO ] &gt; JdbcRunner 1.2</pre>
+</div>
+<p>ツールの終了時には以下の終了ログが出力されます。「SUCCESS」はツールが正常終了したことを表しています。</p>
+<div class="highlight-python"><pre>2011-10-10 22:42:08 [INFO ] &lt; JdbcRunner SUCCESS</pre>
+</div>
+<p>ツールが異常終了した場合は「ERROR」と出力されます。</p>
+<div class="highlight-python"><pre>2011-10-10 23:33:22 [INFO ] &lt; JdbcRunner ERROR</pre>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>3.7.3. 設定パラメータ<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>ツールの起動時に、設定パラメータが出力されます。</p>
+<div class="highlight-python"><pre>2011-10-10 22:40:58 [INFO ] [Config]
+Program start time   : 20111010-224058
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:mysql://localhost:3306/test
+JDBC user            :
+Warmup time          : 10 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 1
+Connection pool size : 1
+Statement cache size : 10
+Auto commit          : true
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0</pre>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>3.7.4. 進捗状況<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>ツールが正しく起動すればすぐに測定が開始されます。測定中は1秒おきに進捗状況が出力されます。</p>
+<div class="highlight-python"><pre>2011-10-10 22:40:59 [INFO ] [Warmup] -9 sec, 3038 tps, (3038 tx)
+2011-10-10 22:41:00 [INFO ] [Warmup] -8 sec, 4887 tps, (7925 tx)
+2011-10-10 22:41:01 [INFO ] [Warmup] -7 sec, 4858 tps, (12783 tx)
+2011-10-10 22:41:02 [INFO ] [Warmup] -6 sec, 4920 tps, (17703 tx)
+2011-10-10 22:41:03 [INFO ] [Warmup] -5 sec, 4932 tps, (22635 tx)
+2011-10-10 22:41:04 [INFO ] [Warmup] -4 sec, 4842 tps, (27477 tx)
+2011-10-10 22:41:05 [INFO ] [Warmup] -3 sec, 4854 tps, (32331 tx)
+2011-10-10 22:41:06 [INFO ] [Warmup] -2 sec, 4799 tps, (37130 tx)
+2011-10-10 22:41:07 [INFO ] [Warmup] -1 sec, 4789 tps, (41919 tx)
+2011-10-10 22:41:08 [INFO ] [Warmup] 0 sec, 4776 tps, (46695 tx)
+2011-10-10 22:41:09 [INFO ] [Progress] 1 sec, 4778 tps, 4778 tx
+2011-10-10 22:41:10 [INFO ] [Progress] 2 sec, 4795 tps, 9573 tx
+2011-10-10 22:41:11 [INFO ] [Progress] 3 sec, 4870 tps, 14443 tx
+2011-10-10 22:41:12 [INFO ] [Progress] 4 sec, 4823 tps, 19266 tx
+2011-10-10 22:41:13 [INFO ] [Progress] 5 sec, 4806 tps, 24072 tx
+...
+2011-10-10 22:42:04 [INFO ] [Progress] 56 sec, 4691 tps, 267178 tx
+2011-10-10 22:42:05 [INFO ] [Progress] 57 sec, 4774 tps, 271952 tx
+2011-10-10 22:42:06 [INFO ] [Progress] 58 sec, 4771 tps, 276723 tx
+2011-10-10 22:42:07 [INFO ] [Progress] 59 sec, 4733 tps, 281456 tx
+2011-10-10 22:42:08 [INFO ] [Progress] 60 sec, 4704 tps, 286160 tx</pre>
+</div>
+<p>[Warmup]はウォームアップ中の状況を表しています。トランザクションの集計開始後は[Progress]と表示されます。進捗状況には、経過時間、スループットと合計トランザクション数が含まれます。</p>
+<div class="highlight-python"><pre>                                     経過時間 スループット 合計トランザクション数
+2011-10-10 22:40:59 [INFO ] [Warmup] -9 sec,  3038 tps,    (3038 tx)</pre>
+</div>
+<p>ウォームアップ時間を設定している場合、経過時間はマイナスの値からカウントアップし、ウォームアップが完了した時点が0秒となります。スループットは直近1秒間に完了したトランザクション数を表しています。合計トランザクション数はトランザクション集計開始後の合計トランザクション数を表します。ウォームアップ中も参考のために括弧つきでそれまでの合計トランザクション数を表示していますが、ウォームアップ中に処理したトランザクション数は最終結果には含まれません。</p>
+<p>注意点として、進捗状況に出力されるスループット、合計トランザクション数は正確な値ではないということがあります。これは負荷テストの並列性を妨げないように、進捗状況の取得において排他制御を行っていないためです。進捗状況の表示は人間が目視で負荷テストの状況を確認するためのものですので、レポートの作成などには結果ファイルのデータを使用してください。</p>
+<p>JdbcRunnerを動かすクライアントの負荷が高すぎる場合、進捗の表示が大きく遅れる場合があります。進捗の表示が1秒以上遅れた場合は以下のような警告が出力されます。このときのスループット、合計トランザクションは不正確な値となっています。</p>
+<div class="highlight-python"><pre>2011-10-10 23:38:01 [INFO ] [Progress] 28 sec, 9029 tps, 205857 tx
+2011-10-10 23:38:03 [INFO ] [Progress] 29 sec, 21249 tps, 227106 tx
+2011-10-10 23:38:03 [WARN ] 表示が遅れています。実際の経過時間 : 30sec
+2011-10-10 23:38:03 [INFO ] [Progress] 30 sec, 0 tps, 227106 tx
+2011-10-10 23:38:04 [INFO ] [Progress] 31 sec, 4442 tps, 231548 tx</pre>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>3.7.5. 結果のサマリ<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>負荷テストが正常に終了した場合、最後に結果のサマリが出力されます。</p>
+<div class="highlight-python"><pre>2011-10-10 22:42:08 [INFO ] [Total tx count] 286161 tx
+2011-10-10 22:42:08 [INFO ] [Throughput] 4769.4 tps
+2011-10-10 22:42:08 [INFO ] [Response time (minimum)] 0 msec
+2011-10-10 22:42:08 [INFO ] [Response time (50%tile)] 0 msec
+2011-10-10 22:42:08 [INFO ] [Response time (90%tile)] 0 msec
+2011-10-10 22:42:08 [INFO ] [Response time (95%tile)] 0 msec
+2011-10-10 22:42:08 [INFO ] [Response time (99%tile)] 0 msec
+2011-10-10 22:42:08 [INFO ] [Response time (maximum)] 11 msec
+2011-10-10 22:42:08 [INFO ] &lt; JdbcRunner SUCCESS</pre>
+</div>
+<ul class="simple">
+<li>Total tx count : 合計トランザクション数が出力されます。ウォームアップ時間に行われたトランザクションは含まれません</li>
+<li>Throughput : スループットが出力されます</li>
+<li>Response time : レスポンスタイムの最小値、50パーセンタイル値(中央値)、90パーセンタイル値、95パーセンタイル値、99パーセンタイル値、最大値が出力されます</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>3.8. 結果ファイル<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<p>負荷テストが正常に終了すると、以下の2つの結果ファイルが出力されます。</p>
+<ol class="arabic simple">
+<li>レスポンスタイムの度数分布データ</li>
+<li>スループットの時系列データ</li>
+</ol>
+<div class="section" id="id14">
+<h3>3.8.1. レスポンスタイムの度数分布データ<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>レスポンスタイムの度数分布データは、log_&lt;負荷テスト開始日時&gt;_r.csvというファイル名でパラメータlogDirで指定したディレクトリに出力されます。</p>
+<div class="highlight-python"><pre>Response time[msec],Count
+0,286042
+1,48
+2,8
+3,2
+4,34
+5,20
+6,6
+11,1</pre>
+</div>
+<p>レスポンスタイムが1ミリ秒というのは、正確には1ミリ秒以上2ミリ秒未満であることを示しています。</p>
+</div>
+<div class="section" id="id15">
+<h3>3.8.2. スループットの時系列データ<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>スループットの時系列データは、log_&lt;負荷テスト開始日時&gt;_t.csvというファイル名でパラメータlogDirで指定したディレクトリに出力されます。</p>
+<div class="highlight-python"><pre>Elapsed time[sec],Throughput[tps]
+1,4771
+2,4798
+3,4870
+4,4820
+5,4807
+...
+56,4692
+57,4774
+58,4770
+59,4738
+60,4704</pre>
+</div>
+<p>2秒経過したときのスループットが4,798トランザクション/秒であるというのは、正確には経過時間が1秒以上2秒未満のときに完了したトランザクションが4,798個あるということを表しています。</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">3. 負荷テストの流れ</a><ul>
+<li><a class="reference external" href="#jdbcrunner">3.1. JdbcRunnerの構成</a></li>
+<li><a class="reference external" href="#id2">3.2. 起動方法</a></li>
+<li><a class="reference external" href="#id3">3.3. 負荷テストの3つのフェーズ</a></li>
+<li><a class="reference external" href="#id4">3.4. ウォームアップ時間</a></li>
+<li><a class="reference external" href="#id5">3.5. 負荷テストの流れ</a></li>
+<li><a class="reference external" href="#id6">3.6. レスポンスタイムの定義</a></li>
+<li><a class="reference external" href="#id7">3.7. ログファイル</a><ul>
+<li><a class="reference external" href="#id8">3.7.1. フォーマット</a></li>
+<li><a class="reference external" href="#id9">3.7.2. 開始ログと終了ログ</a></li>
+<li><a class="reference external" href="#id10">3.7.3. 設定パラメータ</a></li>
+<li><a class="reference external" href="#id11">3.7.4. 進捗状況</a></li>
+<li><a class="reference external" href="#id12">3.7.5. 結果のサマリ</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#id13">3.8. 結果ファイル</a><ul>
+<li><a class="reference external" href="#id14">3.8.1. レスポンスタイムの度数分布データ</a></li>
+<li><a class="reference external" href="#id15">3.8.2. スループットの時系列データ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="tutorial.html"
+                                  title="previous chapter">2. チュートリアル</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="script.html"
+                                  title="next chapter">4. スクリプトの書き方</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/procedure.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="script.html" title="4. スクリプトの書き方"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="2. チュートリアル"
+             >previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2010-2011, Sadao Hiratsuka.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

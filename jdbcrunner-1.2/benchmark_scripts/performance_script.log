@@ -1,0 +1,1788 @@
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-20-14-55-32
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: SR
+Backup from : standby-1
+Backup to : standby-1
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-20-15-44-43
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: ncSR
+Backup from : off
+Backup to : off
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-20-16-13-38
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: ncSR
+Backup from : master
+Backup to : master
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-20-17-27-20
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: ncSR
+Backup from : standby-1
+Backup to : standby-1
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-20-18-41-25
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: cSR
+Backup from : off
+Backup to : off
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-20-19-09-50
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: cSR
+Backup from : master
+Backup to : master
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-20-20-23-32
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: cSR
+Backup from : standby-1
+Backup to : standby-1
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-20-20-51-52
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: cSR
+Backup from : standby-2
+Backup to : standby-2
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-20-21-43-20
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: SR
+Backup from : master
+Backup to : backup-server
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-20-22-55-18
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: SR
+Backup from : standby-1
+Backup to : backup-server
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-20-23-44-26
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: ncSR
+Backup from : master
+Backup to : backup-server
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-21-00-58-17
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: ncSR
+Backup from : standby-1
+Backup to : backup-server
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-21-02-12-01
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: cSR
+Backup from : master
+Backup to : backup-server
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-21-03-25-21
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: cSR
+Backup from : standby-1
+Backup to : backup-server
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-21-04-16-23
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: cSR
+Backup from : standby-2
+Backup to : backup-server
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+cleaning 172.26.136.6 directories
+Initializing Standby-II server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-II DB server...
+Standby-II DB Server started.
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Removed old dstat file from Standby-2 Server
+Executed dstat utility on Standby-2 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+Stopping Standby-II DB server...
+Standby-II DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+-----Plotting Results Graphs-------
+********************************************************************************************
+ 

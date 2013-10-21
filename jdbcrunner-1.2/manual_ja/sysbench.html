@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>8. テストキット Tiny SysBench &mdash; JdbcRunner v1.2 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="JdbcRunner v1.2 documentation" href="index.html" />
+    <link rel="next" title="9. テストキット Tiny TPC-B" href="tpc-b.html" />
+    <link rel="prev" title="7. その他の付属ツール" href="misc.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="tpc-b.html" title="9. テストキット Tiny TPC-B"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="misc.html" title="7. その他の付属ツール"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tiny-sysbench">
+<h1>8. テストキット Tiny SysBench<a class="headerlink" href="#tiny-sysbench" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sysbench">
+<h2>8.1. SysBenchとは<a class="headerlink" href="#sysbench" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://sysbench.sourceforge.net/">SysBench</a> はAlexey Kopytov氏によってメンテナンスされているオープンソースソフトウェアで、以下の5種類のテストを行うことができる総合的なベンチマークツールです。ライセンスはGPLv2です。</p>
+<ul class="simple">
+<li>file I/O performance</li>
+<li>scheduler performance</li>
+<li>memory allocation and transfer speed</li>
+<li>POSIX threads implementation performance</li>
+<li>database server performance (OLTP benchmark)</li>
+</ul>
+<p>OLTPベンチマークで用いられるデータベースのER図を以下に示します。テーブルは一つだけで、ごく単純な作りとなっています。</p>
+<img alt="_images/sysbench.png" src="_images/sysbench.png" />
+<p>OLTPベンチマークは以下の4種類のテストモードを備えています。</p>
+<ul class="simple">
+<li>simple : 主キーによる一意検索を行う</li>
+<li>complex : 主キーによる一意検索、範囲検索、集計処理など9種類のクエリを実行する</li>
+<li>nontrx : トランザクションを使わずに5種類のクエリを実行する</li>
+<li>sp : ユーザが用意したストアドプロシージャを実行する</li>
+</ul>
+<p>complexモードで実行されるトランザクションの内容は以下のとおりです。主キーによる一意検索が10回、その他8種類のクエリは1回ずつ実行されます。この比率はカスタマイズ可能となっています。</p>
+<div class="highlight-python"><pre>SELECT c FROM sbtest WHERE id = :1;
+SELECT c FROM sbtest WHERE id = :1;
+SELECT c FROM sbtest WHERE id = :1;
+SELECT c FROM sbtest WHERE id = :1;
+SELECT c FROM sbtest WHERE id = :1;
+SELECT c FROM sbtest WHERE id = :1;
+SELECT c FROM sbtest WHERE id = :1;
+SELECT c FROM sbtest WHERE id = :1;
+SELECT c FROM sbtest WHERE id = :1;
+SELECT c FROM sbtest WHERE id = :1;
+SELECT c FROM sbtest WHERE id BETWEEN :1 AND :2;
+SELECT SUM(k) FROM sbtest WHERE id BETWEEN :1 AND :2;
+SELECT c FROM sbtest WHERE id BETWEEN :1 AND :2 ORDER BY c;
+SELECT DISTINCT c FROM sbtest WHERE id BETWEEN :1 AND :2 ORDER BY c;
+UPDATE sbtest SET k = k + 1 WHERE id = :1;
+UPDATE sbtest SET c = :1 WHERE id = :2;
+DELETE FROM sbtest WHERE id = :1;
+INSERT INTO sbtest (id, k, c, pad) VALUES (:1, :2, :3, :4);
+COMMIT;</pre>
+</div>
+<p>SysBenchのOLTPベンチマークはMySQLをターゲットとして開発されていますが、Oracle DatabaseとPostgreSQLにも対応しています。</p>
+</div>
+<div class="section" id="id2">
+<h2>8.2. Tiny SysBenchとは<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Tiny SysBenchは、SysBenchのOLTPベンチマークのうちcomplexモードをJdbcRunner上に移植したものです。以下の二つのスクリプトから構成されています。</p>
+<ul class="simple">
+<li>scripts/sysbench_load.js : テストデータ生成用スクリプト</li>
+<li>scripts/sysbench.js : テスト用スクリプト</li>
+</ul>
+</div>
+<div class="section" id="rdbms">
+<h2>8.3. 対応RDBMS<a class="headerlink" href="#rdbms" title="Permalink to this headline">¶</a></h2>
+<p>Tiny SysBenchは以下のRDBMSに対応しています。</p>
+<ul class="simple">
+<li>Oracle Database 11g Release 2</li>
+<li>MySQL 5.1、5.5</li>
+<li>PostgreSQL 8.4、9.0、9.1</li>
+</ul>
+<p>RDBMSのバージョンは実際に動作確認を行ったバージョンを示しており、これ以外のバージョンでも動作する可能性はあります。</p>
+</div>
+<div class="section" id="id3">
+<h2>8.4. テストの準備<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>MySQLにおけるテストの準備手順を以下に示します。Oracle Database、PostgreSQLについてはscripts/sysbench_load.jsのコメントをご参照ください。</p>
+<div class="section" id="id4">
+<h3>8.4.1. ユーザの作成<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>MySQLにrootユーザで接続し、sbtestユーザを作成します。</p>
+<div class="highlight-python"><pre>&gt; mysql -u root
+
+mysql&gt; GRANT ALL PRIVILEGES ON sbtest.* TO sbtest@'%' IDENTIFIED BY 'sbtest';
+Query OK, 0 rows affected (0.00 sec)</pre>
+</div>
+<p>ネットワーク環境によっては、接続元ホストを制限したりsbtestをより安全なパスワードに変更することをおすすめします。</p>
+</div>
+<div class="section" id="id5">
+<h3>8.4.2. データベースの作成<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>sbtestデータベースを作成します。</p>
+<div class="highlight-python"><pre>mysql&gt; CREATE DATABASE sbtest;
+Query OK, 1 row affected (0.00 sec)</pre>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>8.4.3. テストデータの生成<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>scripts/sysbench_load.jsを用いてテストデータの生成を行います。このスクリプトは以下の処理を行っています。</p>
+<ul class="simple">
+<li>テーブルの削除</li>
+<li>テーブルの作成</li>
+<li>データロード</li>
+<li>インデックスの作成 (MySQLのみデータロード前に作成)</li>
+<li>統計情報の更新 (Oracle Database、PostgreSQLのみ実施)</li>
+</ul>
+<div class="highlight-python"><pre>&gt; java JR scripts\sysbench_load.js
+
+01:41:56 [INFO ] &gt; JdbcRunner 1.2
+01:41:56 [INFO ] [Config]
+Program start time   : 20111011-014156
+Script filename      : scripts\sysbench_load.js
+JDBC driver          : -
+JDBC URL             : jdbc:mysql://localhost:3306/sbtest?rewriteBatchedStatements=true
+JDBC user            : sbtest
+Load mode            : true
+Number of agents     : 1
+Auto commit          : false
+Debug mode           : false
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+01:41:56 [INFO ] Tiny SysBench 1.0 - data loader
+01:41:56 [INFO ] -param0 : Number of records (default : 10000)
+01:41:56 [INFO ] Number of records : 10000
+01:41:56 [INFO ] Dropping a table ...
+01:41:56 [WARN ] JavaException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown table 'sbtest'
+01:41:56 [INFO ] Creating a table ...
+01:41:56 [INFO ] Loading sbtest ...
+01:41:57 [INFO ] sbtest : 1000 / 10000
+01:41:57 [INFO ] sbtest : 2000 / 10000
+01:41:57 [INFO ] sbtest : 3000 / 10000
+01:41:57 [INFO ] sbtest : 4000 / 10000
+01:41:57 [INFO ] sbtest : 5000 / 10000
+01:41:57 [INFO ] sbtest : 6000 / 10000
+01:41:57 [INFO ] sbtest : 7000 / 10000
+01:41:57 [INFO ] sbtest : 8000 / 10000
+01:41:57 [INFO ] sbtest : 9000 / 10000
+01:41:57 [INFO ] sbtest : 10000 / 10000
+01:41:57 [INFO ] Completed.
+01:41:57 [INFO ] &lt; JdbcRunner SUCCESS</pre>
+</div>
+<p>「Unknown table &#8216;sbtest&#8217;」という警告は、存在しないsbtestテーブルを削除しようとして出力されるものです。無視して構いません。</p>
+<p>また、-param0を指定することによってsbtestテーブルにロードするレコード数を変更することが可能です。デフォルトは1万レコードとなっています。</p>
+<div class="highlight-python"><pre>&gt; java JR scripts\sysbench_load.js -param0 50000</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>8.5. テストの実行<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>scripts/sysbench.jsを用いてテストを実行します。JdbcRunnerを動作させるマシンは、テスト対象のマシンとは別に用意することを強くおすすめします。</p>
+<p>Oracle Java SE/OpenJDKを利用する際は、Server VMを用いることをおすすめします。詳細は <a class="reference external" href="http://java.sun.com/javase/ja/6/docs/ja/technotes/guides/vm/index.html">JDK 6 仮想マシン (VM) 関連 API &amp; 開発者ガイド</a> をご参照ください。</p>
+<div class="highlight-python"><pre>&gt; java -server JR scripts\sysbench.js -jdbcUrl jdbc:mysql://server/sbtest
+
+02:19:12 [INFO ] &gt; JdbcRunner 1.2
+02:19:12 [INFO ] [Config]
+Program start time   : 20111011-021911
+Script filename      : scripts\sysbench.js
+JDBC driver          : -
+JDBC URL             : jdbc:mysql://server/sbtest
+JDBC user            : sbtest
+Warmup time          : 60 sec
+Measurement time     : 180 sec
+Number of tx types   : 1
+Number of agents     : 16
+Connection pool size : 16
+Statement cache size : 20
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : false
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+02:19:13 [INFO ] Tiny SysBench 1.0
+02:19:13 [INFO ] Number of records : 10000
+02:19:14 [INFO ] [Warmup] -59 sec, 150 tps, (150 tx)
+02:19:15 [INFO ] [Warmup] -58 sec, 241 tps, (391 tx)
+02:19:16 [INFO ] [Warmup] -57 sec, 268 tps, (659 tx)
+02:19:17 [WARN ] [Agent 7] Deadlock detected.
+02:19:17 [INFO ] [Warmup] -56 sec, 368 tps, (1027 tx)
+02:19:18 [WARN ] [Agent 0] Deadlock detected.
+02:19:18 [INFO ] [Warmup] -55 sec, 370 tps, (1397 tx)
+...
+02:23:09 [INFO ] [Progress] 176 sec, 379 tps, 67112 tx
+02:23:10 [INFO ] [Progress] 177 sec, 353 tps, 67465 tx
+02:23:11 [INFO ] [Progress] 178 sec, 370 tps, 67835 tx
+02:23:12 [INFO ] [Progress] 179 sec, 355 tps, 68190 tx
+02:23:13 [INFO ] [Progress] 180 sec, 376 tps, 68566 tx
+02:23:13 [INFO ] [Total tx count] 68565 tx
+02:23:13 [INFO ] [Throughput] 380.9 tps
+02:23:13 [INFO ] [Response time (minimum)] 21 msec
+02:23:13 [INFO ] [Response time (50%tile)] 40 msec
+02:23:13 [INFO ] [Response time (90%tile)] 53 msec
+02:23:13 [INFO ] [Response time (95%tile)] 58 msec
+02:23:13 [INFO ] [Response time (99%tile)] 71 msec
+02:23:13 [INFO ] [Response time (maximum)] 449 msec
+02:23:13 [INFO ] &lt; JdbcRunner SUCCESS</pre>
+</div>
+<p>OLTPベンチマークのcomplexモードでは、デッドロックが発生することがあります。これはオリジナル版のSysBenchでも発生するものです。Tiny SysBenchはデッドロックが発生した場合、該当のトランザクションをロールバックして再度実行します。</p>
+</div>
+<div class="section" id="id8">
+<h2>8.6. テストのカスタマイズ<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Tiny SysBenchはスクリプトscripts/sysbench.jsの変数定義を修正することで、オリジナル版のSysBenchが持つ設定オプションをある程度再現することができます。変数はスクリプトのApplication settingsという箇所に定義されていますので、ここを修正してご利用ください。</p>
+<div class="highlight-python"><pre>// Application settings ----------------------------------------------
+
+var DIST_UNIFORM = 1;
+var DIST_GAUSSIAN = 2;
+var DIST_SPECIAL = 3;
+
+// Number of records in the test table
+var oltpTableSize;
+
+// Ratio of queries in a transaction
+var oltpPointSelects = 10;
+var oltpSimpleRanges = 1;
+var oltpSumRanges = 1;
+var oltpOrderRanges = 1;
+var oltpDistinctRanges = 1;
+var oltpIndexUpdates = 1;
+var oltpNonIndexUpdates = 1;
+
+// Read-only flag
+var oltpReadOnly = false;
+
+// Range size for range queries
+var oltpRangeSize = 100;
+
+// Parameters for random numbers distribution
+var oltpDistType = DIST_SPECIAL;
+var oltpDistIter = 12;
+var oltpDistPct = 1;
+var oltpDistRes = 75;</pre>
+</div>
+<p>オリジナル版SysBenchとの対応表を以下に示します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="17%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">SysBenchのオプション</th>
+<th class="head">sysbench.jsの変数</th>
+<th class="head">説明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>oltp-test-mode</td>
+<td>(未対応)</td>
+<td>テストモードを指定するオプションです</td>
+</tr>
+<tr><td>oltp-reconnect-mode</td>
+<td>(未対応)</td>
+<td>テスト中にデータベースに再接続する方式を指定するオプションです</td>
+</tr>
+<tr><td>oltp-sp-name</td>
+<td>(未対応)</td>
+<td>spモードで実行するストアドプロシージャを指定するオプションです</td>
+</tr>
+<tr><td>oltp-read-only</td>
+<td>oltpReadOnly</td>
+<td>SELECT文のみを実行するオプションです</td>
+</tr>
+<tr><td>oltp-skip-trx</td>
+<td>(未対応)</td>
+<td>BEGIN/COMMIT文をスキップするオプションです</td>
+</tr>
+<tr><td>oltp-range-size</td>
+<td>oltpRangeSize</td>
+<td>範囲検索クエリの検索範囲を指定するオプションです</td>
+</tr>
+<tr><td>oltp-point-selects</td>
+<td>oltpPointSelects</td>
+<td>一意検索クエリの回数を指定するオプションです</td>
+</tr>
+<tr><td>oltp-simple-ranges</td>
+<td>oltpSimpleRanges</td>
+<td>範囲検索クエリの回数を指定するオプションです</td>
+</tr>
+<tr><td>oltp-sum-ranges</td>
+<td>oltpSumRanges</td>
+<td>範囲検索して集計するクエリの回数を指定するオプションです</td>
+</tr>
+<tr><td>oltp-order-ranges</td>
+<td>oltpOrderRanges</td>
+<td>範囲検索してソートするクエリの回数を指定するオプションです</td>
+</tr>
+<tr><td>oltp-distinct-ranges</td>
+<td>oltpDistinctRanges</td>
+<td>範囲検索して重複を省くクエリの回数を指定するオプションです</td>
+</tr>
+<tr><td>oltp-index-updates</td>
+<td>oltpIndexUpdates</td>
+<td>インデックス付き列を更新するクエリの回数を指定するオプションです</td>
+</tr>
+<tr><td>oltp-non-index-updates</td>
+<td>oltpNonIndexUpdates</td>
+<td>インデックスなし列を更新するクエリの回数を指定するオプションです</td>
+</tr>
+<tr><td>oltp-nontrx-mode</td>
+<td>(未対応)</td>
+<td>nontrxモードで実行するクエリを指定するオプションです</td>
+</tr>
+<tr><td>oltp-auto-inc</td>
+<td>(未対応)</td>
+<td>ID列にAUTO_INCREMENTを用いるかどうかを指定するオプションです</td>
+</tr>
+<tr><td>oltp-connect-delay</td>
+<td>(未対応)</td>
+<td>データベースに接続した後のスリープ時間を指定するオプションです</td>
+</tr>
+<tr><td>oltp-user-delay-min</td>
+<td>(未対応)</td>
+<td>クエリごとのスリープ時間の最小値を指定するオプションです</td>
+</tr>
+<tr><td>oltp-user-delay-max</td>
+<td>(未対応)</td>
+<td>クエリごとのスリープ時間の最大値を指定するオプションです</td>
+</tr>
+<tr><td>oltp-table-name</td>
+<td>(未対応)</td>
+<td>テストに用いるテーブル名を指定するオプションです</td>
+</tr>
+<tr><td>oltp-table-size</td>
+<td>(ローダで指定)</td>
+<td>テストに用いるテーブルのレコード数を指定するオプションです</td>
+</tr>
+<tr><td>oltp-dist-type</td>
+<td>oltpDistType</td>
+<td>乱数生成方式を指定するオプションです</td>
+</tr>
+<tr><td>oltp-dist-iter</td>
+<td>oltpDistIter</td>
+<td>ガウス分布乱数を生成するための加算回数を指定するオプションです</td>
+</tr>
+<tr><td>oltp-dist-pct</td>
+<td>oltpDistPct</td>
+<td>特殊分布乱数において、均一分布乱数の生成範囲を指定するオプションです</td>
+</tr>
+<tr><td>oltp-dist-res</td>
+<td>oltpDistRes</td>
+<td>特殊分布乱数において、均一分布乱数の発生確率を指定するオプションです</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">8. テストキット Tiny SysBench</a><ul>
+<li><a class="reference external" href="#sysbench">8.1. SysBenchとは</a></li>
+<li><a class="reference external" href="#id2">8.2. Tiny SysBenchとは</a></li>
+<li><a class="reference external" href="#rdbms">8.3. 対応RDBMS</a></li>
+<li><a class="reference external" href="#id3">8.4. テストの準備</a><ul>
+<li><a class="reference external" href="#id4">8.4.1. ユーザの作成</a></li>
+<li><a class="reference external" href="#id5">8.4.2. データベースの作成</a></li>
+<li><a class="reference external" href="#id6">8.4.3. テストデータの生成</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#id7">8.5. テストの実行</a></li>
+<li><a class="reference external" href="#id8">8.6. テストのカスタマイズ</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="misc.html"
+                                  title="previous chapter">7. その他の付属ツール</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="tpc-b.html"
+                                  title="next chapter">9. テストキット Tiny TPC-B</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/sysbench.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="tpc-b.html" title="9. テストキット Tiny TPC-B"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="misc.html" title="7. その他の付属ツール"
+             >previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2010-2011, Sadao Hiratsuka.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

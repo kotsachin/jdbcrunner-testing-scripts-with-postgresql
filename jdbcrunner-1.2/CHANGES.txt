@@ -1,0 +1,38 @@
+1.2 (2011-10-11)
+----------------
+
+* The option -throttle checks busyness of transactions.
+  When throughput is lower than the configured value,
+  JdbcRunner gives up keeping throughput in total
+  and tries to keep it from now on.
+* The throughput is calculated down to the first decimal place.
+* Tiny TPC-C was updated to version 1.1.
+  - JdbcRunner executes transactions in more precise ratio.
+  - An USE_NL hint was added to SQL S-01 for Oracle Database.
+* A Calc file was added to draw response time histogram.
+* Apache Commons Pool was updated to version 1.5.6.
+* Apache log4j was updated to version 1.2.16.
+* Mozilla Rhino was updated to version 1.7R3.
+* MySQL Connector/J was updated to version 5.1.18.
+* PostgreSQL JDBC Driver was updated to version 9.1 Build 901.
+
+1.1 (2010-05-06)
+----------------
+
+* Long and double data types were supported for bind variables.
+* Null value was supported for bind variables.
+* A new function getScriptStackTrace() was added.
+* A new test kit Tiny SysBench was added.
+* Tiny TPC-B was updated to version 1.1.
+  - Foreign key constraints were added.
+* A new test kit Tiny TPC-C was added.
+* Apache Commons DBCP was updated to version 1.4.
+  DBCP 1.4 now supports JDBC 4.0.
+* MySQL Connector/J was updated to version 5.1.12.
+* The default value of jdbcDriver was changed to empty string.
+  JDBC 4.0 drivers no longer need this parameter.
+
+1.0 (2010-01-10)
+----------------
+
+* First release.

@@ -1,0 +1,1571 @@
+2013-02-13 16:33:16 [INFO ] > JdbcRunner 1.2
+2013-02-13 16:33:16 [INFO ] [Config]
+Program start time   : 20130213-163316
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.151:5432/postgres
+JDBC user            : postgres_user
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-13 16:33:18 [INFO ] [Warmup] -19 sec, 215 tps, (215 tx)
+2013-02-13 16:33:19 [INFO ] [Warmup] -18 sec, 255 tps, (470 tx)
+2013-02-13 16:33:20 [INFO ] [Warmup] -17 sec, 354 tps, (824 tx)
+2013-02-13 16:33:21 [INFO ] [Warmup] -16 sec, 394 tps, (1218 tx)
+2013-02-13 16:33:22 [INFO ] [Warmup] -15 sec, 397 tps, (1615 tx)
+2013-02-13 16:33:23 [INFO ] [Warmup] -14 sec, 403 tps, (2018 tx)
+2013-02-13 16:33:24 [INFO ] [Warmup] -13 sec, 401 tps, (2419 tx)
+2013-02-13 16:33:25 [INFO ] [Warmup] -12 sec, 388 tps, (2807 tx)
+2013-02-13 16:33:26 [INFO ] [Warmup] -11 sec, 327 tps, (3134 tx)
+2013-02-13 16:33:27 [INFO ] [Warmup] -10 sec, 333 tps, (3467 tx)
+2013-02-13 16:33:28 [INFO ] [Warmup] -9 sec, 389 tps, (3856 tx)
+2013-02-13 16:33:29 [INFO ] [Warmup] -8 sec, 417 tps, (4273 tx)
+2013-02-13 16:33:30 [INFO ] [Warmup] -7 sec, 418 tps, (4691 tx)
+2013-02-13 16:33:31 [INFO ] [Warmup] -6 sec, 411 tps, (5102 tx)
+2013-02-13 16:33:32 [INFO ] [Warmup] -5 sec, 420 tps, (5522 tx)
+2013-02-13 16:33:33 [INFO ] [Warmup] -4 sec, 421 tps, (5943 tx)
+2013-02-13 16:33:34 [INFO ] [Warmup] -3 sec, 422 tps, (6365 tx)
+2013-02-13 16:33:35 [INFO ] [Warmup] -2 sec, 422 tps, (6787 tx)
+2013-02-13 16:33:36 [INFO ] [Warmup] -1 sec, 421 tps, (7208 tx)
+2013-02-13 16:33:37 [INFO ] [Warmup] 0 sec, 422 tps, (7630 tx)
+2013-02-13 16:33:38 [INFO ] [Progress] 1 sec, 420 tps, 420 tx
+2013-02-13 16:33:39 [INFO ] [Progress] 2 sec, 423 tps, 843 tx
+2013-02-13 16:33:40 [INFO ] [Progress] 3 sec, 421 tps, 1264 tx
+2013-02-13 16:33:41 [INFO ] [Progress] 4 sec, 422 tps, 1686 tx
+2013-02-13 16:33:42 [INFO ] [Progress] 5 sec, 419 tps, 2105 tx
+2013-02-13 16:33:43 [INFO ] [Progress] 6 sec, 420 tps, 2525 tx
+2013-02-13 16:33:44 [INFO ] [Progress] 7 sec, 425 tps, 2950 tx
+2013-02-13 16:33:45 [INFO ] [Progress] 8 sec, 426 tps, 3376 tx
+2013-02-13 16:33:46 [INFO ] [Progress] 9 sec, 425 tps, 3801 tx
+2013-02-13 16:33:47 [INFO ] [Progress] 10 sec, 425 tps, 4226 tx
+2013-02-13 16:33:48 [INFO ] [Progress] 11 sec, 425 tps, 4651 tx
+2013-02-13 16:33:49 [INFO ] [Progress] 12 sec, 426 tps, 5077 tx
+2013-02-13 16:33:50 [INFO ] [Progress] 13 sec, 423 tps, 5500 tx
+2013-02-13 16:33:51 [INFO ] [Progress] 14 sec, 427 tps, 5927 tx
+2013-02-13 16:33:52 [INFO ] [Progress] 15 sec, 425 tps, 6352 tx
+2013-02-13 16:33:53 [INFO ] [Progress] 16 sec, 425 tps, 6777 tx
+2013-02-13 16:33:54 [INFO ] [Progress] 17 sec, 424 tps, 7201 tx
+2013-02-13 16:33:55 [INFO ] [Progress] 18 sec, 426 tps, 7627 tx
+2013-02-13 16:33:56 [INFO ] [Progress] 19 sec, 424 tps, 8051 tx
+2013-02-13 16:33:57 [INFO ] [Progress] 20 sec, 424 tps, 8475 tx
+2013-02-13 16:33:58 [INFO ] [Progress] 21 sec, 426 tps, 8901 tx
+2013-02-13 16:33:59 [INFO ] [Progress] 22 sec, 424 tps, 9325 tx
+2013-02-13 16:34:00 [INFO ] [Progress] 23 sec, 425 tps, 9750 tx
+2013-02-13 16:34:01 [INFO ] [Progress] 24 sec, 426 tps, 10176 tx
+2013-02-13 16:34:02 [INFO ] [Progress] 25 sec, 424 tps, 10600 tx
+2013-02-13 16:34:03 [INFO ] [Progress] 26 sec, 415 tps, 11015 tx
+2013-02-13 16:34:04 [INFO ] [Progress] 27 sec, 371 tps, 11386 tx
+2013-02-13 16:34:05 [INFO ] [Progress] 28 sec, 372 tps, 11758 tx
+2013-02-13 16:34:06 [INFO ] [Progress] 29 sec, 390 tps, 12148 tx
+2013-02-13 16:34:07 [INFO ] [Progress] 30 sec, 419 tps, 12567 tx
+2013-02-13 16:34:08 [INFO ] [Progress] 31 sec, 424 tps, 12991 tx
+2013-02-13 16:34:09 [INFO ] [Progress] 32 sec, 426 tps, 13417 tx
+2013-02-13 16:34:10 [INFO ] [Progress] 33 sec, 425 tps, 13842 tx
+2013-02-13 16:34:11 [INFO ] [Progress] 34 sec, 425 tps, 14267 tx
+2013-02-13 16:34:12 [INFO ] [Progress] 35 sec, 426 tps, 14693 tx
+2013-02-13 16:34:13 [INFO ] [Progress] 36 sec, 425 tps, 15118 tx
+2013-02-13 16:34:14 [INFO ] [Progress] 37 sec, 425 tps, 15543 tx
+2013-02-13 16:34:15 [INFO ] [Progress] 38 sec, 425 tps, 15968 tx
+2013-02-13 16:34:16 [INFO ] [Progress] 39 sec, 425 tps, 16393 tx
+2013-02-13 16:34:17 [INFO ] [Progress] 40 sec, 427 tps, 16820 tx
+2013-02-13 16:34:18 [INFO ] [Progress] 41 sec, 425 tps, 17245 tx
+2013-02-13 16:34:19 [INFO ] [Progress] 42 sec, 426 tps, 17671 tx
+2013-02-13 16:34:20 [INFO ] [Progress] 43 sec, 427 tps, 18098 tx
+2013-02-13 16:34:21 [INFO ] [Progress] 44 sec, 425 tps, 18523 tx
+2013-02-13 16:34:22 [INFO ] [Progress] 45 sec, 422 tps, 18945 tx
+2013-02-13 16:34:23 [INFO ] [Progress] 46 sec, 426 tps, 19371 tx
+2013-02-13 16:34:24 [INFO ] [Progress] 47 sec, 426 tps, 19797 tx
+2013-02-13 16:34:25 [INFO ] [Progress] 48 sec, 426 tps, 20223 tx
+2013-02-13 16:34:26 [INFO ] [Progress] 49 sec, 426 tps, 20649 tx
+2013-02-13 16:34:27 [INFO ] [Progress] 50 sec, 426 tps, 21075 tx
+2013-02-13 16:34:28 [INFO ] [Progress] 51 sec, 426 tps, 21501 tx
+2013-02-13 16:34:29 [INFO ] [Progress] 52 sec, 425 tps, 21926 tx
+2013-02-13 16:34:30 [INFO ] [Progress] 53 sec, 427 tps, 22353 tx
+2013-02-13 16:34:31 [INFO ] [Progress] 54 sec, 425 tps, 22778 tx
+2013-02-13 16:34:32 [INFO ] [Progress] 55 sec, 426 tps, 23204 tx
+2013-02-13 16:34:33 [INFO ] [Progress] 56 sec, 426 tps, 23630 tx
+2013-02-13 16:34:34 [INFO ] [Progress] 57 sec, 426 tps, 24056 tx
+2013-02-13 16:34:35 [INFO ] [Progress] 58 sec, 428 tps, 24484 tx
+2013-02-13 16:34:36 [INFO ] [Progress] 59 sec, 424 tps, 24908 tx
+2013-02-13 16:34:37 [INFO ] [Progress] 60 sec, 427 tps, 25335 tx
+2013-02-13 16:34:37 [INFO ] [Total tx count] 25334 tx
+2013-02-13 16:34:37 [INFO ] [Throughput] 422.2 tps
+2013-02-13 16:34:37 [INFO ] [Response time (minimum)] 9 msec
+2013-02-13 16:34:37 [INFO ] [Response time (50%tile)] 9 msec
+2013-02-13 16:34:37 [INFO ] [Response time (90%tile)] 9 msec
+2013-02-13 16:34:37 [INFO ] [Response time (95%tile)] 9 msec
+2013-02-13 16:34:37 [INFO ] [Response time (99%tile)] 10 msec
+2013-02-13 16:34:37 [INFO ] [Response time (maximum)] 24 msec
+2013-02-13 16:34:37 [INFO ] < JdbcRunner SUCCESS
+2013-02-13 16:42:26 [INFO ] > JdbcRunner 1.2
+2013-02-13 16:42:26 [INFO ] [Config]
+Program start time   : 20130213-164225
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.151:5432/postgres
+JDBC user            : postgres_user
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-13 16:42:27 [INFO ] [Warmup] -19 sec, 224 tps, (224 tx)
+2013-02-13 16:42:28 [INFO ] [Warmup] -18 sec, 269 tps, (493 tx)
+2013-02-13 16:42:29 [INFO ] [Warmup] -17 sec, 295 tps, (788 tx)
+2013-02-13 16:42:30 [INFO ] [Warmup] -16 sec, 364 tps, (1152 tx)
+2013-02-13 16:42:31 [INFO ] [Warmup] -15 sec, 404 tps, (1556 tx)
+2013-02-13 16:42:32 [INFO ] [Warmup] -14 sec, 421 tps, (1977 tx)
+2013-02-13 16:42:33 [INFO ] [Warmup] -13 sec, 423 tps, (2400 tx)
+2013-02-13 16:42:34 [INFO ] [Warmup] -12 sec, 421 tps, (2821 tx)
+2013-02-13 16:42:35 [INFO ] [Warmup] -11 sec, 410 tps, (3231 tx)
+2013-02-13 16:42:36 [INFO ] [Warmup] -10 sec, 421 tps, (3652 tx)
+2013-02-13 16:42:37 [INFO ] [Warmup] -9 sec, 423 tps, (4075 tx)
+2013-02-13 16:42:38 [INFO ] [Warmup] -8 sec, 422 tps, (4497 tx)
+2013-02-13 16:42:39 [INFO ] [Warmup] -7 sec, 423 tps, (4920 tx)
+2013-02-13 16:42:40 [INFO ] [Warmup] -6 sec, 423 tps, (5343 tx)
+2013-02-13 16:42:41 [INFO ] [Warmup] -5 sec, 425 tps, (5768 tx)
+2013-02-13 16:42:42 [INFO ] [Warmup] -4 sec, 425 tps, (6193 tx)
+2013-02-13 16:42:43 [INFO ] [Warmup] -3 sec, 424 tps, (6617 tx)
+2013-02-13 16:42:44 [INFO ] [Warmup] -2 sec, 426 tps, (7043 tx)
+2013-02-13 16:42:45 [INFO ] [Warmup] -1 sec, 426 tps, (7469 tx)
+2013-02-13 16:42:46 [INFO ] [Warmup] 0 sec, 423 tps, (7892 tx)
+2013-02-13 16:42:47 [INFO ] [Progress] 1 sec, 426 tps, 426 tx
+2013-02-13 16:42:48 [INFO ] [Progress] 2 sec, 425 tps, 851 tx
+2013-02-13 16:42:49 [INFO ] [Progress] 3 sec, 421 tps, 1272 tx
+2013-02-13 16:42:50 [INFO ] [Progress] 4 sec, 425 tps, 1697 tx
+2013-02-13 16:42:51 [INFO ] [Progress] 5 sec, 425 tps, 2122 tx
+2013-02-13 16:42:52 [INFO ] [Progress] 6 sec, 429 tps, 2551 tx
+2013-02-13 16:42:53 [INFO ] [Progress] 7 sec, 429 tps, 2980 tx
+2013-02-13 16:42:54 [INFO ] [Progress] 8 sec, 427 tps, 3407 tx
+2013-02-13 16:42:55 [INFO ] [Progress] 9 sec, 430 tps, 3837 tx
+2013-02-13 16:42:56 [INFO ] [Progress] 10 sec, 428 tps, 4265 tx
+2013-02-13 16:43:17 [INFO ] > JdbcRunner 1.2
+2013-02-13 16:43:17 [INFO ] [Config]
+Program start time   : 20130213-164317
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.151:5432/postgres
+JDBC user            : postgres_user
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-13 16:43:19 [INFO ] [Warmup] -19 sec, 253 tps, (253 tx)
+2013-02-13 16:43:20 [INFO ] [Warmup] -18 sec, 255 tps, (508 tx)
+2013-02-13 16:43:21 [INFO ] [Warmup] -17 sec, 385 tps, (893 tx)
+2013-02-13 16:43:22 [INFO ] [Warmup] -16 sec, 409 tps, (1302 tx)
+2013-02-13 16:43:23 [INFO ] [Warmup] -15 sec, 411 tps, (1713 tx)
+2013-02-13 16:43:24 [INFO ] [Warmup] -14 sec, 413 tps, (2126 tx)
+2013-02-13 16:43:25 [INFO ] [Warmup] -13 sec, 414 tps, (2540 tx)
+2013-02-13 16:43:26 [INFO ] [Warmup] -12 sec, 416 tps, (2956 tx)
+2013-02-13 16:43:27 [INFO ] [Warmup] -11 sec, 403 tps, (3359 tx)
+2013-02-13 16:43:28 [INFO ] [Warmup] -10 sec, 420 tps, (3779 tx)
+2013-02-13 16:43:29 [INFO ] [Warmup] -9 sec, 417 tps, (4196 tx)
+2013-02-13 16:43:30 [INFO ] [Warmup] -8 sec, 419 tps, (4615 tx)
+2013-02-13 16:43:31 [INFO ] [Warmup] -7 sec, 416 tps, (5031 tx)
+2013-02-13 16:43:32 [INFO ] [Warmup] -6 sec, 422 tps, (5453 tx)
+2013-02-13 16:43:33 [INFO ] [Warmup] -5 sec, 420 tps, (5873 tx)
+2013-02-13 16:43:34 [INFO ] [Warmup] -4 sec, 422 tps, (6295 tx)
+2013-02-13 16:43:35 [INFO ] [Warmup] -3 sec, 420 tps, (6715 tx)
+2013-02-13 16:43:36 [INFO ] [Warmup] -2 sec, 423 tps, (7138 tx)
+2013-02-13 16:43:37 [INFO ] [Warmup] -1 sec, 420 tps, (7558 tx)
+2013-02-13 16:43:38 [INFO ] [Warmup] 0 sec, 423 tps, (7981 tx)
+2013-02-13 16:43:39 [INFO ] [Progress] 1 sec, 414 tps, 414 tx
+2013-02-13 16:43:40 [INFO ] [Progress] 2 sec, 422 tps, 836 tx
+2013-02-13 16:43:41 [INFO ] [Progress] 3 sec, 422 tps, 1258 tx
+2013-02-13 16:43:42 [INFO ] [Progress] 4 sec, 423 tps, 1681 tx
+2013-02-13 16:43:43 [INFO ] [Progress] 5 sec, 419 tps, 2100 tx
+2013-02-13 16:43:44 [INFO ] [Progress] 6 sec, 426 tps, 2526 tx
+2013-02-13 16:43:45 [INFO ] [Progress] 7 sec, 424 tps, 2950 tx
+2013-02-13 16:43:46 [INFO ] [Progress] 8 sec, 427 tps, 3377 tx
+2013-02-13 16:43:47 [INFO ] [Progress] 9 sec, 425 tps, 3802 tx
+2013-02-13 16:43:48 [INFO ] [Progress] 10 sec, 427 tps, 4229 tx
+2013-02-13 16:43:49 [INFO ] [Progress] 11 sec, 425 tps, 4654 tx
+2013-02-13 16:43:50 [INFO ] [Progress] 12 sec, 425 tps, 5079 tx
+2013-02-13 16:43:51 [INFO ] [Progress] 13 sec, 426 tps, 5505 tx
+2013-02-13 16:43:52 [INFO ] [Progress] 14 sec, 425 tps, 5930 tx
+2013-02-13 16:43:53 [INFO ] [Progress] 15 sec, 426 tps, 6356 tx
+2013-02-13 16:43:54 [INFO ] [Progress] 16 sec, 424 tps, 6780 tx
+2013-02-13 16:43:55 [INFO ] [Progress] 17 sec, 426 tps, 7206 tx
+2013-02-13 16:43:56 [INFO ] [Progress] 18 sec, 424 tps, 7630 tx
+2013-02-13 16:43:57 [INFO ] [Progress] 19 sec, 425 tps, 8055 tx
+2013-02-13 16:43:58 [INFO ] [Progress] 20 sec, 426 tps, 8481 tx
+2013-02-13 16:43:59 [INFO ] [Progress] 21 sec, 425 tps, 8906 tx
+2013-02-13 16:44:00 [INFO ] [Progress] 22 sec, 426 tps, 9332 tx
+2013-02-13 16:44:01 [INFO ] [Progress] 23 sec, 425 tps, 9757 tx
+2013-02-13 16:44:02 [INFO ] [Progress] 24 sec, 425 tps, 10182 tx
+2013-02-13 16:44:03 [INFO ] [Progress] 25 sec, 425 tps, 10607 tx
+2013-02-13 16:44:04 [INFO ] [Progress] 26 sec, 419 tps, 11026 tx
+2013-02-13 16:44:05 [INFO ] [Progress] 27 sec, 426 tps, 11452 tx
+2013-02-13 16:44:06 [INFO ] [Progress] 28 sec, 425 tps, 11877 tx
+2013-02-13 16:44:07 [INFO ] [Progress] 29 sec, 425 tps, 12302 tx
+2013-02-13 16:44:08 [INFO ] [Progress] 30 sec, 427 tps, 12729 tx
+2013-02-13 16:44:09 [INFO ] [Progress] 31 sec, 426 tps, 13155 tx
+2013-02-13 16:44:10 [INFO ] [Progress] 32 sec, 428 tps, 13583 tx
+2013-02-13 16:44:11 [INFO ] [Progress] 33 sec, 425 tps, 14008 tx
+2013-02-13 16:44:12 [INFO ] [Progress] 34 sec, 428 tps, 14436 tx
+2013-02-13 16:44:13 [INFO ] [Progress] 35 sec, 427 tps, 14863 tx
+2013-02-13 16:44:14 [INFO ] [Progress] 36 sec, 427 tps, 15290 tx
+2013-02-13 16:44:15 [INFO ] [Progress] 37 sec, 426 tps, 15716 tx
+2013-02-13 16:44:16 [INFO ] [Progress] 38 sec, 426 tps, 16142 tx
+2013-02-13 16:44:17 [INFO ] [Progress] 39 sec, 427 tps, 16569 tx
+2013-02-13 16:44:18 [INFO ] [Progress] 40 sec, 425 tps, 16994 tx
+2013-02-13 16:44:19 [INFO ] [Progress] 41 sec, 427 tps, 17421 tx
+2013-02-13 16:44:20 [INFO ] [Progress] 42 sec, 426 tps, 17847 tx
+2013-02-13 16:44:21 [INFO ] [Progress] 43 sec, 426 tps, 18273 tx
+2013-02-13 16:44:22 [INFO ] [Progress] 44 sec, 427 tps, 18700 tx
+2013-02-13 16:44:23 [INFO ] [Progress] 45 sec, 426 tps, 19126 tx
+2013-02-13 16:44:24 [INFO ] [Progress] 46 sec, 427 tps, 19553 tx
+2013-02-13 16:44:25 [INFO ] [Progress] 47 sec, 428 tps, 19981 tx
+2013-02-13 16:44:26 [INFO ] [Progress] 48 sec, 428 tps, 20409 tx
+2013-02-13 16:44:27 [INFO ] [Progress] 49 sec, 427 tps, 20836 tx
+2013-02-13 16:44:28 [INFO ] [Progress] 50 sec, 428 tps, 21264 tx
+2013-02-13 16:44:29 [INFO ] [Progress] 51 sec, 426 tps, 21690 tx
+2013-02-13 16:44:30 [INFO ] [Progress] 52 sec, 428 tps, 22118 tx
+2013-02-13 16:44:42 [INFO ] > JdbcRunner 1.2
+2013-02-13 16:44:42 [INFO ] [Config]
+Program start time   : 20130213-164441
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.151:5432/postgres
+JDBC user            : postgres_user
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-13 16:44:43 [INFO ] [Warmup] -19 sec, 222 tps, (222 tx)
+2013-02-13 16:44:44 [INFO ] [Warmup] -18 sec, 276 tps, (498 tx)
+2013-02-13 16:44:45 [INFO ] [Warmup] -17 sec, 306 tps, (804 tx)
+2013-02-13 16:44:46 [INFO ] [Warmup] -16 sec, 353 tps, (1157 tx)
+2013-02-13 16:44:47 [INFO ] [Warmup] -15 sec, 399 tps, (1556 tx)
+2013-02-13 16:44:48 [INFO ] [Warmup] -14 sec, 399 tps, (1955 tx)
+2013-02-13 16:44:49 [INFO ] [Warmup] -13 sec, 403 tps, (2358 tx)
+2013-02-13 16:44:50 [INFO ] [Warmup] -12 sec, 402 tps, (2760 tx)
+2013-02-13 16:44:51 [INFO ] [Warmup] -11 sec, 355 tps, (3115 tx)
+2013-02-13 16:44:52 [INFO ] [Warmup] -10 sec, 299 tps, (3414 tx)
+2013-02-13 16:44:53 [INFO ] [Warmup] -9 sec, 305 tps, (3719 tx)
+2013-02-13 16:44:54 [INFO ] [Warmup] -8 sec, 390 tps, (4109 tx)
+2013-02-13 16:44:55 [INFO ] [Warmup] -7 sec, 419 tps, (4528 tx)
+2013-02-13 16:44:56 [INFO ] [Warmup] -6 sec, 420 tps, (4948 tx)
+2013-02-13 16:44:57 [INFO ] [Warmup] -5 sec, 417 tps, (5365 tx)
+2013-02-13 16:44:58 [INFO ] [Warmup] -4 sec, 422 tps, (5787 tx)
+2013-02-13 16:44:59 [INFO ] [Warmup] -3 sec, 421 tps, (6208 tx)
+2013-02-13 16:45:00 [INFO ] [Warmup] -2 sec, 422 tps, (6630 tx)
+2013-02-13 16:45:01 [INFO ] [Warmup] -1 sec, 421 tps, (7051 tx)
+2013-02-13 16:45:02 [INFO ] [Warmup] 0 sec, 421 tps, (7472 tx)
+2013-02-13 16:45:03 [INFO ] [Progress] 1 sec, 420 tps, 420 tx
+2013-02-13 16:45:04 [INFO ] [Progress] 2 sec, 422 tps, 842 tx
+2013-02-13 16:45:05 [INFO ] [Progress] 3 sec, 423 tps, 1265 tx
+2013-02-13 16:45:06 [INFO ] [Progress] 4 sec, 420 tps, 1685 tx
+2013-02-13 16:45:07 [INFO ] [Progress] 5 sec, 422 tps, 2107 tx
+2013-02-13 16:45:08 [INFO ] [Progress] 6 sec, 422 tps, 2529 tx
+2013-02-13 16:45:09 [INFO ] [Progress] 7 sec, 421 tps, 2950 tx
+2013-02-13 16:45:10 [INFO ] [Progress] 8 sec, 426 tps, 3376 tx
+2013-02-13 16:45:11 [INFO ] [Progress] 9 sec, 425 tps, 3801 tx
+2013-02-13 16:45:12 [INFO ] [Progress] 10 sec, 425 tps, 4226 tx
+2013-02-13 16:45:13 [INFO ] [Progress] 11 sec, 426 tps, 4652 tx
+2013-02-13 16:45:14 [INFO ] [Progress] 12 sec, 424 tps, 5076 tx
+2013-02-13 16:45:15 [INFO ] [Progress] 13 sec, 427 tps, 5503 tx
+2013-02-13 16:45:16 [INFO ] [Progress] 14 sec, 425 tps, 5928 tx
+2013-02-13 16:45:34 [INFO ] > JdbcRunner 1.2
+2013-02-13 16:45:34 [INFO ] [Config]
+Program start time   : 20130213-164534
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.151:5432/postgres
+JDBC user            : postgres_user
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-13 16:45:36 [INFO ] [Warmup] -19 sec, 209 tps, (209 tx)
+2013-02-13 16:45:37 [INFO ] [Warmup] -18 sec, 250 tps, (459 tx)
+2013-02-13 16:45:38 [INFO ] [Warmup] -17 sec, 259 tps, (718 tx)
+2013-02-13 16:45:39 [INFO ] [Warmup] -16 sec, 326 tps, (1044 tx)
+2013-02-13 16:45:40 [INFO ] [Warmup] -15 sec, 361 tps, (1405 tx)
+2013-02-13 16:45:41 [INFO ] [Warmup] -14 sec, 410 tps, (1815 tx)
+2013-02-13 16:45:42 [INFO ] [Warmup] -13 sec, 413 tps, (2228 tx)
+2013-02-13 16:45:43 [INFO ] [Warmup] -12 sec, 413 tps, (2641 tx)
+2013-02-13 16:45:44 [INFO ] [Warmup] -11 sec, 417 tps, (3058 tx)
+2013-02-13 16:45:45 [INFO ] [Warmup] -10 sec, 402 tps, (3460 tx)
+2013-02-13 16:45:46 [INFO ] [Warmup] -9 sec, 417 tps, (3877 tx)
+2013-02-13 16:45:47 [INFO ] [Warmup] -8 sec, 418 tps, (4295 tx)
+2013-02-13 16:45:48 [INFO ] [Warmup] -7 sec, 420 tps, (4715 tx)
+2013-02-13 16:45:49 [INFO ] [Warmup] -6 sec, 416 tps, (5131 tx)
+2013-02-13 16:45:50 [INFO ] [Warmup] -5 sec, 422 tps, (5553 tx)
+2013-02-13 16:45:51 [INFO ] [Warmup] -4 sec, 421 tps, (5974 tx)
+2013-02-13 16:45:52 [INFO ] [Warmup] -3 sec, 422 tps, (6396 tx)
+2013-02-13 16:45:53 [INFO ] [Warmup] -2 sec, 420 tps, (6816 tx)
+2013-02-13 16:45:54 [INFO ] [Warmup] -1 sec, 422 tps, (7238 tx)
+2013-02-13 16:45:55 [INFO ] [Warmup] 0 sec, 422 tps, (7660 tx)
+2013-02-13 16:45:56 [INFO ] [Progress] 1 sec, 375 tps, 375 tx
+2013-02-13 16:45:57 [INFO ] [Progress] 2 sec, 367 tps, 742 tx
+2013-02-13 16:45:58 [INFO ] [Progress] 3 sec, 421 tps, 1163 tx
+2013-02-13 16:45:59 [INFO ] [Progress] 4 sec, 419 tps, 1582 tx
+2013-02-13 16:46:00 [INFO ] [Progress] 5 sec, 423 tps, 2005 tx
+2013-02-13 16:46:01 [INFO ] [Progress] 6 sec, 421 tps, 2426 tx
+2013-02-13 16:46:02 [INFO ] [Progress] 7 sec, 423 tps, 2849 tx
+2013-02-13 16:46:03 [INFO ] [Progress] 8 sec, 425 tps, 3274 tx
+2013-02-13 16:46:04 [INFO ] [Progress] 9 sec, 426 tps, 3700 tx
+2013-02-13 16:46:44 [INFO ] > JdbcRunner 1.2
+2013-02-13 16:46:44 [INFO ] [Config]
+Program start time   : 20130213-164644
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.151:5432/postgres
+JDBC user            : postgres_user
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-13 16:46:46 [INFO ] [Warmup] -19 sec, 232 tps, (232 tx)
+2013-02-13 16:46:47 [INFO ] [Warmup] -18 sec, 239 tps, (471 tx)
+2013-02-13 16:46:48 [INFO ] [Warmup] -17 sec, 330 tps, (801 tx)
+2013-02-13 16:46:49 [INFO ] [Warmup] -16 sec, 394 tps, (1195 tx)
+2013-02-13 16:46:50 [INFO ] [Warmup] -15 sec, 409 tps, (1604 tx)
+2013-02-13 16:46:51 [INFO ] [Warmup] -14 sec, 412 tps, (2016 tx)
+2013-02-13 16:46:52 [INFO ] [Warmup] -13 sec, 412 tps, (2428 tx)
+2013-02-13 16:46:53 [INFO ] [Warmup] -12 sec, 416 tps, (2844 tx)
+2013-02-13 16:46:54 [INFO ] [Warmup] -11 sec, 409 tps, (3253 tx)
+2013-02-13 16:46:55 [INFO ] [Warmup] -10 sec, 415 tps, (3668 tx)
+2013-02-13 16:46:56 [INFO ] [Warmup] -9 sec, 417 tps, (4085 tx)
+2013-02-13 16:46:57 [INFO ] [Warmup] -8 sec, 419 tps, (4504 tx)
+2013-02-13 16:47:00 [INFO ] > JdbcRunner 1.2
+2013-02-13 16:47:00 [INFO ] [Config]
+Program start time   : 20130213-164700
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.151:5432/postgres
+JDBC user            : postgres_user
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-13 16:47:02 [INFO ] [Warmup] -19 sec, 294 tps, (294 tx)
+2013-02-13 16:47:03 [INFO ] [Warmup] -18 sec, 308 tps, (602 tx)
+2013-02-13 16:47:04 [INFO ] [Warmup] -17 sec, 389 tps, (991 tx)
+2013-02-13 16:47:05 [INFO ] [Warmup] -16 sec, 399 tps, (1390 tx)
+2013-02-13 16:47:06 [INFO ] [Warmup] -15 sec, 396 tps, (1786 tx)
+2013-02-13 16:47:07 [INFO ] [Warmup] -14 sec, 396 tps, (2182 tx)
+2013-02-13 16:47:08 [INFO ] [Warmup] -13 sec, 381 tps, (2563 tx)
+2013-02-13 16:47:09 [INFO ] [Warmup] -12 sec, 402 tps, (2965 tx)
+2013-02-13 16:47:10 [INFO ] [Warmup] -11 sec, 404 tps, (3369 tx)
+2013-02-13 16:47:11 [INFO ] [Warmup] -10 sec, 400 tps, (3769 tx)
+2013-02-13 16:47:12 [INFO ] [Warmup] -9 sec, 383 tps, (4152 tx)
+2013-02-13 16:47:13 [INFO ] [Warmup] -8 sec, 382 tps, (4534 tx)
+2013-02-13 16:47:14 [INFO ] [Warmup] -7 sec, 412 tps, (4946 tx)
+2013-02-13 16:47:15 [INFO ] [Warmup] -6 sec, 366 tps, (5312 tx)
+2013-02-13 16:47:16 [INFO ] [Warmup] -5 sec, 362 tps, (5674 tx)
+2013-02-13 16:47:17 [INFO ] [Warmup] -4 sec, 405 tps, (6079 tx)
+2013-02-13 16:47:18 [INFO ] [Warmup] -3 sec, 422 tps, (6501 tx)
+2013-02-13 16:47:19 [INFO ] [Warmup] -2 sec, 423 tps, (6924 tx)
+2013-02-13 16:47:20 [INFO ] [Warmup] -1 sec, 388 tps, (7312 tx)
+2013-02-13 16:47:21 [INFO ] [Warmup] 0 sec, 375 tps, (7687 tx)
+2013-02-13 16:47:22 [INFO ] [Progress] 1 sec, 419 tps, 419 tx
+2013-02-13 16:47:23 [INFO ] [Progress] 2 sec, 421 tps, 840 tx
+2013-02-13 16:47:24 [INFO ] [Progress] 3 sec, 420 tps, 1260 tx
+2013-02-13 16:47:25 [INFO ] [Progress] 4 sec, 420 tps, 1680 tx
+2013-02-13 16:47:26 [INFO ] [Progress] 5 sec, 422 tps, 2102 tx
+2013-02-13 16:47:27 [INFO ] [Progress] 6 sec, 421 tps, 2523 tx
+2013-02-13 16:47:28 [INFO ] [Progress] 7 sec, 422 tps, 2945 tx
+2013-02-13 16:47:29 [INFO ] [Progress] 8 sec, 425 tps, 3370 tx
+2013-02-13 16:47:30 [INFO ] [Progress] 9 sec, 423 tps, 3793 tx
+2013-02-13 16:47:31 [INFO ] [Progress] 10 sec, 425 tps, 4218 tx
+2013-02-13 16:47:32 [INFO ] [Progress] 11 sec, 423 tps, 4641 tx
+2013-02-13 16:47:33 [INFO ] [Progress] 12 sec, 424 tps, 5065 tx
+2013-02-13 16:47:34 [INFO ] [Progress] 13 sec, 425 tps, 5490 tx
+2013-02-13 16:47:35 [INFO ] [Progress] 14 sec, 422 tps, 5912 tx
+2013-02-13 16:47:36 [INFO ] [Progress] 15 sec, 426 tps, 6338 tx
+2013-02-13 16:47:37 [INFO ] [Progress] 16 sec, 425 tps, 6763 tx
+2013-02-13 16:47:38 [INFO ] [Progress] 17 sec, 416 tps, 7179 tx
+2013-02-13 16:47:39 [INFO ] [Progress] 18 sec, 415 tps, 7594 tx
+2013-02-13 16:47:40 [INFO ] [Progress] 19 sec, 423 tps, 8017 tx
+2013-02-13 16:47:41 [INFO ] [Progress] 20 sec, 426 tps, 8443 tx
+2013-02-13 16:47:42 [INFO ] [Progress] 21 sec, 424 tps, 8867 tx
+2013-02-13 16:47:43 [INFO ] [Progress] 22 sec, 426 tps, 9293 tx
+2013-02-13 16:47:44 [INFO ] [Progress] 23 sec, 424 tps, 9717 tx
+2013-02-13 16:47:45 [INFO ] [Progress] 24 sec, 425 tps, 10142 tx
+2013-02-13 16:47:46 [INFO ] [Progress] 25 sec, 424 tps, 10566 tx
+2013-02-13 16:47:47 [INFO ] [Progress] 26 sec, 422 tps, 10988 tx
+2013-02-13 16:47:48 [INFO ] [Progress] 27 sec, 423 tps, 11411 tx
+2013-02-13 16:47:49 [INFO ] [Progress] 28 sec, 424 tps, 11835 tx
+2013-02-13 16:47:50 [INFO ] [Progress] 29 sec, 425 tps, 12260 tx
+2013-02-13 16:47:51 [INFO ] [Progress] 30 sec, 424 tps, 12684 tx
+2013-02-13 16:47:52 [INFO ] [Progress] 31 sec, 424 tps, 13108 tx
+2013-02-13 16:47:53 [INFO ] [Progress] 32 sec, 426 tps, 13534 tx
+2013-02-13 16:47:54 [INFO ] [Progress] 33 sec, 426 tps, 13960 tx
+2013-02-13 16:47:55 [INFO ] [Progress] 34 sec, 426 tps, 14386 tx
+2013-02-13 16:47:56 [INFO ] [Progress] 35 sec, 426 tps, 14812 tx
+2013-02-13 16:47:57 [INFO ] [Progress] 36 sec, 426 tps, 15238 tx
+2013-02-13 16:47:58 [INFO ] [Progress] 37 sec, 426 tps, 15664 tx
+2013-02-13 16:47:59 [INFO ] [Progress] 38 sec, 422 tps, 16086 tx
+2013-02-13 16:48:00 [INFO ] [Progress] 39 sec, 424 tps, 16510 tx
+2013-02-13 16:48:01 [INFO ] [Progress] 40 sec, 427 tps, 16937 tx
+2013-02-13 16:48:02 [INFO ] [Progress] 41 sec, 425 tps, 17362 tx
+2013-02-13 16:48:03 [INFO ] [Progress] 42 sec, 423 tps, 17785 tx
+2013-02-13 16:48:04 [INFO ] [Progress] 43 sec, 425 tps, 18210 tx
+2013-02-13 16:48:05 [INFO ] [Progress] 44 sec, 427 tps, 18637 tx
+2013-02-13 16:48:06 [INFO ] [Progress] 45 sec, 423 tps, 19060 tx
+2013-02-13 16:48:07 [INFO ] [Progress] 46 sec, 426 tps, 19486 tx
+2013-02-13 16:48:08 [INFO ] [Progress] 47 sec, 424 tps, 19910 tx
+2013-02-13 16:48:09 [INFO ] [Progress] 48 sec, 426 tps, 20336 tx
+2013-02-13 16:48:10 [INFO ] [Progress] 49 sec, 425 tps, 20761 tx
+2013-02-13 16:48:11 [INFO ] [Progress] 50 sec, 425 tps, 21186 tx
+2013-02-13 16:48:12 [INFO ] [Progress] 51 sec, 426 tps, 21612 tx
+2013-02-13 16:48:13 [INFO ] [Progress] 52 sec, 425 tps, 22037 tx
+2013-02-13 16:48:14 [INFO ] [Progress] 53 sec, 424 tps, 22461 tx
+2013-02-13 16:48:15 [INFO ] [Progress] 54 sec, 425 tps, 22886 tx
+2013-02-13 16:48:16 [INFO ] [Progress] 55 sec, 425 tps, 23311 tx
+2013-02-13 16:48:17 [INFO ] [Progress] 56 sec, 425 tps, 23736 tx
+2013-02-13 16:48:18 [INFO ] [Progress] 57 sec, 424 tps, 24160 tx
+2013-02-13 16:48:19 [INFO ] [Progress] 58 sec, 427 tps, 24587 tx
+2013-02-13 16:48:20 [INFO ] [Progress] 59 sec, 425 tps, 25012 tx
+2013-02-13 16:48:21 [INFO ] [Progress] 60 sec, 425 tps, 25437 tx
+2013-02-13 16:48:21 [INFO ] [Total tx count] 25438 tx
+2013-02-13 16:48:21 [INFO ] [Throughput] 424.0 tps
+2013-02-13 16:48:21 [INFO ] [Response time (minimum)] 9 msec
+2013-02-13 16:48:21 [INFO ] [Response time (50%tile)] 9 msec
+2013-02-13 16:48:21 [INFO ] [Response time (90%tile)] 9 msec
+2013-02-13 16:48:21 [INFO ] [Response time (95%tile)] 9 msec
+2013-02-13 16:48:21 [INFO ] [Response time (99%tile)] 9 msec
+2013-02-13 16:48:21 [INFO ] [Response time (maximum)] 20 msec
+2013-02-13 16:48:21 [INFO ] < JdbcRunner SUCCESS
+2013-02-13 16:49:02 [INFO ] > JdbcRunner 1.2
+2013-02-13 16:49:02 [INFO ] [Config]
+Program start time   : 20130213-164902
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.151:5432/postgres
+JDBC user            : postgres_user
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-13 16:49:04 [INFO ] [Warmup] -19 sec, 246 tps, (246 tx)
+2013-02-13 16:49:05 [INFO ] [Warmup] -18 sec, 264 tps, (510 tx)
+2013-02-13 16:49:06 [INFO ] [Warmup] -17 sec, 341 tps, (851 tx)
+2013-02-13 16:49:07 [INFO ] [Warmup] -16 sec, 368 tps, (1219 tx)
+2013-02-13 16:49:08 [INFO ] [Warmup] -15 sec, 413 tps, (1632 tx)
+2013-02-13 16:49:09 [INFO ] [Warmup] -14 sec, 414 tps, (2046 tx)
+2013-02-13 16:49:10 [INFO ] [Warmup] -13 sec, 416 tps, (2462 tx)
+2013-02-13 16:49:11 [INFO ] [Warmup] -12 sec, 403 tps, (2865 tx)
+2013-02-13 16:49:12 [INFO ] [Warmup] -11 sec, 401 tps, (3266 tx)
+2013-02-13 16:49:13 [INFO ] [Warmup] -10 sec, 419 tps, (3685 tx)
+2013-02-13 16:49:14 [INFO ] [Warmup] -9 sec, 418 tps, (4103 tx)
+2013-02-13 16:49:15 [INFO ] [Warmup] -8 sec, 420 tps, (4523 tx)
+2013-02-13 16:49:16 [INFO ] [Warmup] -7 sec, 420 tps, (4943 tx)
+2013-02-13 16:49:17 [INFO ] [Warmup] -6 sec, 420 tps, (5363 tx)
+2013-02-13 16:49:18 [INFO ] [Warmup] -5 sec, 422 tps, (5785 tx)
+2013-02-13 16:49:19 [INFO ] [Warmup] -4 sec, 421 tps, (6206 tx)
+2013-02-13 16:49:20 [INFO ] [Warmup] -3 sec, 421 tps, (6627 tx)
+2013-02-13 16:49:21 [INFO ] [Warmup] -2 sec, 423 tps, (7050 tx)
+2013-02-13 16:49:22 [INFO ] [Warmup] -1 sec, 420 tps, (7470 tx)
+2013-02-13 16:49:23 [INFO ] [Warmup] 0 sec, 420 tps, (7890 tx)
+2013-02-13 16:49:24 [INFO ] [Progress] 1 sec, 422 tps, 422 tx
+2013-02-13 16:49:25 [INFO ] [Progress] 2 sec, 420 tps, 842 tx
+2013-02-13 16:49:26 [INFO ] [Progress] 3 sec, 421 tps, 1263 tx
+2013-02-13 16:49:27 [INFO ] [Progress] 4 sec, 422 tps, 1685 tx
+2013-02-13 16:49:28 [INFO ] [Progress] 5 sec, 422 tps, 2107 tx
+2013-02-13 16:49:29 [INFO ] [Progress] 6 sec, 422 tps, 2529 tx
+2013-02-13 16:49:30 [INFO ] [Progress] 7 sec, 425 tps, 2954 tx
+2013-02-13 16:49:31 [INFO ] [Progress] 8 sec, 426 tps, 3380 tx
+2013-02-13 16:49:32 [INFO ] [Progress] 9 sec, 424 tps, 3804 tx
+2013-02-13 16:49:33 [INFO ] [Progress] 10 sec, 425 tps, 4229 tx
+2013-02-13 16:49:34 [INFO ] [Progress] 11 sec, 425 tps, 4654 tx
+2013-02-13 16:49:35 [INFO ] [Progress] 12 sec, 426 tps, 5080 tx
+2013-02-13 16:49:36 [INFO ] [Progress] 13 sec, 426 tps, 5506 tx
+2013-02-13 16:49:37 [INFO ] [Progress] 14 sec, 425 tps, 5931 tx
+2013-02-13 16:49:38 [INFO ] [Progress] 15 sec, 426 tps, 6357 tx
+2013-02-13 16:49:39 [INFO ] [Progress] 16 sec, 427 tps, 6784 tx
+2013-02-13 16:49:40 [INFO ] [Progress] 17 sec, 425 tps, 7209 tx
+2013-02-13 16:49:41 [INFO ] [Progress] 18 sec, 425 tps, 7634 tx
+2013-02-13 16:49:42 [INFO ] [Progress] 19 sec, 426 tps, 8060 tx
+2013-02-13 16:49:43 [INFO ] [Progress] 20 sec, 420 tps, 8480 tx
+2013-02-13 16:49:44 [INFO ] [Progress] 21 sec, 424 tps, 8904 tx
+2013-02-13 16:49:45 [INFO ] [Progress] 22 sec, 426 tps, 9330 tx
+2013-02-13 16:49:46 [INFO ] [Progress] 23 sec, 425 tps, 9755 tx
+2013-02-13 16:49:47 [INFO ] [Progress] 24 sec, 426 tps, 10181 tx
+2013-02-13 16:50:03 [INFO ] > JdbcRunner 1.2
+2013-02-13 16:50:03 [INFO ] [Config]
+Program start time   : 20130213-165002
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.151:5432/postgres
+JDBC user            : postgres_user
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-13 16:50:04 [INFO ] [Warmup] -19 sec, 255 tps, (255 tx)
+2013-02-13 16:50:05 [INFO ] [Warmup] -18 sec, 280 tps, (535 tx)
+2013-02-13 16:50:12 [INFO ] > JdbcRunner 1.2
+2013-02-13 16:50:12 [INFO ] [Config]
+Program start time   : 20130213-165011
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.151:5432/postgres
+JDBC user            : postgres_user
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-13 16:50:13 [INFO ] [Warmup] -19 sec, 284 tps, (284 tx)
+2013-02-13 16:50:18 [INFO ] > JdbcRunner 1.2
+2013-02-13 16:50:18 [INFO ] [Config]
+Program start time   : 20130213-165017
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.151:5432/postgres
+JDBC user            : postgres_user
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-13 16:50:19 [INFO ] [Warmup] -19 sec, 211 tps, (211 tx)
+2013-02-13 16:50:20 [INFO ] [Warmup] -18 sec, 231 tps, (442 tx)
+2013-02-13 16:50:21 [INFO ] [Warmup] -17 sec, 340 tps, (782 tx)
+2013-02-13 16:50:22 [INFO ] [Warmup] -16 sec, 402 tps, (1184 tx)
+2013-02-13 16:50:23 [INFO ] [Warmup] -15 sec, 402 tps, (1586 tx)
+2013-02-13 16:50:24 [INFO ] [Warmup] -14 sec, 399 tps, (1985 tx)
+2013-02-13 16:50:25 [INFO ] [Warmup] -13 sec, 404 tps, (2389 tx)
+2013-02-13 16:50:26 [INFO ] [Warmup] -12 sec, 404 tps, (2793 tx)
+2013-02-13 16:50:27 [INFO ] [Warmup] -11 sec, 397 tps, (3190 tx)
+2013-02-13 16:50:28 [INFO ] [Warmup] -10 sec, 343 tps, (3533 tx)
+2013-02-13 16:50:29 [INFO ] [Warmup] -9 sec, 347 tps, (3880 tx)
+2013-02-13 16:50:30 [INFO ] [Warmup] -8 sec, 424 tps, (4304 tx)
+2013-02-13 16:50:31 [INFO ] [Warmup] -7 sec, 423 tps, (4727 tx)
+2013-02-13 16:50:32 [INFO ] [Warmup] -6 sec, 423 tps, (5150 tx)
+2013-02-13 16:50:33 [INFO ] [Warmup] -5 sec, 424 tps, (5574 tx)
+2013-02-13 16:50:34 [INFO ] [Warmup] -4 sec, 425 tps, (5999 tx)
+2013-02-13 16:50:35 [INFO ] [Warmup] -3 sec, 427 tps, (6426 tx)
+2013-02-13 16:50:36 [INFO ] [Warmup] -2 sec, 425 tps, (6851 tx)
+2013-02-13 16:50:37 [INFO ] [Warmup] -1 sec, 412 tps, (7263 tx)
+2013-02-13 16:50:38 [INFO ] [Warmup] 0 sec, 426 tps, (7689 tx)
+2013-02-13 16:50:39 [INFO ] [Progress] 1 sec, 427 tps, 427 tx
+2013-02-13 16:50:40 [INFO ] [Progress] 2 sec, 418 tps, 845 tx
+2013-02-13 16:50:41 [INFO ] [Progress] 3 sec, 422 tps, 1267 tx
+2013-02-13 16:50:42 [INFO ] [Progress] 4 sec, 424 tps, 1691 tx
+2013-02-13 16:50:43 [INFO ] [Progress] 5 sec, 424 tps, 2115 tx
+2013-02-13 16:50:44 [INFO ] [Progress] 6 sec, 426 tps, 2541 tx
+2013-02-13 16:50:45 [INFO ] [Progress] 7 sec, 423 tps, 2964 tx
+2013-02-13 16:50:46 [INFO ] [Progress] 8 sec, 418 tps, 3382 tx
+2013-02-13 16:50:47 [INFO ] [Progress] 9 sec, 425 tps, 3807 tx
+2013-02-13 16:50:48 [INFO ] [Progress] 10 sec, 429 tps, 4236 tx
+2013-02-13 16:50:49 [INFO ] [Progress] 11 sec, 429 tps, 4665 tx
+2013-02-13 16:50:50 [INFO ] [Progress] 12 sec, 429 tps, 5094 tx
+2013-02-13 16:50:51 [INFO ] [Progress] 13 sec, 428 tps, 5522 tx
+2013-02-13 16:50:52 [INFO ] [Progress] 14 sec, 428 tps, 5950 tx
+2013-02-13 16:50:53 [INFO ] [Progress] 15 sec, 428 tps, 6378 tx
+2013-02-13 16:50:54 [INFO ] [Progress] 16 sec, 429 tps, 6807 tx
+2013-02-13 16:50:55 [INFO ] [Progress] 17 sec, 427 tps, 7234 tx
+2013-02-13 16:50:56 [INFO ] [Progress] 18 sec, 429 tps, 7663 tx
+2013-02-13 16:50:57 [INFO ] [Progress] 19 sec, 429 tps, 8092 tx
+2013-02-13 16:50:58 [INFO ] [Progress] 20 sec, 429 tps, 8521 tx
+2013-02-13 16:50:59 [INFO ] [Progress] 21 sec, 428 tps, 8949 tx
+2013-02-13 16:51:00 [INFO ] [Progress] 22 sec, 430 tps, 9379 tx
+2013-02-13 16:51:01 [INFO ] [Progress] 23 sec, 427 tps, 9806 tx
+2013-02-13 16:51:02 [INFO ] [Progress] 24 sec, 431 tps, 10237 tx
+2013-02-13 16:51:03 [INFO ] [Progress] 25 sec, 428 tps, 10665 tx
+2013-02-13 16:51:04 [INFO ] [Progress] 26 sec, 425 tps, 11090 tx
+2013-02-13 16:51:05 [INFO ] [Progress] 27 sec, 430 tps, 11520 tx
+2013-02-13 16:51:06 [INFO ] [Progress] 28 sec, 429 tps, 11949 tx
+2013-02-13 16:51:07 [INFO ] [Progress] 29 sec, 429 tps, 12378 tx
+2013-02-13 16:51:08 [INFO ] [Progress] 30 sec, 431 tps, 12809 tx
+2013-02-13 16:51:09 [INFO ] [Progress] 31 sec, 429 tps, 13238 tx
+2013-02-13 16:51:10 [INFO ] [Progress] 32 sec, 431 tps, 13669 tx
+2013-02-13 16:51:11 [INFO ] [Progress] 33 sec, 429 tps, 14098 tx
+2013-02-13 16:51:12 [INFO ] [Progress] 34 sec, 431 tps, 14529 tx
+2013-02-13 16:51:13 [INFO ] [Progress] 35 sec, 428 tps, 14957 tx
+2013-02-13 16:51:14 [INFO ] [Progress] 36 sec, 430 tps, 15387 tx
+2013-02-13 16:51:15 [INFO ] [Progress] 37 sec, 429 tps, 15816 tx
+2013-02-13 16:51:16 [INFO ] [Progress] 38 sec, 430 tps, 16246 tx
+2013-02-13 16:51:17 [INFO ] [Progress] 39 sec, 427 tps, 16673 tx
+2013-02-13 16:51:18 [INFO ] [Progress] 40 sec, 431 tps, 17104 tx
+2013-02-13 16:51:19 [INFO ] [Progress] 41 sec, 430 tps, 17534 tx
+2013-02-13 16:51:20 [INFO ] [Progress] 42 sec, 430 tps, 17964 tx
+2013-02-13 16:51:21 [INFO ] [Progress] 43 sec, 429 tps, 18393 tx
+2013-02-13 16:51:22 [INFO ] [Progress] 44 sec, 424 tps, 18817 tx
+2013-02-13 16:51:23 [INFO ] [Progress] 45 sec, 428 tps, 19245 tx
+2013-02-13 16:51:24 [INFO ] [Progress] 46 sec, 430 tps, 19675 tx
+2013-02-13 16:51:25 [INFO ] [Progress] 47 sec, 431 tps, 20106 tx
+2013-02-13 16:51:26 [INFO ] [Progress] 48 sec, 432 tps, 20538 tx
+2013-02-13 16:51:27 [INFO ] [Progress] 49 sec, 430 tps, 20968 tx
+2013-02-13 16:51:28 [INFO ] [Progress] 50 sec, 432 tps, 21400 tx
+2013-02-13 16:51:29 [INFO ] [Progress] 51 sec, 432 tps, 21832 tx
+2013-02-13 16:51:30 [INFO ] [Progress] 52 sec, 428 tps, 22260 tx
+2013-02-13 16:51:31 [INFO ] [Progress] 53 sec, 430 tps, 22690 tx
+2013-02-13 16:51:32 [INFO ] [Progress] 54 sec, 431 tps, 23121 tx
+2013-02-13 16:51:33 [INFO ] [Progress] 55 sec, 427 tps, 23548 tx
+2013-02-13 16:51:34 [INFO ] [Progress] 56 sec, 431 tps, 23979 tx
+2013-02-13 16:51:35 [INFO ] [Progress] 57 sec, 429 tps, 24408 tx
+2013-02-13 16:51:36 [INFO ] [Progress] 58 sec, 431 tps, 24839 tx
+2013-02-13 16:51:37 [INFO ] [Progress] 59 sec, 429 tps, 25268 tx
+2013-02-13 16:51:38 [INFO ] [Progress] 60 sec, 428 tps, 25696 tx
+2013-02-13 16:51:38 [INFO ] [Total tx count] 25697 tx
+2013-02-13 16:51:38 [INFO ] [Throughput] 428.3 tps
+2013-02-13 16:51:38 [INFO ] [Response time (minimum)] 9 msec
+2013-02-13 16:51:38 [INFO ] [Response time (50%tile)] 9 msec
+2013-02-13 16:51:38 [INFO ] [Response time (90%tile)] 9 msec
+2013-02-13 16:51:38 [INFO ] [Response time (95%tile)] 9 msec
+2013-02-13 16:51:38 [INFO ] [Response time (99%tile)] 9 msec
+2013-02-13 16:51:38 [INFO ] [Response time (maximum)] 22 msec
+2013-02-13 16:51:38 [INFO ] < JdbcRunner SUCCESS
+2013-02-13 17:08:43 [INFO ] > JdbcRunner 1.2
+2013-02-13 17:08:43 [INFO ] [Config]
+Program start time   : 20130213-170842
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.151:5432/postgres
+JDBC user            : postgres_user
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : logs
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-16 21:50:17 [INFO ] > JdbcRunner 1.2
+2013-02-16 21:50:17 [INFO ] [Config]
+Program start time   : 20130216-215017
+Script filename      : scripts/testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres_user
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-16 21:50:17 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while accessing the database
+org.postgresql.util.PSQLException: ERROR: syntax error at end of input
+  Position: 46
+	at helper.js:53 (execute)
+	at scripts/testload.js:13 (run)
+
+	at jdbcrunner.Script.call(Script.java:290)
+	at jdbcrunner.Script.callRun(Script.java:218)
+	at jdbcrunner.Helper.callRun(Helper.java:107)
+	at jdbcrunner.Agent.callRun(Agent.java:246)
+	at jdbcrunner.Agent.run(Agent.java:108)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at end of input
+  Position: 46
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2103)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1836)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:512)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:388)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:334)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at jdbcrunner.Helper.execute(Helper.java:364)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:161)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:247)
+	at org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:76)
+	at org.mozilla.javascript.gen.helper_js_3._c_execute_13(helper.js:53)
+	at org.mozilla.javascript.gen.helper_js_3.call(helper.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:97)
+	at org.mozilla.javascript.gen.scripts_testload_js_4._c_run_1(scripts/testload.js:13)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3178)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at jdbcrunner.Script.call(Script.java:279)
+	... 5 more
+2013-02-16 21:50:17 [INFO ] < JdbcRunner ERROR
+2013-02-16 21:51:06 [INFO ] > JdbcRunner 1.2
+2013-02-16 21:51:06 [INFO ] [Config]
+Program start time   : 20130216-215106
+Script filename      : scripts/testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres_user
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-16 21:51:06 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while accessing the database
+org.postgresql.util.PSQLException: ERROR: syntax error at end of input
+  Position: 46
+	at helper.js:53 (execute)
+	at scripts/testload.js:13 (init)
+
+	at jdbcrunner.Script.call(Script.java:290)
+	at jdbcrunner.Script.callInit(Script.java:205)
+	at jdbcrunner.Helper.callInit(Helper.java:93)
+	at jdbcrunner.Agent.callInit(Agent.java:224)
+	at jdbcrunner.Agent.run(Agent.java:86)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at end of input
+  Position: 46
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2103)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1836)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:512)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:388)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:334)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at jdbcrunner.Helper.execute(Helper.java:364)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:161)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:247)
+	at org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:76)
+	at org.mozilla.javascript.gen.helper_js_3._c_execute_13(helper.js:53)
+	at org.mozilla.javascript.gen.helper_js_3.call(helper.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:97)
+	at org.mozilla.javascript.gen.scripts_testload_js_4._c_init_1(scripts/testload.js:13)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3178)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at jdbcrunner.Script.call(Script.java:279)
+	... 5 more
+2013-02-16 21:51:06 [INFO ] < JdbcRunner ERROR
+2013-02-16 21:53:44 [INFO ] > JdbcRunner 1.2
+2013-02-16 21:53:44 [INFO ] [Config]
+Program start time   : 20130216-215343
+Script filename      : scripts/testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres_user
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-16 21:53:44 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while accessing the database
+org.postgresql.util.PSQLException: ERROR: syntax error at end of input
+  Position: 46
+	at helper.js:53 (execute)
+	at scripts/testload.js:13 (init)
+
+	at jdbcrunner.Script.call(Script.java:290)
+	at jdbcrunner.Script.callInit(Script.java:205)
+	at jdbcrunner.Helper.callInit(Helper.java:93)
+	at jdbcrunner.Agent.callInit(Agent.java:224)
+	at jdbcrunner.Agent.run(Agent.java:86)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at end of input
+  Position: 46
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2103)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1836)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:512)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:388)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:334)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at jdbcrunner.Helper.execute(Helper.java:364)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:161)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:247)
+	at org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:76)
+	at org.mozilla.javascript.gen.helper_js_3._c_execute_13(helper.js:53)
+	at org.mozilla.javascript.gen.helper_js_3.call(helper.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:97)
+	at org.mozilla.javascript.gen.scripts_testload_js_4._c_init_1(scripts/testload.js:13)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3178)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at jdbcrunner.Script.call(Script.java:279)
+	... 5 more
+2013-02-16 21:53:44 [INFO ] < JdbcRunner ERROR
+2013-02-16 21:56:03 [INFO ] > JdbcRunner 1.2
+2013-02-16 21:56:03 [INFO ] [Config]
+Program start time   : 20130216-215602
+Script filename      : scripts/testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.156:5432/postgres
+JDBC user            : postgres_user
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-16 21:56:03 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while connecting to database
+	at jdbcrunner.Agent.callInit(Agent.java:227)
+	at jdbcrunner.Agent.run(Agent.java:86)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (FATAL: no pg_hba.conf entry for host "172.26.126.156", user "postgres_user", database "postgres", SSL off)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at jdbcrunner.Manager.getConnection(Manager.java:224)
+	at jdbcrunner.Agent.callInit(Agent.java:222)
+	... 2 more
+Caused by: org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "172.26.126.156", user "postgres_user", database "postgres", SSL off
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:293)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:108)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:125)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3g.AbstractJdbc3gConnection.<init>(AbstractJdbc3gConnection.java:22)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.<init>(AbstractJdbc4Connection.java:32)
+	at org.postgresql.jdbc4.Jdbc4Connection.<init>(Jdbc4Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:393)
+	at org.postgresql.Driver.connect(Driver.java:267)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 6 more
+2013-02-16 21:56:03 [INFO ] < JdbcRunner ERROR
+2013-02-16 22:54:57 [INFO ] > JdbcRunner 1.2
+2013-02-16 22:54:57 [INFO ] [Config]
+Program start time   : 20130216-225457
+Script filename      : scripts/testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.126.156:5432/postgres
+JDBC user            : postgres_user
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-16 22:54:57 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while connecting to database
+	at jdbcrunner.Agent.callInit(Agent.java:227)
+	at jdbcrunner.Agent.run(Agent.java:86)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (FATAL: no pg_hba.conf entry for host "172.26.126.156", user "postgres_user", database "postgres", SSL off)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at jdbcrunner.Manager.getConnection(Manager.java:224)
+	at jdbcrunner.Agent.callInit(Agent.java:222)
+	... 2 more
+Caused by: org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "172.26.126.156", user "postgres_user", database "postgres", SSL off
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:293)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:108)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:125)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3g.AbstractJdbc3gConnection.<init>(AbstractJdbc3gConnection.java:22)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.<init>(AbstractJdbc4Connection.java:32)
+	at org.postgresql.jdbc4.Jdbc4Connection.<init>(Jdbc4Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:393)
+	at org.postgresql.Driver.connect(Driver.java:267)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 6 more
+2013-02-16 22:54:57 [INFO ] < JdbcRunner ERROR
+2013-02-16 22:59:00 [INFO ] > JdbcRunner 1.2
+2013-02-16 22:59:00 [INFO ] [Config]
+Program start time   : 20130216-225900
+Script filename      : scripts/testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres_user
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-16 22:59:01 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while accessing the database
+org.postgresql.util.PSQLException: ERROR: syntax error at end of input
+  Position: 46
+	at helper.js:53 (execute)
+	at scripts/testload.js:14 (init)
+
+	at jdbcrunner.Script.call(Script.java:290)
+	at jdbcrunner.Script.callInit(Script.java:205)
+	at jdbcrunner.Helper.callInit(Helper.java:93)
+	at jdbcrunner.Agent.callInit(Agent.java:224)
+	at jdbcrunner.Agent.run(Agent.java:86)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at end of input
+  Position: 46
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2103)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1836)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:512)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:388)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:334)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at jdbcrunner.Helper.execute(Helper.java:364)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:161)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:247)
+	at org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:76)
+	at org.mozilla.javascript.gen.helper_js_3._c_execute_13(helper.js:53)
+	at org.mozilla.javascript.gen.helper_js_3.call(helper.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:97)
+	at org.mozilla.javascript.gen.scripts_testload_js_4._c_init_1(scripts/testload.js:14)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3178)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at jdbcrunner.Script.call(Script.java:279)
+	... 5 more
+2013-02-16 22:59:01 [INFO ] < JdbcRunner ERROR
+2013-02-16 23:00:44 [INFO ] > JdbcRunner 1.2
+2013-02-16 23:00:44 [INFO ] [Config]
+Program start time   : 20130216-230044
+Script filename      : scripts/testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres_user
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-16 23:00:45 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while accessing the database
+org.postgresql.util.PSQLException: ERROR: syntax error at end of input
+  Position: 46
+	at helper.js:53 (execute)
+	at scripts/testload.js:14 (init)
+
+	at jdbcrunner.Script.call(Script.java:290)
+	at jdbcrunner.Script.callInit(Script.java:205)
+	at jdbcrunner.Helper.callInit(Helper.java:93)
+	at jdbcrunner.Agent.callInit(Agent.java:224)
+	at jdbcrunner.Agent.run(Agent.java:86)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at end of input
+  Position: 46
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2103)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1836)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:512)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:388)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:334)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at jdbcrunner.Helper.execute(Helper.java:364)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:161)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:247)
+	at org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:76)
+	at org.mozilla.javascript.gen.helper_js_3._c_execute_13(helper.js:53)
+	at org.mozilla.javascript.gen.helper_js_3.call(helper.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:97)
+	at org.mozilla.javascript.gen.scripts_testload_js_4._c_init_1(scripts/testload.js:14)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3178)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at jdbcrunner.Script.call(Script.java:279)
+	... 5 more
+2013-02-16 23:00:45 [INFO ] < JdbcRunner ERROR
+2013-02-16 23:01:12 [INFO ] > JdbcRunner 1.2
+2013-02-16 23:01:12 [INFO ] [Config]
+Program start time   : 20130216-230112
+Script filename      : scripts/testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres_user
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-16 23:01:13 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while accessing the database
+org.postgresql.util.PSQLException: Cannot commit when autoCommit is enabled.
+	at helper.js:37 (commit)
+	at scripts/testload.js:29 (fin)
+
+	at jdbcrunner.Script.call(Script.java:290)
+	at jdbcrunner.Script.callFin(Script.java:231)
+	at jdbcrunner.Helper.callFin(Helper.java:121)
+	at jdbcrunner.Agent.callFin(Agent.java:268)
+	at jdbcrunner.Agent.run(Agent.java:130)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.postgresql.util.PSQLException: Cannot commit when autoCommit is enabled.
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.commit(AbstractJdbc2Connection.java:705)
+	at org.apache.commons.dbcp.DelegatingConnection.commit(DelegatingConnection.java:334)
+	at org.apache.commons.dbcp.DelegatingConnection.commit(DelegatingConnection.java:334)
+	at org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.commit(PoolingDataSource.java:211)
+	at jdbcrunner.Helper.commit(Helper.java:196)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:161)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:247)
+	at org.mozilla.javascript.gen.helper_js_3._c_commit_9(helper.js:37)
+	at org.mozilla.javascript.gen.helper_js_3.call(helper.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName0(OptRuntime.java:108)
+	at org.mozilla.javascript.gen.scripts_testload_js_4._c_fin_3(scripts/testload.js:29)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3178)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at jdbcrunner.Script.call(Script.java:279)
+	... 5 more
+2013-02-16 23:01:13 [INFO ] < JdbcRunner ERROR
+2013-02-16 23:02:39 [INFO ] > JdbcRunner 1.2
+2013-02-16 23:02:39 [INFO ] [Config]
+Program start time   : 20130216-230239
+Script filename      : scripts/testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres_user
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-16 23:02:39 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while accessing the database
+org.postgresql.util.PSQLException: ERROR: relation "tutorial" already exists
+	at helper.js:53 (execute)
+	at scripts/testload.js:14 (init)
+
+	at jdbcrunner.Script.call(Script.java:290)
+	at jdbcrunner.Script.callInit(Script.java:205)
+	at jdbcrunner.Helper.callInit(Helper.java:93)
+	at jdbcrunner.Agent.callInit(Agent.java:224)
+	at jdbcrunner.Agent.run(Agent.java:86)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "tutorial" already exists
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2103)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1836)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:512)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:388)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:334)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at jdbcrunner.Helper.execute(Helper.java:364)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:161)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:247)
+	at org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:76)
+	at org.mozilla.javascript.gen.helper_js_3._c_execute_13(helper.js:53)
+	at org.mozilla.javascript.gen.helper_js_3.call(helper.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:97)
+	at org.mozilla.javascript.gen.scripts_testload_js_4._c_init_1(scripts/testload.js:14)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3178)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at jdbcrunner.Script.call(Script.java:279)
+	... 5 more
+2013-02-16 23:02:39 [INFO ] < JdbcRunner ERROR
+2013-02-16 23:03:36 [INFO ] > JdbcRunner 1.2
+2013-02-16 23:03:36 [INFO ] [Config]
+Program start time   : 20130216-230335
+Script filename      : scripts/testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres_user
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-16 23:03:36 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while accessing the database
+org.postgresql.util.PSQLException: ERROR: relation "tutorial" already exists
+	at helper.js:53 (execute)
+	at scripts/testload.js:22 (run)
+
+	at jdbcrunner.Script.call(Script.java:290)
+	at jdbcrunner.Script.callRun(Script.java:218)
+	at jdbcrunner.Helper.callRun(Helper.java:107)
+	at jdbcrunner.Agent.callRun(Agent.java:246)
+	at jdbcrunner.Agent.run(Agent.java:108)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "tutorial" already exists
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2103)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1836)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:512)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:388)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:334)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at jdbcrunner.Helper.execute(Helper.java:364)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:161)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:247)
+	at org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:76)
+	at org.mozilla.javascript.gen.helper_js_3._c_execute_13(helper.js:53)
+	at org.mozilla.javascript.gen.helper_js_3.call(helper.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:97)
+	at org.mozilla.javascript.gen.scripts_testload_js_4._c_run_2(scripts/testload.js:22)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3178)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at jdbcrunner.Script.call(Script.java:279)
+	... 5 more
+2013-02-16 23:03:36 [INFO ] < JdbcRunner ERROR
+2013-02-16 23:06:13 [INFO ] > JdbcRunner 1.2
+2013-02-16 23:06:13 [INFO ] [Config]
+Program start time   : 20130216-230613
+Script filename      : scripts/testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres_user
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-16 23:06:13 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while accessing the database
+org.postgresql.util.PSQLException: ERROR: relation "tutorial" already exists
+	at helper.js:53 (execute)
+	at scripts/testload.js:22 (run)
+
+	at jdbcrunner.Script.call(Script.java:290)
+	at jdbcrunner.Script.callRun(Script.java:218)
+	at jdbcrunner.Helper.callRun(Helper.java:107)
+	at jdbcrunner.Agent.callRun(Agent.java:246)
+	at jdbcrunner.Agent.run(Agent.java:108)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "tutorial" already exists
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2103)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1836)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:512)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:388)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:334)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at jdbcrunner.Helper.execute(Helper.java:364)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:161)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:247)
+	at org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:76)
+	at org.mozilla.javascript.gen.helper_js_3._c_execute_13(helper.js:53)
+	at org.mozilla.javascript.gen.helper_js_3.call(helper.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:97)
+	at org.mozilla.javascript.gen.scripts_testload_js_4._c_run_2(scripts/testload.js:22)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3178)
+	at org.mozilla.javascript.gen.scripts_testload_js_4.call(scripts/testload.js)
+	at jdbcrunner.Script.call(Script.java:279)
+	... 5 more
+2013-02-16 23:06:13 [INFO ] < JdbcRunner ERROR
+2013-02-16 23:07:46 [INFO ] > JdbcRunner 1.2
+2013-02-16 23:07:46 [INFO ] [Config]
+Program start time   : 20130216-230746
+Script filename      : scripts/testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres_user
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-16 23:07:46 [INFO ] < JdbcRunner SUCCESS
+2013-02-21 15:20:46 [INFO ] > JdbcRunner 1.2
+2013-02-21 15:20:46 [INFO ] [Config]
+Program start time   : 20130221-152046
+Script filename      : scripts/testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://172.26.127.116:5432/postgres
+JDBC user            : postgres_user
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-21 15:20:47 [INFO ] < JdbcRunner SUCCESS

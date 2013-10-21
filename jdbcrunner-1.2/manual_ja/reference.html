@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>6. スクリプトAPIリファレンス &mdash; JdbcRunner v1.2 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="JdbcRunner v1.2 documentation" href="index.html" />
+    <link rel="next" title="7. その他の付属ツール" href="misc.html" />
+    <link rel="prev" title="5. 設定パラメータ" href="parameter.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="misc.html" title="7. その他の付属ツール"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="parameter.html" title="5. 設定パラメータ"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="api">
+<h1>6. スクリプトAPIリファレンス<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<p>この章では、JdbcRunnerが提供する独自ファンクションの使い方を説明します。</p>
+<div class="section" id="sql">
+<h2>6.1. SQL発行ファンクション<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>6.1.1. SQL発行ファンクションの共通事項<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h4>6.1.1.1. 独自記法のSQL文<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>SQL発行ファンクションはいずれも1番目の引数に独自記法のSQL文をとります。このSQL文は基本的にPreparedStatementの記法に準じますが、一つ異なる点があります。それはPreparedStatementでプレースホルダとして用いる「?」記号の代わりに、以下の独自プレースホルダを記述するということです。</p>
+<ul class="simple">
+<li>$int : 値を整数としてバインドする場合</li>
+<li>$long : 値を長整数としてバインドする場合</li>
+<li>$double : 値を倍精度浮動小数点数としてバインドする場合</li>
+<li>$string : 値を文字列としてバインドする場合</li>
+<li>$timestamp : 値を日付・時刻(java.sql.Timestamp)としてバインドする場合</li>
+</ul>
+<p>JDBCでクエリを発行する例を以下に示します。</p>
+<div class="highlight-python"><pre>pstmt = conn.prepareStatement("SELECT ename FROM emp WHERE empno = ?");
+pstmt.setInt(1, id);
+rs = pstmt.executeQuery();
+
+while (rs.next()) {
+    count++;
+}
+
+rs.close();
+pstmt.close();</pre>
+</div>
+<p>これと同じ処理を、JdbcRunnerでは以下のように書きます。</p>
+<div class="highlight-python"><pre>var count = query("SELECT ename FROM emp WHERE empno = $int", id);</pre>
+</div>
+<p>本記法においては「$」は特殊記号として扱われます。もしSQLに「$」という文字そのものを使いたい場合は、「$$」と書いてください。次に示すのは、PostgreSQLにおいて「ドル引用符付け」という記法を用いる例です。</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">query</span><span class="p">(</span><span class="s">&quot;SELECT $$tag$$Dianne&#39;s horse$$tag$$&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>NULL値をバインドする場合は、JavaScriptのnullを指定してください。</p>
+<div class="highlight-python"><pre>var value = null;
+execute("INSERT INTO test (c1) VALUES ($int)", value);</pre>
+</div>
+</div>
+<div class="section" id="id3">
+<h4>6.1.1.2. 日付・時刻のバインド<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>SQL文に日付・時刻をバインドする方法は複数用意されています。</p>
+<ol class="arabic simple">
+<li>JavaScriptのDateオブジェクトをバインドする</li>
+<li>Javaのjava.util.Dateオブジェクトをバインドする</li>
+<li>数値をバインドする</li>
+<li>文字列をバインドする</li>
+</ol>
+<p>以下はJavaScriptのDateオブジェクトをバインドする例です。</p>
+<div class="highlight-python"><pre>var d = new Date(2010, 0, 2, 3, 4, 5); // 2010年1月2日 3時4分5秒
+query("SELECT ename FROM emp WHERE hiredate &lt; $timestamp", d);</pre>
+</div>
+<p>Javaのjava.util.Dateオブジェクトをバインドする例です。</p>
+<div class="highlight-python"><pre>var d = new java.util.Date(1262369045000); // 2010年1月2日 3時4分5秒
+query("SELECT ename FROM emp WHERE hiredate &lt; $timestamp", d);</pre>
+</div>
+<p>数値をバインドする例です。数値として、1970年1月1日 0時0分0秒 GMTからの経過ミリ秒を指定します。</p>
+<div class="highlight-python"><pre>var d = 1262369045000; // 2010年1月2日 3時4分5秒
+query("SELECT ename FROM emp WHERE hiredate &lt; $timestamp", d);</pre>
+</div>
+<p>文字列をバインドする例です。文字列はJDBCタイムスタンプエスケープ形式(yyyy-mm-dd hh:mm:ss[.f...])で記述します。</p>
+<div class="highlight-python"><pre>var d = "2010-01-02 03:04:05"; // 2010年1月2日 3時4分5秒
+query("SELECT ename FROM emp WHERE hiredate &lt; $timestamp", d);</pre>
+</div>
+</div>
+</div>
+<div class="section" id="query-sql-param">
+<h3>6.1.2. query(sql, param, ...)<a class="headerlink" href="#query-sql-param" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>sql : 独自記法のSQL文</li>
+<li>param, ... : パラメータにバインドする値</li>
+<li>戻り値 : 結果セットのレコード数</li>
+</ul>
+<p>RDBMSに対してクエリを発行するファンクションです。内部的にはPreparedStatement#executeQuery()のラッパになっています。</p>
+</div>
+<div class="section" id="fetchasarray-sql-param">
+<h3>6.1.3. fetchAsArray(sql, param, ...)<a class="headerlink" href="#fetchasarray-sql-param" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>sql : 独自記法のSQL文</li>
+<li>param, ... : パラメータにバインドする値</li>
+<li>戻り値 : 結果セット</li>
+</ul>
+<p>RDBMSに対してクエリを発行するファンクションです。内部的にはPreparedStatement#executeQuery()のラッパになっています。</p>
+<p>query()では結果セットのレコード数しか得ることができませんが、fetchAsArray()では結果セットをJavaScriptの二次元配列として得ることができます。</p>
+<div class="highlight-python"><pre>mysql&gt; SELECT * FROM dept ORDER BY deptno;
++--------+------------+----------+
+| deptno | dname      | loc      |
++--------+------------+----------+
+|     10 | accounting | new york |
+|     20 | research   | dallas   |
+|     30 | sales      | chicago  |
+|     40 | operations | boston   |
++--------+------------+----------+
+4 rows in set (0.00 sec)</pre>
+</div>
+<p>以下は、このdeptテーブルからデータを取得するサンプルスクリプトです。</p>
+<div class="highlight-python"><pre>var rs = fetchAsArray("SELECT * FROM dept ORDER BY deptno");
+info("rows     : " + rs.length);
+info("columns  : " + rs[0].length);
+info("row1col1 : " + rs[0][0]);
+info("row2col3 : " + rs[1][2]);</pre>
+</div>
+<p>この例では次のようなログが出力されます。</p>
+<div class="highlight-python"><pre>2011-10-11 01:06:52 [INFO ] rows     : 4
+2011-10-11 01:06:52 [INFO ] columns  : 3
+2011-10-11 01:06:52 [INFO ] row1col1 : 10
+2011-10-11 01:06:52 [INFO ] row2col3 : dallas</pre>
+</div>
+<p>fetchAsArray()はクライアントの負荷が大きくなってしまうため、結果セットが必要ない場合はquery()を用いるようにしてください。</p>
+</div>
+<div class="section" id="execute-sql-param">
+<h3>6.1.4. execute(sql, param, ...)<a class="headerlink" href="#execute-sql-param" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>sql : 独自記法のSQL文</li>
+<li>param, ... : パラメータにバインドする値</li>
+<li>戻り値 : 更新されたレコード数</li>
+</ul>
+<p>RDBMSに対してDMLを発行するファンクションです。内部的にはPreparedStatement#executeUpdate()のラッパになっています。</p>
+</div>
+<div class="section" id="executebatch-sql-paramarray">
+<h3>6.1.5. executeBatch(sql, paramArray, ...)<a class="headerlink" href="#executebatch-sql-paramarray" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>sql : 独自記法のSQL文</li>
+<li>paramArray, ... : パラメータにバインドする配列</li>
+<li>戻り値 : 更新されたレコード数の配列</li>
+</ul>
+<p>RDBMSに対してJDBCバッチ更新を行うファンクションです。内部的にはPreparedStatement#addBatch()、PreparedStatement#executeBatch()のラッパになっています。</p>
+<p>paramArrayにはJavaScriptの配列を指定します。パラメータが複数ある場合は、それらの要素数を揃えておく必要があります。</p>
+<div class="highlight-python"><pre>var c1Array = new Array(1, 2, 3);
+var c2Array = new Array("Apple", "Orange", "Banana");
+executeBatch("INSERT INTO test (c1, c2) VALUES ($int, $string)", c1Array, c2Array);</pre>
+</div>
+<p>この例では、3つのレコードを一度にINSERTすることができます。</p>
+<div class="highlight-python"><pre>mysql&gt; SELECT * FROM test ORDER BY c1;
++----+--------+
+| c1 | c2     |
++----+--------+
+|  1 | Apple  |
+|  2 | Orange |
+|  3 | Banana |
++----+--------+
+3 rows in set (0.00 sec)</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>6.2. データベース操作ファンクション<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="takeconnection">
+<h3>6.2.1. takeConnection()<a class="headerlink" href="#takeconnection" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>戻り値 : データベースへの接続</li>
+</ul>
+<p>エージェントが現在使用している、データベースへの接続を返すファンクションです。このファンクションは、JDBCの機能を直接呼び出す際に利用します。</p>
+<p>オートコミットモードを切り替える例を以下に示します。</p>
+<div class="highlight-python"><pre>var conn = takeConnection();
+conn.setAutoCommit(true);</pre>
+</div>
+<p>トランザクション分離レベルを設定する例を以下に示します。</p>
+<div class="highlight-python"><pre>var conn = takeConnection();
+conn.setTransactionIsolation(java.sql.Connection.TRANSACTION_SERIALIZABLE)</pre>
+</div>
+<p>このファンクションは新たにコネクションプールからデータベースへの接続を払い出すのではなく、現在すでに使用している接続を返すという点に注意してください。</p>
+</div>
+<div class="section" id="getdatabaseproductname">
+<h3>6.2.2. getDatabaseProductName()<a class="headerlink" href="#getdatabaseproductname" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>戻り値 : RDBMSの製品名</li>
+</ul>
+<p>RDBMSの製品名を返すファンクションです。内部的にはDatabaseMetaData#getDatabaseProductName()のラッパになっています。</p>
+</div>
+<div class="section" id="commit">
+<h3>6.2.3. commit()<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h3>
+<p>データベースへの変更を確定するファンクションです。このメソッドを使う場合は、オートコミットモードが無効になっている必要があります。</p>
+</div>
+<div class="section" id="rollback">
+<h3>6.2.4. rollback()<a class="headerlink" href="#rollback" title="Permalink to this headline">¶</a></h3>
+<p>データベースへの変更を取り消すファンクションです。このメソッドを使う場合は、オートコミットモードが無効になっている必要があります。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>6.3. エージェント制御ファンクション<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getid">
+<h3>6.3.1. getId()<a class="headerlink" href="#getid" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>戻り値 : エージェントの番号</li>
+</ul>
+<p>エージェントの番号を返すファンクションです。エージェント数が10の場合、このファンクションは0以上9以下の値を返します。</p>
+</div>
+<div class="section" id="setbreak">
+<h3>6.3.2. setBreak()<a class="headerlink" href="#setbreak" title="Permalink to this headline">¶</a></h3>
+<p>run()ファンクションの停止フラグを立てるファンクションです。このファンクションを実行すると、run()ファンクションをそれ以上繰り返さなくなります。ロードモードと組み合わせて、指定回数だけ処理を行わせる際に利用します。</p>
+<div class="highlight-python"><pre>var isLoad = true;
+var counter = 0;
+
+function run() {
+    if (++counter &lt;= 10) {
+        execute("INSERT INTO test (id, data) VALUES ($int, $string)",
+            counter, "ABCDEFGHIJKLMNOPQESTUVWXYZ");
+    } else {
+        setBreak();
+    }
+}</pre>
+</div>
+</div>
+<div class="section" id="settxtype-txtype">
+<h3>6.3.3. setTxType(txType)<a class="headerlink" href="#settxtype-txtype" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>txType : トランザクション種別</li>
+</ul>
+<p>トランザクション種別を設定するファンクションです。トランザクション種類数が5の場合、このファンクションには0以上4以下の値を設定することができます。</p>
+<p>トランザクション種類数を2以上に設定してこのファンクションを用いることで、複数の処理をミックスさせた負荷テストを行い、それぞれのスループットとレスポンスタイムを分計することができます。</p>
+<div class="highlight-python"><pre>var nTxTypes = 2;
+
+function run() {
+    var r = random(1, 100);
+
+    if (r &lt;= 60) {
+        setTxType(0);
+        orderFunc();
+    } else {
+        setTxType(1);
+        paymentFunc();
+    }
+}</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>6.4. ユーティリティファンクション<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getdata-key">
+<h3>6.4.1. getData(key)<a class="headerlink" href="#getdata-key" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>key : 関連付けされたデータが返されるキー</li>
+<li>戻り値 : 指定されたキーに関連付けされているデータ</li>
+</ul>
+<p>エージェント間で共有しているデータを取得するファンクションです。内部的にはjava.util.concurrent.ConcurrentHashMap#get()のラッパになっています。</p>
+</div>
+<div class="section" id="putdata-key-value">
+<h3>6.4.2. putData(key, value)<a class="headerlink" href="#putdata-key-value" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>key : 指定されたデータが関連付けされるキー</li>
+<li>value : 指定されたキーに関連付けされるデータ</li>
+</ul>
+<p>エージェント間で共有したいデータを登録するファンクションです。内部的にはjava.util.concurrent.ConcurrentHashMap#put()のラッパになっています。</p>
+<p>負荷テストの初期化処理でテーブルの主キー一覧を取得し、それを各エージェントに共有させる例を以下に示します。</p>
+<div class="highlight-python"><pre>var emp;
+
+function init() {
+    if (getId() == 0) {
+        putData("emp", fetchAsArray("SELECT empno FROM emp ORDER BY empno"));
+    }
+}
+
+function run() {
+    if (!emp) {
+        emp = getData("emp");
+    }
+
+    var empno = emp[random(0, emp.length - 1)][0];
+    query("SELECT ename FROM emp WHERE empno = $int", empno);
+}</pre>
+</div>
+</div>
+<div class="section" id="random-min-max">
+<h3>6.4.3. random(min, max)<a class="headerlink" href="#random-min-max" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>min : 乱数の最小値</li>
+<li>max : 乱数の最大値</li>
+<li>戻り値 : min以上max以下のランダムな整数</li>
+</ul>
+<p>mix以上max以下のランダムな整数を返すファンクションです。maxを含みます。</p>
+</div>
+<div class="section" id="getscriptstacktrace-object">
+<h3>6.4.4. getScriptStackTrace(object)<a class="headerlink" href="#getscriptstacktrace-object" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>object : JavaScriptの例外オブジェクト</li>
+<li>戻り値 : スタックトレース、引数がJavaScriptの例外オブジェクトでない場合は空文字列</li>
+</ul>
+<p>try～catch文で受け取った例外オブジェクトを引数にして、スタックトレースを取得するファンクションです。以下に例を示します。</p>
+<div class="highlight-python"><pre>try {
+    ...
+} catch (e) {
+    warn("[Agent " + getId() + "] " + e.javaException + getScriptStackTrace(e));
+    rollback();
+}</pre>
+</div>
+<p>こうすると、以下のように例外の発生箇所を特定することができます。</p>
+<div class="highlight-python"><pre>2011-10-10 18:37:23 [WARN ] [Agent 6] org.postgresql.util.PSQLException: ERROR: deadlock detected
+  詳細l: Process 8576 waits for ShareLock on transaction 219025; blocked by process 8583.
+Process 8583 waits for ShareLock on transaction 219016; blocked by process 8576.
+  ヒント: See server log for query details.
+  場所: SQL statement "SELECT 1 FROM ONLY "public"."warehouse" x WHERE "w_id" OPERATOR(pg_catalog.=) $1 FOR SHARE OF x"
+    at helper.js:53 (execute)
+    at tpcc.js:224 (newOrder)
+    at tpcc.js:95 (run)</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>6.5. ログ出力ファンクション<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="trace-message">
+<h3>6.5.1. trace(message)<a class="headerlink" href="#trace-message" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>message : ログメッセージ</li>
+</ul>
+<p>トレースログを出力するファンクションです。このログはトレースモードが有効な場合のみ出力されます。</p>
+</div>
+<div class="section" id="debug-message">
+<h3>6.5.2. debug(message)<a class="headerlink" href="#debug-message" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>message : ログメッセージ</li>
+</ul>
+<p>デバッグログを出力するファンクションです。このログはデバッグモードが有効な場合のみ出力されます。</p>
+</div>
+<div class="section" id="info-message">
+<h3>6.5.3. info(message)<a class="headerlink" href="#info-message" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>message : ログメッセージ</li>
+</ul>
+<p>情報ログを出力するファンクションです。</p>
+</div>
+<div class="section" id="warn-message">
+<h3>6.5.4. warn(message)<a class="headerlink" href="#warn-message" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>message : ログメッセージ</li>
+</ul>
+<p>警告ログを出力するファンクションです。</p>
+</div>
+<div class="section" id="error-message">
+<h3>6.5.5. error(message)<a class="headerlink" href="#error-message" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>message : ログメッセージ</li>
+</ul>
+<p>意図的にエラーを発生させるファンクションです。また、エラーログの出力を行います。</p>
+<p>このファンクションを呼び出すと、負荷テストが異常終了します。</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">6. スクリプトAPIリファレンス</a><ul>
+<li><a class="reference external" href="#sql">6.1. SQL発行ファンクション</a><ul>
+<li><a class="reference external" href="#id1">6.1.1. SQL発行ファンクションの共通事項</a><ul>
+<li><a class="reference external" href="#id2">6.1.1.1. 独自記法のSQL文</a></li>
+<li><a class="reference external" href="#id3">6.1.1.2. 日付・時刻のバインド</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#query-sql-param">6.1.2. query(sql, param, ...)</a></li>
+<li><a class="reference external" href="#fetchasarray-sql-param">6.1.3. fetchAsArray(sql, param, ...)</a></li>
+<li><a class="reference external" href="#execute-sql-param">6.1.4. execute(sql, param, ...)</a></li>
+<li><a class="reference external" href="#executebatch-sql-paramarray">6.1.5. executeBatch(sql, paramArray, ...)</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#id4">6.2. データベース操作ファンクション</a><ul>
+<li><a class="reference external" href="#takeconnection">6.2.1. takeConnection()</a></li>
+<li><a class="reference external" href="#getdatabaseproductname">6.2.2. getDatabaseProductName()</a></li>
+<li><a class="reference external" href="#commit">6.2.3. commit()</a></li>
+<li><a class="reference external" href="#rollback">6.2.4. rollback()</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#id5">6.3. エージェント制御ファンクション</a><ul>
+<li><a class="reference external" href="#getid">6.3.1. getId()</a></li>
+<li><a class="reference external" href="#setbreak">6.3.2. setBreak()</a></li>
+<li><a class="reference external" href="#settxtype-txtype">6.3.3. setTxType(txType)</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#id6">6.4. ユーティリティファンクション</a><ul>
+<li><a class="reference external" href="#getdata-key">6.4.1. getData(key)</a></li>
+<li><a class="reference external" href="#putdata-key-value">6.4.2. putData(key, value)</a></li>
+<li><a class="reference external" href="#random-min-max">6.4.3. random(min, max)</a></li>
+<li><a class="reference external" href="#getscriptstacktrace-object">6.4.4. getScriptStackTrace(object)</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#id7">6.5. ログ出力ファンクション</a><ul>
+<li><a class="reference external" href="#trace-message">6.5.1. trace(message)</a></li>
+<li><a class="reference external" href="#debug-message">6.5.2. debug(message)</a></li>
+<li><a class="reference external" href="#info-message">6.5.3. info(message)</a></li>
+<li><a class="reference external" href="#warn-message">6.5.4. warn(message)</a></li>
+<li><a class="reference external" href="#error-message">6.5.5. error(message)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="parameter.html"
+                                  title="previous chapter">5. 設定パラメータ</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="misc.html"
+                                  title="next chapter">7. その他の付属ツール</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/reference.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="misc.html" title="7. その他の付属ツール"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="parameter.html" title="5. 設定パラメータ"
+             >previous</a> |</li>
+        <li><a href="index.html">JdbcRunner v1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2010-2011, Sadao Hiratsuka.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

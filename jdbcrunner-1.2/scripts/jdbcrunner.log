@@ -1,0 +1,1207 @@
+2013-01-15 12:03:28 [INFO ] > JdbcRunner 1.2
+2013-01-15 12:03:28 [INFO ] [Config]
+Program start time   : 20130115-120327
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-01-15 12:03:29 [INFO ] [Warmup] -19 sec, 1501 tps, (1501 tx)
+2013-01-15 12:03:30 [INFO ] [Warmup] -18 sec, 1488 tps, (2989 tx)
+2013-01-15 12:03:31 [INFO ] [Warmup] -17 sec, 1673 tps, (4662 tx)
+2013-01-15 12:03:32 [INFO ] [Warmup] -16 sec, 1741 tps, (6403 tx)
+2013-01-15 12:03:33 [INFO ] [Warmup] -15 sec, 2198 tps, (8601 tx)
+2013-01-15 12:03:34 [INFO ] [Warmup] -14 sec, 2061 tps, (10662 tx)
+2013-01-15 12:03:35 [INFO ] [Warmup] -13 sec, 2428 tps, (13090 tx)
+2013-01-15 12:03:36 [INFO ] [Warmup] -12 sec, 2613 tps, (15703 tx)
+2013-01-15 12:03:37 [INFO ] [Warmup] -11 sec, 2634 tps, (18337 tx)
+2013-01-15 12:03:38 [INFO ] [Warmup] -10 sec, 2286 tps, (20623 tx)
+2013-01-15 12:03:39 [INFO ] [Warmup] -9 sec, 2723 tps, (23346 tx)
+2013-01-15 12:03:40 [INFO ] [Warmup] -8 sec, 2739 tps, (26085 tx)
+2013-01-15 12:03:41 [INFO ] [Warmup] -7 sec, 2801 tps, (28886 tx)
+2013-01-15 12:03:42 [INFO ] [Warmup] -6 sec, 2704 tps, (31590 tx)
+2013-01-15 12:03:43 [INFO ] [Warmup] -5 sec, 2730 tps, (34320 tx)
+2013-01-15 12:03:44 [INFO ] [Warmup] -4 sec, 2726 tps, (37046 tx)
+2013-01-15 12:03:45 [INFO ] [Warmup] -3 sec, 2786 tps, (39832 tx)
+2013-01-15 12:03:46 [INFO ] [Warmup] -2 sec, 2645 tps, (42477 tx)
+2013-01-15 12:03:47 [INFO ] [Warmup] -1 sec, 2539 tps, (45016 tx)
+2013-01-15 12:03:48 [INFO ] [Warmup] 0 sec, 2816 tps, (47832 tx)
+2013-01-15 12:03:49 [INFO ] [Progress] 1 sec, 2780 tps, 2780 tx
+2013-01-15 12:03:50 [INFO ] [Progress] 2 sec, 2831 tps, 5611 tx
+2013-01-15 12:03:51 [INFO ] [Progress] 3 sec, 2845 tps, 8456 tx
+2013-01-15 12:03:52 [INFO ] [Progress] 4 sec, 2793 tps, 11249 tx
+2013-01-15 12:03:53 [INFO ] [Progress] 5 sec, 2722 tps, 13971 tx
+2013-01-15 12:03:54 [INFO ] [Progress] 6 sec, 2494 tps, 16465 tx
+2013-01-15 12:03:55 [INFO ] [Progress] 7 sec, 2432 tps, 18897 tx
+2013-01-15 12:03:56 [INFO ] [Progress] 8 sec, 2828 tps, 21725 tx
+2013-01-15 12:03:57 [INFO ] [Progress] 9 sec, 2800 tps, 24525 tx
+2013-01-15 12:03:58 [INFO ] [Progress] 10 sec, 2785 tps, 27310 tx
+2013-01-15 12:03:59 [INFO ] [Progress] 11 sec, 2700 tps, 30010 tx
+2013-01-15 12:04:00 [INFO ] [Progress] 12 sec, 2716 tps, 32726 tx
+2013-01-15 12:04:01 [INFO ] [Progress] 13 sec, 2881 tps, 35607 tx
+2013-01-15 12:04:02 [INFO ] [Progress] 14 sec, 2753 tps, 38360 tx
+2013-01-15 12:04:03 [INFO ] [Progress] 15 sec, 2675 tps, 41035 tx
+2013-01-15 12:04:04 [INFO ] [Progress] 16 sec, 2725 tps, 43760 tx
+2013-01-15 12:04:05 [INFO ] [Progress] 17 sec, 2825 tps, 46585 tx
+2013-01-15 12:04:06 [INFO ] [Progress] 18 sec, 2808 tps, 49393 tx
+2013-01-15 12:04:07 [INFO ] [Progress] 19 sec, 2747 tps, 52140 tx
+2013-01-15 12:04:08 [INFO ] [Progress] 20 sec, 2712 tps, 54852 tx
+2013-01-15 12:04:09 [INFO ] [Progress] 21 sec, 2652 tps, 57504 tx
+2013-01-15 12:04:10 [INFO ] [Progress] 22 sec, 2785 tps, 60289 tx
+2013-01-15 12:04:11 [INFO ] [Progress] 23 sec, 2788 tps, 63077 tx
+2013-01-15 12:04:12 [INFO ] [Progress] 24 sec, 2802 tps, 65879 tx
+2013-01-15 12:04:13 [INFO ] [Progress] 25 sec, 2756 tps, 68635 tx
+2013-01-15 12:04:14 [INFO ] [Progress] 26 sec, 2717 tps, 71352 tx
+2013-01-15 12:04:15 [INFO ] [Progress] 27 sec, 2810 tps, 74162 tx
+2013-01-15 12:04:16 [INFO ] [Progress] 28 sec, 2834 tps, 76996 tx
+2013-01-15 12:04:17 [INFO ] [Progress] 29 sec, 2762 tps, 79758 tx
+2013-01-15 12:04:18 [INFO ] [Progress] 30 sec, 2699 tps, 82457 tx
+2013-01-15 12:04:19 [INFO ] [Progress] 31 sec, 2604 tps, 85061 tx
+2013-01-15 12:04:20 [INFO ] [Progress] 32 sec, 2747 tps, 87808 tx
+2013-01-15 12:04:21 [INFO ] [Progress] 33 sec, 2718 tps, 90526 tx
+2013-01-15 12:04:22 [INFO ] [Progress] 34 sec, 2708 tps, 93234 tx
+2013-01-15 12:04:23 [INFO ] [Progress] 35 sec, 2763 tps, 95997 tx
+2013-01-15 12:04:24 [INFO ] [Progress] 36 sec, 2761 tps, 98758 tx
+2013-01-15 12:04:25 [INFO ] [Progress] 37 sec, 2862 tps, 101620 tx
+2013-01-15 12:04:26 [INFO ] [Progress] 38 sec, 2769 tps, 104389 tx
+2013-01-15 12:04:27 [INFO ] [Progress] 39 sec, 2849 tps, 107238 tx
+2013-01-15 12:04:28 [INFO ] [Progress] 40 sec, 2796 tps, 110034 tx
+2013-01-15 12:04:29 [INFO ] [Progress] 41 sec, 2847 tps, 112881 tx
+2013-01-15 12:04:30 [INFO ] [Progress] 42 sec, 2810 tps, 115691 tx
+2013-01-15 12:04:31 [INFO ] [Progress] 43 sec, 2806 tps, 118497 tx
+2013-01-15 12:04:32 [INFO ] [Progress] 44 sec, 2869 tps, 121366 tx
+2013-01-15 12:04:33 [INFO ] [Progress] 45 sec, 2764 tps, 124130 tx
+2013-01-15 12:04:34 [INFO ] [Progress] 46 sec, 2603 tps, 126733 tx
+2013-01-15 12:04:35 [INFO ] [Progress] 47 sec, 2820 tps, 129553 tx
+2013-01-15 12:04:36 [INFO ] [Progress] 48 sec, 2834 tps, 132387 tx
+2013-01-15 12:04:37 [INFO ] [Progress] 49 sec, 2595 tps, 134982 tx
+2013-01-15 12:04:38 [INFO ] [Progress] 50 sec, 2722 tps, 137704 tx
+2013-01-15 12:04:39 [INFO ] [Progress] 51 sec, 2672 tps, 140376 tx
+2013-01-15 12:04:40 [INFO ] [Progress] 52 sec, 2797 tps, 143173 tx
+2013-01-15 12:04:41 [INFO ] [Progress] 53 sec, 2839 tps, 146012 tx
+2013-01-15 12:04:42 [INFO ] [Progress] 54 sec, 2780 tps, 148792 tx
+2013-01-15 12:04:43 [INFO ] [Progress] 55 sec, 2582 tps, 151374 tx
+2013-01-15 12:04:44 [INFO ] [Progress] 56 sec, 2629 tps, 154003 tx
+2013-01-15 12:04:45 [INFO ] [Progress] 57 sec, 2819 tps, 156822 tx
+2013-01-15 12:04:46 [INFO ] [Progress] 58 sec, 2866 tps, 159688 tx
+2013-01-15 12:04:47 [INFO ] [Progress] 59 sec, 2756 tps, 162444 tx
+2013-01-15 12:04:48 [INFO ] [Progress] 60 sec, 2674 tps, 165118 tx
+2013-01-15 12:04:48 [INFO ] [Total tx count] 165119 tx
+2013-01-15 12:04:48 [INFO ] [Throughput] 2752.0 tps
+2013-01-15 12:04:48 [INFO ] [Response time (minimum)] 0 msec
+2013-01-15 12:04:48 [INFO ] [Response time (50%tile)] 1 msec
+2013-01-15 12:04:48 [INFO ] [Response time (90%tile)] 2 msec
+2013-01-15 12:04:48 [INFO ] [Response time (95%tile)] 2 msec
+2013-01-15 12:04:48 [INFO ] [Response time (99%tile)] 3 msec
+2013-01-15 12:04:48 [INFO ] [Response time (maximum)] 14 msec
+2013-01-15 12:04:48 [INFO ] < JdbcRunner SUCCESS
+2013-01-15 14:43:09 [INFO ] > JdbcRunner 1.2
+2013-01-15 14:43:09 [INFO ] [Config]
+Program start time   : 20130115-144309
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-01-15 14:43:10 [INFO ] [Warmup] -19 sec, 1155 tps, (1155 tx)
+2013-01-15 14:43:11 [INFO ] [Warmup] -18 sec, 1087 tps, (2242 tx)
+2013-01-15 14:43:12 [INFO ] [Warmup] -17 sec, 1302 tps, (3544 tx)
+2013-01-15 14:43:13 [INFO ] [Warmup] -16 sec, 1709 tps, (5253 tx)
+2013-01-15 14:43:14 [INFO ] [Warmup] -15 sec, 1917 tps, (7170 tx)
+2013-01-15 14:43:15 [INFO ] [Warmup] -14 sec, 2151 tps, (9321 tx)
+2013-01-15 14:43:16 [INFO ] [Warmup] -13 sec, 1762 tps, (11083 tx)
+2013-01-15 14:43:17 [INFO ] [Warmup] -12 sec, 2065 tps, (13148 tx)
+2013-01-15 14:43:18 [INFO ] [Warmup] -11 sec, 2312 tps, (15460 tx)
+2013-01-15 14:43:19 [INFO ] [Warmup] -10 sec, 2404 tps, (17864 tx)
+2013-01-15 14:43:20 [INFO ] [Warmup] -9 sec, 2376 tps, (20240 tx)
+2013-01-15 14:43:21 [INFO ] [Warmup] -8 sec, 2544 tps, (22784 tx)
+2013-01-15 14:43:22 [INFO ] [Warmup] -7 sec, 2481 tps, (25265 tx)
+2013-01-15 14:43:23 [INFO ] [Warmup] -6 sec, 2453 tps, (27718 tx)
+2013-01-15 14:43:24 [INFO ] [Warmup] -5 sec, 2374 tps, (30092 tx)
+2013-01-15 14:43:25 [INFO ] [Warmup] -4 sec, 2540 tps, (32632 tx)
+2013-01-15 14:43:26 [INFO ] [Warmup] -3 sec, 2597 tps, (35229 tx)
+2013-01-15 14:43:27 [INFO ] [Warmup] -2 sec, 2629 tps, (37858 tx)
+2013-01-15 14:43:28 [INFO ] [Warmup] -1 sec, 2550 tps, (40408 tx)
+2013-01-15 14:43:29 [INFO ] [Warmup] 0 sec, 2551 tps, (42959 tx)
+2013-01-15 14:43:30 [INFO ] [Progress] 1 sec, 2644 tps, 2644 tx
+2013-01-15 14:43:31 [INFO ] [Progress] 2 sec, 2599 tps, 5243 tx
+2013-01-15 14:43:32 [INFO ] [Progress] 3 sec, 2520 tps, 7763 tx
+2013-01-15 14:43:33 [INFO ] [Progress] 4 sec, 2585 tps, 10348 tx
+2013-01-15 14:43:34 [INFO ] [Progress] 5 sec, 2488 tps, 12836 tx
+2013-01-15 14:43:35 [INFO ] [Progress] 6 sec, 2606 tps, 15442 tx
+2013-01-15 14:43:36 [INFO ] [Progress] 7 sec, 2656 tps, 18098 tx
+2013-01-15 14:43:37 [INFO ] [Progress] 8 sec, 2624 tps, 20722 tx
+2013-01-15 14:43:38 [INFO ] [Progress] 9 sec, 2407 tps, 23129 tx
+2013-01-15 14:43:39 [INFO ] [Progress] 10 sec, 2455 tps, 25584 tx
+2013-01-15 14:43:40 [INFO ] [Progress] 11 sec, 2619 tps, 28203 tx
+2013-01-15 14:43:41 [INFO ] [Progress] 12 sec, 2602 tps, 30805 tx
+2013-01-15 14:43:42 [INFO ] [Progress] 13 sec, 2618 tps, 33423 tx
+2013-01-15 14:43:43 [INFO ] [Progress] 14 sec, 2477 tps, 35900 tx
+2013-01-15 14:43:44 [INFO ] [Progress] 15 sec, 2524 tps, 38424 tx
+2013-01-15 14:43:45 [INFO ] [Progress] 16 sec, 2554 tps, 40978 tx
+2013-01-15 14:43:46 [INFO ] [Progress] 17 sec, 2576 tps, 43554 tx
+2013-01-15 14:43:47 [INFO ] [Progress] 18 sec, 2601 tps, 46155 tx
+2013-01-15 14:43:48 [INFO ] [Progress] 19 sec, 2634 tps, 48789 tx
+2013-01-15 14:43:49 [INFO ] [Progress] 20 sec, 2552 tps, 51341 tx
+2013-01-15 14:43:50 [INFO ] [Progress] 21 sec, 2662 tps, 54003 tx
+2013-01-15 14:43:51 [INFO ] [Progress] 22 sec, 2533 tps, 56536 tx
+2013-01-15 14:43:52 [INFO ] [Progress] 23 sec, 2585 tps, 59121 tx
+2013-01-15 14:43:53 [INFO ] [Progress] 24 sec, 2584 tps, 61705 tx
+2013-01-15 14:43:54 [INFO ] [Progress] 25 sec, 2549 tps, 64254 tx
+2013-01-15 14:43:55 [INFO ] [Progress] 26 sec, 2593 tps, 66847 tx
+2013-01-15 14:43:56 [INFO ] [Progress] 27 sec, 2633 tps, 69480 tx
+2013-01-15 14:43:57 [INFO ] [Progress] 28 sec, 2589 tps, 72069 tx
+2013-01-15 14:43:58 [INFO ] [Progress] 29 sec, 2490 tps, 74559 tx
+2013-01-15 14:43:59 [INFO ] [Progress] 30 sec, 2454 tps, 77013 tx
+2013-01-15 14:44:00 [INFO ] [Progress] 31 sec, 2557 tps, 79570 tx
+2013-01-15 14:44:01 [INFO ] [Progress] 32 sec, 2603 tps, 82173 tx
+2013-01-15 14:44:02 [INFO ] [Progress] 33 sec, 2567 tps, 84740 tx
+2013-01-15 14:44:03 [INFO ] [Progress] 34 sec, 2496 tps, 87236 tx
+2013-01-15 14:44:04 [INFO ] [Progress] 35 sec, 2568 tps, 89804 tx
+2013-01-15 14:44:05 [INFO ] [Progress] 36 sec, 2498 tps, 92302 tx
+2013-01-15 14:44:06 [INFO ] [Progress] 37 sec, 2595 tps, 94897 tx
+2013-01-15 14:44:07 [INFO ] [Progress] 38 sec, 2553 tps, 97450 tx
+2013-01-15 14:44:08 [INFO ] [Progress] 39 sec, 2449 tps, 99899 tx
+2013-01-15 14:44:09 [INFO ] [Progress] 40 sec, 2167 tps, 102066 tx
+2013-01-15 14:44:10 [INFO ] [Progress] 41 sec, 2517 tps, 104583 tx
+2013-01-15 14:44:11 [INFO ] [Progress] 42 sec, 2539 tps, 107122 tx
+2013-01-15 14:44:12 [INFO ] [Progress] 43 sec, 2481 tps, 109603 tx
+2013-01-15 14:44:13 [INFO ] [Progress] 44 sec, 2564 tps, 112167 tx
+2013-01-15 14:44:14 [INFO ] [Progress] 45 sec, 2590 tps, 114757 tx
+2013-01-15 14:44:15 [INFO ] [Progress] 46 sec, 2479 tps, 117236 tx
+2013-01-15 14:44:16 [INFO ] [Progress] 47 sec, 2455 tps, 119691 tx
+2013-01-15 14:44:17 [INFO ] [Progress] 48 sec, 2460 tps, 122151 tx
+2013-01-15 14:44:18 [INFO ] [Progress] 49 sec, 2475 tps, 124626 tx
+2013-01-15 14:44:19 [INFO ] [Progress] 50 sec, 2555 tps, 127181 tx
+2013-01-15 14:44:20 [INFO ] [Progress] 51 sec, 2526 tps, 129707 tx
+2013-01-15 14:44:21 [INFO ] [Progress] 52 sec, 2617 tps, 132324 tx
+2013-01-15 14:44:22 [INFO ] [Progress] 53 sec, 2571 tps, 134895 tx
+2013-01-15 14:44:23 [INFO ] [Progress] 54 sec, 2571 tps, 137466 tx
+2013-01-15 14:44:24 [INFO ] [Progress] 55 sec, 2538 tps, 140004 tx
+2013-01-15 14:44:25 [INFO ] [Progress] 56 sec, 2451 tps, 142455 tx
+2013-01-15 14:44:26 [INFO ] [Progress] 57 sec, 2503 tps, 144958 tx
+2013-01-15 14:44:27 [INFO ] [Progress] 58 sec, 2384 tps, 147342 tx
+2013-01-15 14:44:28 [INFO ] [Progress] 59 sec, 2556 tps, 149898 tx
+2013-01-15 14:44:29 [INFO ] [Progress] 60 sec, 2576 tps, 152474 tx
+2013-01-15 14:44:29 [INFO ] [Total tx count] 152474 tx
+2013-01-15 14:44:29 [INFO ] [Throughput] 2541.2 tps
+2013-01-15 14:44:29 [INFO ] [Response time (minimum)] 0 msec
+2013-01-15 14:44:29 [INFO ] [Response time (50%tile)] 1 msec
+2013-01-15 14:44:29 [INFO ] [Response time (90%tile)] 2 msec
+2013-01-15 14:44:29 [INFO ] [Response time (95%tile)] 2 msec
+2013-01-15 14:44:29 [INFO ] [Response time (99%tile)] 3 msec
+2013-01-15 14:44:29 [INFO ] [Response time (maximum)] 13 msec
+2013-01-15 14:44:29 [INFO ] < JdbcRunner SUCCESS
+2013-01-15 14:48:42 [INFO ] > JdbcRunner 1.2
+2013-01-15 14:48:42 [INFO ] [Config]
+Program start time   : 20130115-144842
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-01-15 14:48:43 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while executing the script
+java.lang.IllegalArgumentException: Invalid parameter name : $ int
+	at helper.js:45 (query)
+	at test.js:25 (run)
+
+	at jdbcrunner.Script.call(Script.java:294)
+	at jdbcrunner.Script.callRun(Script.java:218)
+	at jdbcrunner.Helper.callRun(Helper.java:107)
+	at jdbcrunner.Agent.callRun(Agent.java:246)
+	at jdbcrunner.Agent.run(Agent.java:108)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: java.lang.IllegalArgumentException: Invalid parameter name : $ int
+	at jdbcrunner.Template.checkSequence(Template.java:291)
+	at jdbcrunner.Template.<init>(Template.java:102)
+	at jdbcrunner.Helper.getTemplate(Helper.java:548)
+	at jdbcrunner.Helper.query(Helper.java:238)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:161)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:247)
+	at org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:76)
+	at org.mozilla.javascript.gen.helper_js_3._c_query_11(helper.js:45)
+	at org.mozilla.javascript.gen.helper_js_3.call(helper.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:97)
+	at org.mozilla.javascript.gen.test_js_8._c_run_2(test.js:25)
+	at org.mozilla.javascript.gen.test_js_8.call(test.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3178)
+	at org.mozilla.javascript.gen.test_js_8.call(test.js)
+	at jdbcrunner.Script.call(Script.java:279)
+	... 5 more
+2013-01-15 14:48:43 [INFO ] < JdbcRunner ERROR
+2013-01-15 14:51:51 [INFO ] > JdbcRunner 1.2
+2013-01-15 14:51:51 [INFO ] [Config]
+Program start time   : 20130115-145151
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-01-15 14:51:52 [ERROR] An exception occurred at agent 1
+jdbcrunner.ApplicationException: An exception occurred while executing the script
+java.lang.IllegalArgumentException: Cannot convert parameter 1 from String to Integer : dddddddddd
+	at helper.js:45 (query)
+	at test.js:25 (run)
+
+	at jdbcrunner.Script.call(Script.java:294)
+	at jdbcrunner.Script.callRun(Script.java:218)
+	at jdbcrunner.Helper.callRun(Helper.java:107)
+	at jdbcrunner.Agent.callRun(Agent.java:246)
+	at jdbcrunner.Agent.run(Agent.java:108)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: java.lang.IllegalArgumentException: Cannot convert parameter 1 from String to Integer : dddddddddd
+	at jdbcrunner.Template.setParameters(Template.java:174)
+	at jdbcrunner.Helper.query(Helper.java:240)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:161)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:247)
+	at org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:76)
+	at org.mozilla.javascript.gen.helper_js_4._c_query_11(helper.js:45)
+	at org.mozilla.javascript.gen.helper_js_4.call(helper.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:97)
+	at org.mozilla.javascript.gen.test_js_7._c_run_2(test.js:25)
+	at org.mozilla.javascript.gen.test_js_7.call(test.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3178)
+	at org.mozilla.javascript.gen.test_js_7.call(test.js)
+	at jdbcrunner.Script.call(Script.java:279)
+	... 5 more
+Caused by: java.lang.NumberFormatException: For input string: "dddddddddd"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:481)
+	at java.lang.Integer.parseInt(Integer.java:514)
+	at jdbcrunner.Template.setParameters(Template.java:171)
+	... 22 more
+2013-01-15 14:51:52 [INFO ] < JdbcRunner ERROR
+2013-01-15 14:53:15 [INFO ] > JdbcRunner 1.2
+2013-01-15 14:53:15 [INFO ] [Config]
+Program start time   : 20130115-145314
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-01-15 14:53:16 [INFO ] [Warmup] -19 sec, 1430 tps, (1430 tx)
+2013-01-15 14:53:17 [INFO ] [Warmup] -18 sec, 1217 tps, (2647 tx)
+2013-01-15 14:53:18 [INFO ] [Warmup] -17 sec, 1404 tps, (4051 tx)
+2013-01-15 14:53:19 [INFO ] [Warmup] -16 sec, 1613 tps, (5664 tx)
+2013-01-15 14:53:20 [INFO ] [Warmup] -15 sec, 1704 tps, (7368 tx)
+2013-01-15 14:53:21 [INFO ] [Warmup] -14 sec, 2097 tps, (9465 tx)
+2013-01-15 14:53:22 [INFO ] [Warmup] -13 sec, 1741 tps, (11206 tx)
+2013-01-15 14:53:23 [INFO ] [Warmup] -12 sec, 2449 tps, (13655 tx)
+2013-01-15 14:53:24 [INFO ] [Warmup] -11 sec, 2530 tps, (16185 tx)
+2013-01-15 14:53:25 [INFO ] [Warmup] -10 sec, 2403 tps, (18588 tx)
+2013-01-15 14:53:26 [INFO ] [Warmup] -9 sec, 2161 tps, (20749 tx)
+2013-01-15 14:53:27 [INFO ] [Warmup] -8 sec, 2270 tps, (23019 tx)
+2013-01-15 14:53:28 [INFO ] [Warmup] -7 sec, 2179 tps, (25198 tx)
+2013-01-15 14:53:29 [INFO ] [Warmup] -6 sec, 2123 tps, (27321 tx)
+2013-01-15 14:53:30 [INFO ] [Warmup] -5 sec, 2016 tps, (29337 tx)
+2013-01-15 14:53:31 [INFO ] [Warmup] -4 sec, 1958 tps, (31295 tx)
+2013-01-15 14:53:32 [INFO ] [Warmup] -3 sec, 2092 tps, (33387 tx)
+2013-01-15 14:53:33 [INFO ] [Warmup] -2 sec, 2043 tps, (35430 tx)
+2013-01-15 14:53:34 [INFO ] [Warmup] -1 sec, 2420 tps, (37850 tx)
+2013-01-15 14:53:35 [INFO ] [Warmup] 0 sec, 2502 tps, (40352 tx)
+2013-01-15 14:53:36 [INFO ] [Progress] 1 sec, 2610 tps, 2610 tx
+2013-01-15 14:53:37 [INFO ] [Progress] 2 sec, 2419 tps, 5029 tx
+2013-01-15 14:53:38 [INFO ] [Progress] 3 sec, 2581 tps, 7610 tx
+2013-01-15 14:53:39 [INFO ] [Progress] 4 sec, 2555 tps, 10165 tx
+2013-01-15 14:53:40 [INFO ] [Progress] 5 sec, 2657 tps, 12822 tx
+2013-01-15 14:53:41 [INFO ] [Progress] 6 sec, 2561 tps, 15383 tx
+2013-01-15 14:53:42 [INFO ] [Progress] 7 sec, 2588 tps, 17971 tx
+2013-01-15 14:53:43 [INFO ] [Progress] 8 sec, 2591 tps, 20562 tx
+2013-01-15 14:53:44 [INFO ] [Progress] 9 sec, 2603 tps, 23165 tx
+2013-01-15 14:53:45 [INFO ] [Progress] 10 sec, 2649 tps, 25814 tx
+2013-01-15 14:53:46 [INFO ] [Progress] 11 sec, 2435 tps, 28249 tx
+2013-01-15 14:53:47 [INFO ] [Progress] 12 sec, 2518 tps, 30767 tx
+2013-01-15 14:53:48 [INFO ] [Progress] 13 sec, 2642 tps, 33409 tx
+2013-01-15 14:53:49 [INFO ] [Progress] 14 sec, 2627 tps, 36036 tx
+2013-01-15 14:53:50 [INFO ] [Progress] 15 sec, 2643 tps, 38679 tx
+2013-01-15 14:53:51 [INFO ] [Progress] 16 sec, 2621 tps, 41300 tx
+2013-01-15 14:53:52 [INFO ] [Progress] 17 sec, 2605 tps, 43905 tx
+2013-01-15 14:53:53 [INFO ] [Progress] 18 sec, 2694 tps, 46599 tx
+2013-01-15 14:53:54 [INFO ] [Progress] 19 sec, 2614 tps, 49213 tx
+2013-01-15 14:53:55 [INFO ] [Progress] 20 sec, 2712 tps, 51925 tx
+2013-01-15 14:53:56 [INFO ] [Progress] 21 sec, 2518 tps, 54443 tx
+2013-01-15 14:53:57 [INFO ] [Progress] 22 sec, 2660 tps, 57103 tx
+2013-01-15 14:53:58 [INFO ] [Progress] 23 sec, 2583 tps, 59686 tx
+2013-01-15 14:53:59 [INFO ] [Progress] 24 sec, 2604 tps, 62290 tx
+2013-01-15 14:54:00 [INFO ] [Progress] 25 sec, 2542 tps, 64832 tx
+2013-01-15 14:54:01 [INFO ] [Progress] 26 sec, 2600 tps, 67432 tx
+2013-01-15 14:54:02 [INFO ] [Progress] 27 sec, 2611 tps, 70043 tx
+2013-01-15 14:54:03 [INFO ] [Progress] 28 sec, 2608 tps, 72651 tx
+2013-01-15 14:54:04 [INFO ] [Progress] 29 sec, 2569 tps, 75220 tx
+2013-01-15 14:54:05 [INFO ] [Progress] 30 sec, 2552 tps, 77772 tx
+2013-01-15 14:54:06 [INFO ] [Progress] 31 sec, 2422 tps, 80194 tx
+2013-01-15 14:54:07 [INFO ] [Progress] 32 sec, 2543 tps, 82737 tx
+2013-01-15 14:54:08 [INFO ] [Progress] 33 sec, 2700 tps, 85437 tx
+2013-01-15 14:54:09 [INFO ] [Progress] 34 sec, 2559 tps, 87996 tx
+2013-01-15 14:54:10 [INFO ] [Progress] 35 sec, 2645 tps, 90641 tx
+2013-01-15 14:54:11 [INFO ] [Progress] 36 sec, 2665 tps, 93306 tx
+2013-01-15 14:54:12 [INFO ] [Progress] 37 sec, 2525 tps, 95831 tx
+2013-01-15 14:54:13 [INFO ] [Progress] 38 sec, 2637 tps, 98468 tx
+2013-01-15 14:54:14 [INFO ] [Progress] 39 sec, 2520 tps, 100988 tx
+2013-01-15 14:54:15 [INFO ] [Progress] 40 sec, 2421 tps, 103409 tx
+2013-01-15 14:54:16 [INFO ] [Progress] 41 sec, 2636 tps, 106045 tx
+2013-01-15 14:54:17 [INFO ] [Progress] 42 sec, 2535 tps, 108580 tx
+2013-01-15 14:54:18 [INFO ] [Progress] 43 sec, 2626 tps, 111206 tx
+2013-01-15 14:54:19 [INFO ] [Progress] 44 sec, 2482 tps, 113688 tx
+2013-01-15 14:54:20 [INFO ] [Progress] 45 sec, 2663 tps, 116351 tx
+2013-01-15 14:54:21 [INFO ] [Progress] 46 sec, 2570 tps, 118921 tx
+2013-01-15 14:54:22 [INFO ] [Progress] 47 sec, 2558 tps, 121479 tx
+2013-01-15 14:54:23 [INFO ] [Progress] 48 sec, 2544 tps, 124023 tx
+2013-01-15 14:54:24 [INFO ] [Progress] 49 sec, 2536 tps, 126559 tx
+2013-01-15 14:54:25 [INFO ] [Progress] 50 sec, 2701 tps, 129260 tx
+2013-01-15 14:54:26 [INFO ] [Progress] 51 sec, 2588 tps, 131848 tx
+2013-01-15 14:54:27 [INFO ] [Progress] 52 sec, 2473 tps, 134321 tx
+2013-01-15 14:54:28 [INFO ] [Progress] 53 sec, 2591 tps, 136912 tx
+2013-01-15 14:54:29 [INFO ] [Progress] 54 sec, 2449 tps, 139361 tx
+2013-01-15 14:54:30 [INFO ] [Progress] 55 sec, 2617 tps, 141978 tx
+2013-01-15 14:54:31 [INFO ] [Progress] 56 sec, 2603 tps, 144581 tx
+2013-01-15 14:54:32 [INFO ] [Progress] 57 sec, 2364 tps, 146945 tx
+2013-01-15 14:54:33 [INFO ] [Progress] 58 sec, 2620 tps, 149565 tx
+2013-01-15 14:54:34 [INFO ] [Progress] 59 sec, 2596 tps, 152161 tx
+2013-01-15 14:54:35 [INFO ] [Progress] 60 sec, 2612 tps, 154773 tx
+2013-01-15 14:54:35 [INFO ] [Total tx count] 154774 tx
+2013-01-15 14:54:35 [INFO ] [Throughput] 2579.6 tps
+2013-01-15 14:54:35 [INFO ] [Response time (minimum)] 0 msec
+2013-01-15 14:54:35 [INFO ] [Response time (50%tile)] 1 msec
+2013-01-15 14:54:35 [INFO ] [Response time (90%tile)] 2 msec
+2013-01-15 14:54:35 [INFO ] [Response time (95%tile)] 2 msec
+2013-01-15 14:54:35 [INFO ] [Response time (99%tile)] 3 msec
+2013-01-15 14:54:35 [INFO ] [Response time (maximum)] 11 msec
+2013-01-15 14:54:35 [INFO ] < JdbcRunner SUCCESS
+2013-01-15 14:56:15 [INFO ] > JdbcRunner 1.2
+2013-01-15 14:56:15 [INFO ] [Config]
+Program start time   : 20130115-145615
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-01-15 14:56:16 [INFO ] [Warmup] -19 sec, 1481 tps, (1481 tx)
+2013-01-15 14:56:17 [INFO ] [Warmup] -18 sec, 1264 tps, (2745 tx)
+2013-01-15 14:56:52 [INFO ] > JdbcRunner 1.2
+2013-01-15 14:56:52 [INFO ] [Config]
+Program start time   : 20130115-145652
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-01-15 14:56:54 [INFO ] [Warmup] -19 sec, 1429 tps, (1429 tx)
+2013-01-15 14:56:55 [INFO ] [Warmup] -18 sec, 1160 tps, (2589 tx)
+2013-01-15 14:56:56 [INFO ] [Warmup] -17 sec, 1555 tps, (4144 tx)
+2013-01-15 14:56:57 [INFO ] [Warmup] -16 sec, 1799 tps, (5943 tx)
+2013-01-15 14:56:58 [INFO ] [Warmup] -15 sec, 2128 tps, (8071 tx)
+2013-01-15 14:56:59 [INFO ] [Warmup] -14 sec, 2049 tps, (10120 tx)
+2013-01-15 14:57:00 [INFO ] [Warmup] -13 sec, 1875 tps, (11995 tx)
+2013-01-15 14:57:01 [INFO ] [Warmup] -12 sec, 2543 tps, (14538 tx)
+2013-01-15 14:57:02 [INFO ] [Warmup] -11 sec, 2560 tps, (17098 tx)
+2013-01-15 14:57:03 [INFO ] [Warmup] -10 sec, 2575 tps, (19673 tx)
+2013-01-15 14:57:04 [INFO ] [Warmup] -9 sec, 2528 tps, (22201 tx)
+2013-01-15 14:57:05 [INFO ] [Warmup] -8 sec, 2536 tps, (24737 tx)
+2013-01-15 14:57:06 [INFO ] [Warmup] -7 sec, 2706 tps, (27443 tx)
+2013-01-15 14:57:07 [INFO ] [Warmup] -6 sec, 2550 tps, (29993 tx)
+2013-01-15 14:57:08 [INFO ] [Warmup] -5 sec, 2655 tps, (32648 tx)
+2013-01-15 14:57:09 [INFO ] [Warmup] -4 sec, 2557 tps, (35205 tx)
+2013-01-15 14:57:10 [INFO ] [Warmup] -3 sec, 2575 tps, (37780 tx)
+2013-01-15 14:57:11 [INFO ] [Warmup] -2 sec, 2604 tps, (40384 tx)
+2013-01-15 14:57:12 [INFO ] [Warmup] -1 sec, 2378 tps, (42762 tx)
+2013-01-15 14:57:13 [INFO ] [Warmup] 0 sec, 2483 tps, (45245 tx)
+2013-01-15 14:57:14 [INFO ] [Progress] 1 sec, 2122 tps, 2122 tx
+2013-01-15 14:57:15 [INFO ] [Progress] 2 sec, 2184 tps, 4306 tx
+2013-01-15 14:57:16 [INFO ] [Progress] 3 sec, 2575 tps, 6881 tx
+2013-01-15 14:57:17 [INFO ] [Progress] 4 sec, 2389 tps, 9270 tx
+2013-01-15 14:57:18 [INFO ] [Progress] 5 sec, 2072 tps, 11342 tx
+2013-01-15 14:57:19 [INFO ] [Progress] 6 sec, 2121 tps, 13463 tx
+2013-01-15 14:57:20 [INFO ] [Progress] 7 sec, 1897 tps, 15360 tx
+2013-01-15 14:57:21 [INFO ] [Progress] 8 sec, 2210 tps, 17570 tx
+2013-01-15 14:57:22 [INFO ] [Progress] 9 sec, 2309 tps, 19879 tx
+2013-01-15 14:57:23 [INFO ] [Progress] 10 sec, 2327 tps, 22206 tx
+2013-01-15 14:57:24 [INFO ] [Progress] 11 sec, 2315 tps, 24521 tx
+2013-01-15 14:57:25 [INFO ] [Progress] 12 sec, 2293 tps, 26814 tx
+2013-01-15 14:57:26 [INFO ] [Progress] 13 sec, 2214 tps, 29028 tx
+2013-01-15 14:57:27 [INFO ] [Progress] 14 sec, 2323 tps, 31351 tx
+2013-01-15 14:57:28 [INFO ] [Progress] 15 sec, 2172 tps, 33523 tx
+2013-01-15 14:57:29 [INFO ] [Progress] 16 sec, 2203 tps, 35726 tx
+2013-01-15 14:57:30 [INFO ] [Progress] 17 sec, 1928 tps, 37654 tx
+2013-01-15 14:57:31 [INFO ] [Progress] 18 sec, 1834 tps, 39488 tx
+2013-01-15 14:57:32 [INFO ] [Progress] 19 sec, 1840 tps, 41328 tx
+2013-01-15 14:57:33 [INFO ] [Progress] 20 sec, 1904 tps, 43232 tx
+2013-01-15 14:57:34 [INFO ] [Progress] 21 sec, 1835 tps, 45067 tx
+2013-01-15 14:57:35 [INFO ] [Progress] 22 sec, 1727 tps, 46794 tx
+2013-01-15 14:57:36 [INFO ] [Progress] 23 sec, 1845 tps, 48639 tx
+2013-01-15 14:57:37 [INFO ] [Progress] 24 sec, 1860 tps, 50499 tx
+2013-01-15 14:57:38 [INFO ] [Progress] 25 sec, 1734 tps, 52233 tx
+2013-01-15 14:57:39 [INFO ] [Progress] 26 sec, 1766 tps, 53999 tx
+2013-01-15 14:57:40 [INFO ] [Progress] 27 sec, 1899 tps, 55898 tx
+2013-01-15 14:57:41 [INFO ] [Progress] 28 sec, 1905 tps, 57803 tx
+2013-01-15 14:57:42 [INFO ] [Progress] 29 sec, 2043 tps, 59846 tx
+2013-01-15 14:57:43 [INFO ] [Progress] 30 sec, 2021 tps, 61867 tx
+2013-01-15 14:57:44 [INFO ] [Progress] 31 sec, 2013 tps, 63880 tx
+2013-01-15 14:57:45 [INFO ] [Progress] 32 sec, 1993 tps, 65873 tx
+2013-01-15 14:57:46 [INFO ] [Progress] 33 sec, 2001 tps, 67874 tx
+2013-01-15 14:57:47 [INFO ] [Progress] 34 sec, 2044 tps, 69918 tx
+2013-01-15 14:57:48 [INFO ] [Progress] 35 sec, 1982 tps, 71900 tx
+2013-01-15 14:57:49 [INFO ] [Progress] 36 sec, 1998 tps, 73898 tx
+2013-01-15 14:57:50 [INFO ] [Progress] 37 sec, 1882 tps, 75780 tx
+2013-01-15 14:57:51 [INFO ] [Progress] 38 sec, 1990 tps, 77770 tx
+2013-01-15 14:57:52 [INFO ] [Progress] 39 sec, 1987 tps, 79757 tx
+2013-01-15 14:57:53 [INFO ] [Progress] 40 sec, 1990 tps, 81747 tx
+2013-01-15 14:57:54 [INFO ] [Progress] 41 sec, 2003 tps, 83750 tx
+2013-01-15 14:57:55 [INFO ] [Progress] 42 sec, 1941 tps, 85691 tx
+2013-01-15 14:57:56 [INFO ] [Progress] 43 sec, 1988 tps, 87679 tx
+2013-01-15 14:57:57 [INFO ] [Progress] 44 sec, 1954 tps, 89633 tx
+2013-01-15 14:57:58 [INFO ] [Progress] 45 sec, 1988 tps, 91621 tx
+2013-01-15 14:57:59 [INFO ] [Progress] 46 sec, 2039 tps, 93660 tx
+2013-01-15 14:58:00 [INFO ] [Progress] 47 sec, 2027 tps, 95687 tx
+2013-01-15 14:58:01 [INFO ] [Progress] 48 sec, 1995 tps, 97682 tx
+2013-01-15 14:58:02 [INFO ] [Progress] 49 sec, 1929 tps, 99611 tx
+2013-01-15 14:58:03 [INFO ] [Progress] 50 sec, 1949 tps, 101560 tx
+2013-01-15 14:58:04 [INFO ] [Progress] 51 sec, 1999 tps, 103559 tx
+2013-01-15 14:58:05 [INFO ] [Progress] 52 sec, 1959 tps, 105518 tx
+2013-01-15 14:58:06 [INFO ] [Progress] 53 sec, 2004 tps, 107522 tx
+2013-01-15 14:58:07 [INFO ] [Progress] 54 sec, 1922 tps, 109444 tx
+2013-01-15 14:58:08 [INFO ] [Progress] 55 sec, 1921 tps, 111365 tx
+2013-01-15 14:58:09 [INFO ] [Progress] 56 sec, 1813 tps, 113178 tx
+2013-01-15 14:58:10 [INFO ] [Progress] 57 sec, 1824 tps, 115002 tx
+2013-01-15 14:58:11 [INFO ] [Progress] 58 sec, 1669 tps, 116671 tx
+2013-01-15 14:58:12 [INFO ] [Progress] 59 sec, 1784 tps, 118455 tx
+2013-01-15 14:58:13 [INFO ] [Progress] 60 sec, 1816 tps, 120271 tx
+2013-01-15 14:58:13 [INFO ] [Total tx count] 120270 tx
+2013-01-15 14:58:13 [INFO ] [Throughput] 2004.5 tps
+2013-01-15 14:58:13 [INFO ] [Response time (minimum)] 0 msec
+2013-01-15 14:58:13 [INFO ] [Response time (50%tile)] 1 msec
+2013-01-15 14:58:13 [INFO ] [Response time (90%tile)] 2 msec
+2013-01-15 14:58:13 [INFO ] [Response time (95%tile)] 3 msec
+2013-01-15 14:58:13 [INFO ] [Response time (99%tile)] 4 msec
+2013-01-15 14:58:13 [INFO ] [Response time (maximum)] 16 msec
+2013-01-15 14:58:13 [INFO ] < JdbcRunner SUCCESS
+2013-01-16 10:21:13 [INFO ] > JdbcRunner 1.2
+2013-01-16 10:21:13 [INFO ] [Config]
+Program start time   : 20130116-102112
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Warmup time          : 20 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 4
+Connection pool size : 4
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-01-16 10:21:14 [INFO ] [Warmup] -19 sec, 1409 tps, (1409 tx)
+2013-01-16 10:21:15 [INFO ] [Warmup] -18 sec, 1203 tps, (2612 tx)
+2013-01-16 10:21:16 [INFO ] [Warmup] -17 sec, 1366 tps, (3978 tx)
+2013-01-16 10:21:17 [INFO ] [Warmup] -16 sec, 1651 tps, (5629 tx)
+2013-01-16 10:21:18 [INFO ] [Warmup] -15 sec, 1999 tps, (7628 tx)
+2013-01-16 10:21:19 [INFO ] [Warmup] -14 sec, 2041 tps, (9669 tx)
+2013-01-16 10:21:20 [INFO ] [Warmup] -13 sec, 1751 tps, (11420 tx)
+2013-01-16 10:21:21 [INFO ] [Warmup] -12 sec, 2343 tps, (13763 tx)
+2013-01-16 10:21:22 [INFO ] [Warmup] -11 sec, 2386 tps, (16149 tx)
+2013-01-16 10:21:23 [INFO ] [Warmup] -10 sec, 2521 tps, (18670 tx)
+2013-01-16 10:21:24 [INFO ] [Warmup] -9 sec, 2397 tps, (21067 tx)
+2013-01-16 10:21:25 [INFO ] [Warmup] -8 sec, 2528 tps, (23595 tx)
+2013-01-16 10:21:26 [INFO ] [Warmup] -7 sec, 2481 tps, (26076 tx)
+2013-01-16 10:21:27 [INFO ] [Warmup] -6 sec, 2559 tps, (28635 tx)
+2013-01-16 10:21:28 [INFO ] [Warmup] -5 sec, 2423 tps, (31058 tx)
+2013-01-16 10:21:29 [INFO ] [Warmup] -4 sec, 2423 tps, (33481 tx)
+2013-01-16 10:21:30 [INFO ] [Warmup] -3 sec, 2578 tps, (36059 tx)
+2013-01-16 10:21:31 [INFO ] [Warmup] -2 sec, 2508 tps, (38567 tx)
+2013-01-16 10:21:32 [INFO ] [Warmup] -1 sec, 2591 tps, (41158 tx)
+2013-01-16 10:21:33 [INFO ] [Warmup] 0 sec, 2587 tps, (43745 tx)
+2013-01-16 10:21:34 [INFO ] [Progress] 1 sec, 2541 tps, 2541 tx
+2013-01-16 10:21:35 [INFO ] [Progress] 2 sec, 2488 tps, 5029 tx
+2013-01-16 10:21:36 [INFO ] [Progress] 3 sec, 2498 tps, 7527 tx
+2013-01-16 10:21:37 [INFO ] [Progress] 4 sec, 2582 tps, 10109 tx
+2013-01-16 10:21:38 [INFO ] [Progress] 5 sec, 2587 tps, 12696 tx
+2013-01-16 10:21:39 [INFO ] [Progress] 6 sec, 2613 tps, 15309 tx
+2013-01-16 10:21:40 [INFO ] [Progress] 7 sec, 2596 tps, 17905 tx
+2013-01-16 10:21:41 [INFO ] [Progress] 8 sec, 2482 tps, 20387 tx
+2013-01-16 10:21:42 [INFO ] [Progress] 9 sec, 2566 tps, 22953 tx
+2013-01-16 10:21:43 [INFO ] [Progress] 10 sec, 2602 tps, 25555 tx
+2013-01-16 10:21:44 [INFO ] [Progress] 11 sec, 2372 tps, 27927 tx
+2013-01-16 10:21:45 [INFO ] [Progress] 12 sec, 2466 tps, 30393 tx
+2013-01-16 10:21:46 [INFO ] [Progress] 13 sec, 2462 tps, 32855 tx
+2013-01-16 10:21:47 [INFO ] [Progress] 14 sec, 2441 tps, 35296 tx
+2013-01-16 10:21:48 [INFO ] [Progress] 15 sec, 2492 tps, 37788 tx
+2013-01-16 10:21:49 [INFO ] [Progress] 16 sec, 2425 tps, 40213 tx
+2013-01-16 10:21:50 [INFO ] [Progress] 17 sec, 2483 tps, 42696 tx
+2013-01-16 10:21:51 [INFO ] [Progress] 18 sec, 2416 tps, 45112 tx
+2013-01-16 10:21:52 [INFO ] [Progress] 19 sec, 2280 tps, 47392 tx
+2013-01-16 10:21:53 [INFO ] [Progress] 20 sec, 2507 tps, 49899 tx
+2013-01-16 10:21:54 [INFO ] [Progress] 21 sec, 2505 tps, 52404 tx
+2013-01-16 10:21:55 [INFO ] [Progress] 22 sec, 2549 tps, 54953 tx
+2013-01-16 10:21:56 [INFO ] [Progress] 23 sec, 2607 tps, 57560 tx
+2013-01-16 10:21:57 [INFO ] [Progress] 24 sec, 2546 tps, 60106 tx
+2013-01-16 10:21:58 [INFO ] [Progress] 25 sec, 2352 tps, 62458 tx
+2013-01-16 10:21:59 [INFO ] [Progress] 26 sec, 2510 tps, 64968 tx
+2013-01-16 10:22:00 [INFO ] [Progress] 27 sec, 2332 tps, 67300 tx
+2013-01-16 10:22:01 [INFO ] [Progress] 28 sec, 2417 tps, 69717 tx
+2013-01-16 10:22:02 [INFO ] [Progress] 29 sec, 2395 tps, 72112 tx
+2013-01-16 10:22:03 [INFO ] [Progress] 30 sec, 2422 tps, 74534 tx
+2013-01-16 10:22:04 [INFO ] [Progress] 31 sec, 2495 tps, 77029 tx
+2013-01-16 10:22:05 [INFO ] [Progress] 32 sec, 2553 tps, 79582 tx
+2013-01-16 10:22:06 [INFO ] [Progress] 33 sec, 2071 tps, 81653 tx
+2013-01-16 10:22:07 [INFO ] [Progress] 34 sec, 2348 tps, 84001 tx
+2013-01-16 10:22:08 [INFO ] [Progress] 35 sec, 2298 tps, 86299 tx
+2013-01-16 10:22:09 [INFO ] [Progress] 36 sec, 2493 tps, 88792 tx
+2013-01-16 10:22:10 [INFO ] [Progress] 37 sec, 2323 tps, 91115 tx
+2013-01-16 10:22:11 [INFO ] [Progress] 38 sec, 2591 tps, 93706 tx
+2013-01-16 10:22:12 [INFO ] [Progress] 39 sec, 2446 tps, 96152 tx
+2013-01-16 10:22:13 [INFO ] [Progress] 40 sec, 2324 tps, 98476 tx
+2013-01-16 10:22:14 [INFO ] [Progress] 41 sec, 2556 tps, 101032 tx
+2013-01-16 10:22:15 [INFO ] [Progress] 42 sec, 2501 tps, 103533 tx
+2013-01-16 10:22:16 [INFO ] [Progress] 43 sec, 2383 tps, 105916 tx
+2013-01-16 10:22:17 [INFO ] [Progress] 44 sec, 2031 tps, 107947 tx
+2013-01-16 10:22:18 [INFO ] [Progress] 45 sec, 2287 tps, 110234 tx
+2013-01-16 10:22:19 [INFO ] [Progress] 46 sec, 2220 tps, 112454 tx
+2013-01-16 10:22:20 [INFO ] [Progress] 47 sec, 2533 tps, 114987 tx
+2013-01-16 10:22:21 [INFO ] [Progress] 48 sec, 2469 tps, 117456 tx
+2013-01-16 10:22:22 [INFO ] [Progress] 49 sec, 2393 tps, 119849 tx
+2013-01-16 10:22:23 [INFO ] [Progress] 50 sec, 2611 tps, 122460 tx
+2013-01-16 10:22:24 [INFO ] [Progress] 51 sec, 2637 tps, 125097 tx
+2013-01-16 10:22:25 [INFO ] [Progress] 52 sec, 2502 tps, 127599 tx
+2013-01-16 10:22:26 [INFO ] [Progress] 53 sec, 2592 tps, 130191 tx
+2013-01-16 10:22:27 [INFO ] [Progress] 54 sec, 2595 tps, 132786 tx
+2013-01-16 10:22:28 [INFO ] [Progress] 55 sec, 2569 tps, 135355 tx
+2013-01-16 10:22:29 [INFO ] [Progress] 56 sec, 2517 tps, 137872 tx
+2013-01-16 10:22:30 [INFO ] [Progress] 57 sec, 2388 tps, 140260 tx
+2013-01-16 10:22:31 [INFO ] [Progress] 58 sec, 2587 tps, 142847 tx
+2013-01-16 10:22:32 [INFO ] [Progress] 59 sec, 2547 tps, 145394 tx
+2013-01-16 10:22:33 [INFO ] [Progress] 60 sec, 2569 tps, 147963 tx
+2013-01-16 10:22:33 [INFO ] [Total tx count] 147964 tx
+2013-01-16 10:22:33 [INFO ] [Throughput] 2466.1 tps
+2013-01-16 10:22:33 [INFO ] [Response time (minimum)] 0 msec
+2013-01-16 10:22:33 [INFO ] [Response time (50%tile)] 1 msec
+2013-01-16 10:22:33 [INFO ] [Response time (90%tile)] 2 msec
+2013-01-16 10:22:33 [INFO ] [Response time (95%tile)] 2 msec
+2013-01-16 10:22:33 [INFO ] [Response time (99%tile)] 3 msec
+2013-01-16 10:22:33 [INFO ] [Response time (maximum)] 14 msec
+2013-01-16 10:22:33 [INFO ] < JdbcRunner SUCCESS
+2013-01-16 11:59:03 [INFO ] > JdbcRunner 1.2
+2013-01-16 11:59:03 [INFO ] [Config]
+Program start time   : 20130116-115903
+Script filename      : testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-01-16 12:04:20 [INFO ] > JdbcRunner 1.2
+2013-01-16 12:04:20 [INFO ] [Config]
+Program start time   : 20130116-120420
+Script filename      : testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-01-16 12:19:18 [INFO ] > JdbcRunner 1.2
+2013-01-16 12:19:18 [INFO ] [Config]
+Program start time   : 20130116-121917
+Script filename      : testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-01-16 12:19:18 [INFO ] < JdbcRunner SUCCESS
+2013-01-16 12:38:21 [INFO ] > JdbcRunner 1.2
+2013-01-16 12:38:21 [INFO ] [Config]
+Program start time   : 20130116-123821
+Script filename      : testload.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Load mode            : true
+Number of agents     : 1
+Auto commit          : true
+Debug mode           : false
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-01-16 12:38:22 [INFO ] < JdbcRunner SUCCESS
+2013-02-07 09:49:10 [INFO ] > JdbcRunner 1.2
+2013-02-07 09:49:10 [INFO ] [Config]
+Program start time   : 20130207-094909
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Warmup time          : 10 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 2
+Connection pool size : 2
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-07 09:49:10 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while accessing the database
+org.postgresql.util.PSQLException: ERROR: relation "tutorial" does not exist
+  Position: 15
+	at helper.js:49 (fetchAsArray)
+	at test.js:15 (init)
+
+	at jdbcrunner.Script.call(Script.java:290)
+	at jdbcrunner.Script.callInit(Script.java:205)
+	at jdbcrunner.Helper.callInit(Helper.java:93)
+	at jdbcrunner.Agent.callInit(Agent.java:224)
+	at jdbcrunner.Agent.run(Agent.java:86)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "tutorial" does not exist
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2103)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1836)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:512)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:388)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeQuery(AbstractJdbc2Statement.java:273)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at jdbcrunner.Helper.fetchAsArray(Helper.java:300)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:161)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:247)
+	at org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:76)
+	at org.mozilla.javascript.gen.helper_js_4._c_fetchAsArray_12(helper.js:49)
+	at org.mozilla.javascript.gen.helper_js_4.call(helper.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:97)
+	at org.mozilla.javascript.gen.test_js_5._c_init_1(test.js:15)
+	at org.mozilla.javascript.gen.test_js_5.call(test.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3178)
+	at org.mozilla.javascript.gen.test_js_5.call(test.js)
+	at jdbcrunner.Script.call(Script.java:279)
+	... 5 more
+2013-02-07 09:49:10 [INFO ] < JdbcRunner ERROR
+2013-02-07 09:56:47 [INFO ] > JdbcRunner 1.2
+2013-02-07 09:56:47 [INFO ] [Config]
+Program start time   : 20130207-095647
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Warmup time          : 10 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 2
+Connection pool size : 2
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-07 09:56:47 [ERROR] An exception occurred at agent 0
+jdbcrunner.ApplicationException: An exception occurred while accessing the database
+org.postgresql.util.PSQLException: ERROR: column "data" does not exist
+  Position: 8
+	at helper.js:45 (query)
+	at test.js:25 (run)
+
+	at jdbcrunner.Script.call(Script.java:290)
+	at jdbcrunner.Script.callRun(Script.java:218)
+	at jdbcrunner.Helper.callRun(Helper.java:107)
+	at jdbcrunner.Agent.callRun(Agent.java:246)
+	at jdbcrunner.Agent.run(Agent.java:108)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "data" does not exist
+  Position: 8
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2103)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1836)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:512)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:388)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeQuery(AbstractJdbc2Statement.java:273)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at jdbcrunner.Helper.query(Helper.java:241)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:161)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:247)
+	at org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:76)
+	at org.mozilla.javascript.gen.helper_js_4._c_query_11(helper.js:45)
+	at org.mozilla.javascript.gen.helper_js_4.call(helper.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:97)
+	at org.mozilla.javascript.gen.test_js_5._c_run_2(test.js:25)
+	at org.mozilla.javascript.gen.test_js_5.call(test.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3178)
+	at org.mozilla.javascript.gen.test_js_5.call(test.js)
+	at jdbcrunner.Script.call(Script.java:279)
+	... 5 more
+2013-02-07 09:56:47 [INFO ] < JdbcRunner ERROR
+2013-02-07 10:01:17 [INFO ] > JdbcRunner 1.2
+2013-02-07 10:01:17 [INFO ] [Config]
+Program start time   : 20130207-100116
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Warmup time          : 10 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 2
+Connection pool size : 2
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-07 10:01:18 [INFO ] [Warmup] -9 sec, 1078 tps, (1078 tx)
+2013-02-07 10:01:19 [INFO ] [Warmup] -8 sec, 1079 tps, (2157 tx)
+2013-02-07 10:01:20 [INFO ] [Warmup] -7 sec, 1204 tps, (3361 tx)
+2013-02-07 10:01:21 [INFO ] [Warmup] -6 sec, 1262 tps, (4623 tx)
+2013-02-07 10:01:22 [INFO ] [Warmup] -5 sec, 1290 tps, (5913 tx)
+2013-02-07 10:01:23 [INFO ] [Warmup] -4 sec, 1417 tps, (7330 tx)
+2013-02-07 10:01:24 [INFO ] [Warmup] -3 sec, 1413 tps, (8743 tx)
+2013-02-07 10:01:25 [INFO ] [Warmup] -2 sec, 1338 tps, (10081 tx)
+2013-02-07 10:01:26 [INFO ] [Warmup] -1 sec, 1373 tps, (11454 tx)
+2013-02-07 10:01:27 [INFO ] [Warmup] 0 sec, 1647 tps, (13101 tx)
+2013-02-07 10:01:28 [INFO ] [Progress] 1 sec, 1652 tps, 1652 tx
+2013-02-07 10:01:29 [INFO ] [Progress] 2 sec, 1614 tps, 3266 tx
+2013-02-07 10:01:30 [INFO ] [Progress] 3 sec, 1618 tps, 4884 tx
+2013-02-07 10:01:31 [INFO ] [Progress] 4 sec, 1660 tps, 6544 tx
+2013-02-07 10:01:32 [INFO ] [Progress] 5 sec, 1661 tps, 8205 tx
+2013-02-07 10:01:33 [INFO ] [Progress] 6 sec, 1668 tps, 9873 tx
+2013-02-07 10:01:34 [INFO ] [Progress] 7 sec, 1590 tps, 11463 tx
+2013-02-07 10:01:35 [INFO ] [Progress] 8 sec, 1554 tps, 13017 tx
+2013-02-07 10:01:36 [INFO ] [Progress] 9 sec, 1666 tps, 14683 tx
+2013-02-07 10:01:37 [INFO ] [Progress] 10 sec, 1656 tps, 16339 tx
+2013-02-07 10:01:38 [INFO ] [Progress] 11 sec, 1633 tps, 17972 tx
+2013-02-07 10:01:39 [INFO ] [Progress] 12 sec, 1665 tps, 19637 tx
+2013-02-07 10:01:40 [INFO ] [Progress] 13 sec, 1583 tps, 21220 tx
+2013-02-07 10:01:41 [INFO ] [Progress] 14 sec, 1682 tps, 22902 tx
+2013-02-07 10:01:42 [INFO ] [Progress] 15 sec, 1662 tps, 24564 tx
+2013-02-07 10:01:43 [INFO ] [Progress] 16 sec, 1677 tps, 26241 tx
+2013-02-07 10:01:44 [INFO ] [Progress] 17 sec, 1669 tps, 27910 tx
+2013-02-07 10:01:45 [INFO ] [Progress] 18 sec, 1634 tps, 29544 tx
+2013-02-07 10:01:46 [INFO ] [Progress] 19 sec, 1670 tps, 31214 tx
+2013-02-07 10:01:47 [INFO ] [Progress] 20 sec, 1674 tps, 32888 tx
+2013-02-07 10:01:48 [INFO ] [Progress] 21 sec, 1671 tps, 34559 tx
+2013-02-07 10:01:49 [INFO ] [Progress] 22 sec, 1651 tps, 36210 tx
+2013-02-07 10:01:50 [INFO ] [Progress] 23 sec, 1648 tps, 37858 tx
+2013-02-07 10:01:51 [INFO ] [Progress] 24 sec, 1620 tps, 39478 tx
+2013-02-07 10:01:52 [INFO ] [Progress] 25 sec, 1652 tps, 41130 tx
+2013-02-07 10:01:53 [INFO ] [Progress] 26 sec, 1669 tps, 42799 tx
+2013-02-07 10:01:54 [INFO ] [Progress] 27 sec, 1656 tps, 44455 tx
+2013-02-07 10:01:55 [INFO ] [Progress] 28 sec, 1616 tps, 46071 tx
+2013-02-07 10:01:56 [INFO ] [Progress] 29 sec, 1678 tps, 47749 tx
+2013-02-07 10:01:57 [INFO ] [Progress] 30 sec, 1612 tps, 49361 tx
+2013-02-07 10:01:58 [INFO ] [Progress] 31 sec, 1674 tps, 51035 tx
+2013-02-07 10:01:59 [INFO ] [Progress] 32 sec, 1665 tps, 52700 tx
+2013-02-07 10:02:00 [INFO ] [Progress] 33 sec, 1626 tps, 54326 tx
+2013-02-07 10:02:01 [INFO ] [Progress] 34 sec, 1662 tps, 55988 tx
+2013-02-07 10:02:02 [INFO ] [Progress] 35 sec, 1662 tps, 57650 tx
+2013-02-07 10:02:03 [INFO ] [Progress] 36 sec, 1660 tps, 59310 tx
+2013-02-07 10:02:04 [INFO ] [Progress] 37 sec, 1686 tps, 60996 tx
+2013-02-07 10:02:05 [INFO ] [Progress] 38 sec, 1584 tps, 62580 tx
+2013-02-07 10:02:06 [INFO ] [Progress] 39 sec, 1660 tps, 64240 tx
+2013-02-07 10:02:07 [INFO ] [Progress] 40 sec, 1670 tps, 65910 tx
+2013-02-07 10:02:08 [INFO ] [Progress] 41 sec, 1666 tps, 67576 tx
+2013-02-07 10:02:09 [INFO ] [Progress] 42 sec, 1679 tps, 69255 tx
+2013-02-07 10:02:10 [INFO ] [Progress] 43 sec, 1630 tps, 70885 tx
+2013-02-07 10:02:11 [INFO ] [Progress] 44 sec, 1676 tps, 72561 tx
+2013-02-07 10:02:12 [INFO ] [Progress] 45 sec, 1634 tps, 74195 tx
+2013-02-07 10:02:13 [INFO ] [Progress] 46 sec, 1597 tps, 75792 tx
+2013-02-07 10:02:14 [INFO ] [Progress] 47 sec, 1406 tps, 77198 tx
+2013-02-07 10:02:15 [INFO ] [Progress] 48 sec, 1552 tps, 78750 tx
+2013-02-07 10:02:16 [INFO ] [Progress] 49 sec, 1595 tps, 80345 tx
+2013-02-07 10:02:17 [INFO ] [Progress] 50 sec, 1631 tps, 81976 tx
+2013-02-07 10:02:18 [INFO ] [Progress] 51 sec, 1495 tps, 83471 tx
+2013-02-07 10:02:19 [INFO ] [Progress] 52 sec, 1199 tps, 84670 tx
+2013-02-07 10:02:20 [INFO ] [Progress] 53 sec, 1648 tps, 86318 tx
+2013-02-07 10:02:21 [INFO ] [Progress] 54 sec, 1543 tps, 87861 tx
+2013-02-07 10:02:22 [INFO ] [Progress] 55 sec, 1498 tps, 89359 tx
+2013-02-07 10:02:23 [INFO ] [Progress] 56 sec, 1387 tps, 90746 tx
+2013-02-07 10:02:24 [INFO ] [Progress] 57 sec, 1381 tps, 92127 tx
+2013-02-07 10:02:25 [INFO ] [Progress] 58 sec, 1264 tps, 93391 tx
+2013-02-07 10:02:26 [INFO ] [Progress] 59 sec, 1288 tps, 94679 tx
+2013-02-07 10:02:27 [INFO ] [Progress] 60 sec, 1348 tps, 96027 tx
+2013-02-07 10:02:27 [INFO ] [Total tx count] 96027 tx
+2013-02-07 10:02:27 [INFO ] [Throughput] 1600.5 tps
+2013-02-07 10:02:27 [INFO ] [Response time (minimum)] 0 msec
+2013-02-07 10:02:27 [INFO ] [Response time (50%tile)] 1 msec
+2013-02-07 10:02:27 [INFO ] [Response time (90%tile)] 1 msec
+2013-02-07 10:02:27 [INFO ] [Response time (95%tile)] 1 msec
+2013-02-07 10:02:27 [INFO ] [Response time (99%tile)] 2 msec
+2013-02-07 10:02:27 [INFO ] [Response time (maximum)] 6 msec
+2013-02-07 10:02:27 [INFO ] < JdbcRunner SUCCESS
+2013-02-07 10:33:20 [INFO ] > JdbcRunner 1.2
+2013-02-07 10:33:20 [INFO ] [Config]
+Program start time   : 20130207-103320
+Script filename      : test.js
+JDBC driver          : -
+JDBC URL             : jdbc:postgresql://localhost:5432/postgres
+JDBC user            : postgres
+Warmup time          : 10 sec
+Measurement time     : 60 sec
+Number of tx types   : 1
+Number of agents     : 2
+Connection pool size : 2
+Statement cache size : 10
+Auto commit          : false
+Sleep time           : 0 msec
+Throttle             : - tps
+Debug mode           : true
+Trace mode           : false
+Log directory        : .
+Parameter 0          : 0
+Parameter 1          : 0
+Parameter 2          : 0
+Parameter 3          : 0
+Parameter 4          : 0
+Parameter 5          : 0
+Parameter 6          : 0
+Parameter 7          : 0
+Parameter 8          : 0
+Parameter 9          : 0
+2013-02-07 10:33:21 [INFO ] [Warmup] -9 sec, 951 tps, (951 tx)
+2013-02-07 10:33:22 [INFO ] [Warmup] -8 sec, 933 tps, (1884 tx)
+2013-02-07 10:33:23 [INFO ] [Warmup] -7 sec, 1205 tps, (3089 tx)
+2013-02-07 10:33:24 [INFO ] [Warmup] -6 sec, 1210 tps, (4299 tx)
+2013-02-07 10:33:25 [INFO ] [Warmup] -5 sec, 1249 tps, (5548 tx)
+2013-02-07 10:33:26 [INFO ] [Warmup] -4 sec, 1398 tps, (6946 tx)
+2013-02-07 10:33:27 [INFO ] [Warmup] -3 sec, 1393 tps, (8339 tx)
+2013-02-07 10:33:28 [INFO ] [Warmup] -2 sec, 1443 tps, (9782 tx)
+2013-02-07 10:33:29 [INFO ] [Warmup] -1 sec, 1309 tps, (11091 tx)
+2013-02-07 10:33:30 [INFO ] [Warmup] 0 sec, 1527 tps, (12618 tx)
+2013-02-07 10:33:31 [INFO ] [Progress] 1 sec, 1612 tps, 1612 tx
+2013-02-07 10:33:32 [INFO ] [Progress] 2 sec, 1604 tps, 3216 tx
+2013-02-07 10:33:33 [INFO ] [Progress] 3 sec, 1651 tps, 4867 tx
+2013-02-07 10:33:34 [INFO ] [Progress] 4 sec, 1647 tps, 6514 tx
+2013-02-07 10:33:35 [INFO ] [Progress] 5 sec, 1603 tps, 8117 tx
+2013-02-07 10:33:36 [INFO ] [Progress] 6 sec, 1685 tps, 9802 tx
+2013-02-07 10:33:37 [INFO ] [Progress] 7 sec, 1621 tps, 11423 tx
+2013-02-07 10:33:38 [INFO ] [Progress] 8 sec, 1673 tps, 13096 tx
+2013-02-07 10:33:39 [INFO ] [Progress] 9 sec, 1655 tps, 14751 tx
+2013-02-07 10:33:40 [INFO ] [Progress] 10 sec, 1655 tps, 16406 tx
+2013-02-07 10:33:41 [INFO ] [Progress] 11 sec, 1675 tps, 18081 tx
+2013-02-07 10:33:42 [INFO ] [Progress] 12 sec, 1633 tps, 19714 tx
+2013-02-07 10:33:43 [INFO ] [Progress] 13 sec, 1680 tps, 21394 tx
+2013-02-07 10:33:44 [INFO ] [Progress] 14 sec, 1650 tps, 23044 tx
+2013-02-07 10:33:45 [INFO ] [Progress] 15 sec, 1684 tps, 24728 tx
+2013-02-07 10:33:46 [INFO ] [Progress] 16 sec, 1676 tps, 26404 tx
+2013-02-07 10:33:47 [INFO ] [Progress] 17 sec, 1638 tps, 28042 tx
+2013-02-07 10:33:48 [INFO ] [Progress] 18 sec, 1670 tps, 29712 tx
+2013-02-07 10:33:49 [INFO ] [Progress] 19 sec, 1686 tps, 31398 tx
+2013-02-07 10:33:50 [INFO ] [Progress] 20 sec, 1669 tps, 33067 tx
+2013-02-07 10:33:51 [INFO ] [Progress] 21 sec, 1679 tps, 34746 tx
+2013-02-07 10:33:52 [INFO ] [Progress] 22 sec, 1620 tps, 36366 tx
+2013-02-07 10:33:53 [INFO ] [Progress] 23 sec, 1665 tps, 38031 tx
+2013-02-07 10:33:54 [INFO ] [Progress] 24 sec, 1687 tps, 39718 tx
+2013-02-07 10:33:55 [INFO ] [Progress] 25 sec, 1675 tps, 41393 tx
+2013-02-07 10:33:56 [INFO ] [Progress] 26 sec, 1680 tps, 43073 tx
+2013-02-07 10:33:57 [INFO ] [Progress] 27 sec, 1583 tps, 44656 tx
+2013-02-07 10:33:58 [INFO ] [Progress] 28 sec, 1651 tps, 46307 tx
+2013-02-07 10:33:59 [INFO ] [Progress] 29 sec, 1672 tps, 47979 tx
+2013-02-07 10:34:00 [INFO ] [Progress] 30 sec, 1650 tps, 49629 tx
+2013-02-07 10:34:01 [INFO ] [Progress] 31 sec, 1685 tps, 51314 tx
+2013-02-07 10:34:02 [INFO ] [Progress] 32 sec, 1661 tps, 52975 tx
+2013-02-07 10:34:03 [INFO ] [Progress] 33 sec, 1625 tps, 54600 tx
+2013-02-07 10:34:04 [INFO ] [Progress] 34 sec, 1676 tps, 56276 tx
+2013-02-07 10:34:05 [INFO ] [Progress] 35 sec, 1676 tps, 57952 tx
+2013-02-07 10:34:06 [INFO ] [Progress] 36 sec, 1688 tps, 59640 tx
+2013-02-07 10:34:07 [INFO ] [Progress] 37 sec, 1682 tps, 61322 tx
+2013-02-07 10:34:08 [INFO ] [Progress] 38 sec, 1631 tps, 62953 tx
+2013-02-07 10:34:09 [INFO ] [Progress] 39 sec, 1672 tps, 64625 tx
+2013-02-07 10:34:10 [INFO ] [Progress] 40 sec, 1628 tps, 66253 tx
+2013-02-07 10:34:11 [INFO ] [Progress] 41 sec, 1706 tps, 67959 tx
+2013-02-07 10:34:12 [INFO ] [Progress] 42 sec, 1636 tps, 69595 tx
+2013-02-07 10:34:13 [INFO ] [Progress] 43 sec, 1628 tps, 71223 tx
+2013-02-07 10:34:14 [INFO ] [Progress] 44 sec, 1541 tps, 72764 tx
+2013-02-07 10:34:15 [INFO ] [Progress] 45 sec, 1676 tps, 74440 tx
+2013-02-07 10:34:16 [INFO ] [Progress] 46 sec, 1677 tps, 76117 tx
+2013-02-07 10:34:17 [INFO ] [Progress] 47 sec, 1688 tps, 77805 tx
+2013-02-07 10:34:18 [INFO ] [Progress] 48 sec, 1625 tps, 79430 tx
+2013-02-07 10:34:19 [INFO ] [Progress] 49 sec, 1501 tps, 80931 tx
+2013-02-07 10:34:20 [INFO ] [Progress] 50 sec, 1473 tps, 82404 tx
+2013-02-07 10:34:21 [INFO ] [Progress] 51 sec, 1693 tps, 84097 tx
+2013-02-07 10:34:22 [INFO ] [Progress] 52 sec, 1673 tps, 85770 tx
+2013-02-07 10:34:23 [INFO ] [Progress] 53 sec, 1643 tps, 87413 tx
+2013-02-07 10:34:24 [INFO ] [Progress] 54 sec, 1641 tps, 89054 tx
+2013-02-07 10:34:25 [INFO ] [Progress] 55 sec, 1569 tps, 90623 tx
+2013-02-07 10:34:26 [INFO ] [Progress] 56 sec, 1672 tps, 92295 tx
+2013-02-07 10:34:27 [INFO ] [Progress] 57 sec, 1563 tps, 93858 tx
+2013-02-07 10:34:28 [INFO ] [Progress] 58 sec, 1623 tps, 95481 tx
+2013-02-07 10:34:29 [INFO ] [Progress] 59 sec, 1668 tps, 97149 tx
+2013-02-07 10:34:30 [INFO ] [Progress] 60 sec, 1649 tps, 98798 tx
+2013-02-07 10:34:30 [INFO ] [Total tx count] 98798 tx
+2013-02-07 10:34:30 [INFO ] [Throughput] 1646.6 tps
+2013-02-07 10:34:30 [INFO ] [Response time (minimum)] 0 msec
+2013-02-07 10:34:30 [INFO ] [Response time (50%tile)] 1 msec
+2013-02-07 10:34:30 [INFO ] [Response time (90%tile)] 1 msec
+2013-02-07 10:34:30 [INFO ] [Response time (95%tile)] 1 msec
+2013-02-07 10:34:30 [INFO ] [Response time (99%tile)] 2 msec
+2013-02-07 10:34:30 [INFO ] [Response time (maximum)] 12 msec
+2013-02-07 10:34:30 [INFO ] < JdbcRunner SUCCESS

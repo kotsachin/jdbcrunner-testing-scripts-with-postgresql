@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jdbcrunner_javadoc" default="javadoc" basedir=".">
+    <description>
+        JdbcRunner javadoc
+    </description>
+
+    <target name="javadoc" depends="deletedir">
+        <javadoc destdir="javadoc" access="public" encoding="UTF-8">
+            <classpath>
+                <fileset dir="lib" includes="*.jar" />
+            </classpath>
+            <fileset dir="src" includes="**/*.java" />
+        </javadoc>
+    </target>
+
+    <target name="deletedir">
+        <delete dir="javadoc" />
+    </target>
+
+</project>

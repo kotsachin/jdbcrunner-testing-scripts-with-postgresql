@@ -1,0 +1,104 @@
+   
+*********************************************************************************************
+Start time of benchmark: 2013-05-06-11-09-18
+Number of runs: 2
+Warmup Time: 90 
+Measurement Time: 360
+Number of Agents: 10
+Scale: 10
+Sleep Times: 300, 150, 120, 70, 70
+Test type: SR
+Backup: off
+********************************************************************************************
+  
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 1
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+*********************** Setting up servers for the test ************************************
+cleaning 172.26.136.4 directories
+Initializing Master database....
+cleaning 172.26.136.5 directories
+Initializing Standby-I server....
+*********************** Servers set up for the test ****************************************
+  
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+********************************************************************************************
+ 
+********************************************************************************************
+Loading benchmark data with scale : 10
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Starting Standby-I DB server...
+Standby-I DB Server started.
+Starting Master DB server...
+Master DB Server started.
+Removed old dstat file from Master Server
+Removed old dstat file from Driver Machine
+Executed dstat utility on Master Server
+Removed old dstat file from Standby-1 Server
+Executed dstat utility on Standby-1 Server
+Executed dstat utility on Driver Machine
+********************************************************************************************
+Running Benchmark on Master: run 2
+Stopping Master DB server...
+Master DB Server stopped.
+Stopping Standby-I DB server...
+Standby-I DB Server stopped.
+********************************************************************************************
+ 
+********************************************************************************************
+Plot results into './benchmark/2013-05-06-11-09-18/Master/run1/gnuPlot/serverMachineDstat' directory
+Plot results into './benchmark/2013-05-06-11-09-18/Master/run2/gnuPlot/serverMachineDstat' directory
+Plot results into './benchmark/2013-05-06-11-09-18/Standby-1/run1/gnuPlot/serverMachineDstat' directory
+Plot results into './benchmark/2013-05-06-11-09-18/Standby-1/run2/gnuPlot/serverMachineDstat' directory
+Plot results into './benchmark/2013-05-06-11-09-18/Master/run1/gnuPlot/driverMachineDstat' directory
+Plot results into './benchmark/2013-05-06-11-09-18/Master/run2/gnuPlot/driverMachineDstat' directory
+********************************************************************************************
+ 
